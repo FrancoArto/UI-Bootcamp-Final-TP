@@ -10,7 +10,6 @@ export default createMaterialTopTabNavigator({
   Forms:{ 
         screen: HomeScreen,
         navigationOptions: {
-            tabBarLabel: 'Home',
             tabBarIcon: ({ tintColor }) => (
                 <Icon name="triangle" color={tintColor} size={24} />
             )
@@ -18,9 +17,9 @@ export default createMaterialTopTabNavigator({
   Other:{ 
     screen: categoriesScreen,
     navigationOptions: {
-    tabBarLabel: 'Categories',
     tabBarIcon: ({tintColor}) => (
-      <SecondIcon name="camera" color={tintColor} size={35}/>
+      <SecondIcon name="camera" color={tintColor} size={30}/>
     )
+        
   }}   
-})
+},{ tabBarOptions: { showIcon: true, showLabel: false }})

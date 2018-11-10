@@ -5,7 +5,7 @@ import TabNavigator from '../components/TabNavigator'
 const Routes ={
     TabNavigator: { 
         screen: TabNavigator,
-        navigationOptions: ({ navigation }) => ({
+        navigationOptions: () => ({
             title: 'TruchiTwitter'
         }) 
     },
