@@ -1,7 +1,14 @@
 import HomeScreen from '../screens/HomeScreen'
 import CategoriesScreen from '../screens/categoriesScreen'
+import TabNavigator from '../components/TabNavigator'
 
 const Routes ={
+    TabNavigator: { 
+        screen: TabNavigator,
+        navigationOptions: ({ navigation }) => ({
+            title: 'TruchiTwitter'
+        }) 
+    },
     Home: { screen: HomeScreen },
     Categories: { screen: CategoriesScreen}
 };
