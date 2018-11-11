@@ -12,7 +12,7 @@ import {
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-import * as Actions from '../../actions'; //Import your actions
+import { fetchTwitsTimeline } from '../../actions/timeLineActions'; //Import your actions
 
 class Home extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.props.getData(); //call our action
+       this.props.dispatch(fetchTwitsTimeline()); //call our action
     }
 
     render() {
@@ -42,20 +42,20 @@ class Home extends Component {
                         ref='listRef'
                         data={this.props.data}
                         renderItem={this.renderItem}
-                        keyExtractor={(item, index) => index.toString()}/>
+                        keyExtractor={(item) => item.id.toString()}/>
                 </View>
             );
         }
     }
 
-    renderItem({item, index}) {
+    renderItem({item}) {
         return (
             <View style={styles.row}>
                 <Text style={styles.title}>
-                    {(parseInt(index) + 1)}{". "}{item.title}
+                    {item.user.name}
                 </Text>
                 <Text style={styles.description}>
-                    {item.description}
+                    {item.text}
                 </Text>
             </View>
         )
@@ -69,20 +69,20 @@ class Home extends Component {
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
     return {
-        loading: state.dataReducer.loading,
-        data: state.dataReducer.data
+        data: state.timeLineReducer.timeLine.data,
+        loading: state.timeLineReducer.timeLine.loading,
+        error: state.timeLineReducer.timeLine.error
     }
 }
 
 // Doing this merges our actions into the component’s props,
 // while wrapping them in dispatch() so that they immediately dispatch an Action.
 // Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(Actions, dispatch);
-}
+
+
 
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
 
 const styles = StyleSheet.create({
     activityIndicatorContainer:{
