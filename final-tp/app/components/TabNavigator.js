@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Feather'
 import SecondIcon from 'react-native-vector-icons/EvilIcons'
 import HomeScreen from '../screens/HomeScreen'
 import categoriesScreen from '../screens/categoriesScreen'
+import ScreenSearch from '../screens/ScreenSearch';
 
 
 export default createMaterialTopTabNavigator({
@@ -15,7 +16,7 @@ export default createMaterialTopTabNavigator({
             )
   }},
   Other:{ 
-    screen: categoriesScreen,
+    screen: ScreenSearch,
     navigationOptions: {
     tabBarIcon: ({tintColor}) => (
       <SecondIcon name="camera" color={tintColor} size={30}/>
