@@ -12,7 +12,7 @@ import {
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-import { fetchTwitsTimeline } from '../../actions/timeLineActions'; //Import your actions
+import { fetchTweetsTimeline } from '../../actions/timeLineActions'; //Import your actions
 
 class Home extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-       this.props.dispatch(fetchTwitsTimeline()); //call our action
+       this.props.dispatch(fetchTweetsTimeline()); //call our action
     }
 
     render() {
@@ -69,9 +69,9 @@ class Home extends Component {
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
     return {
-        data: state.timeLineReducer.timeLine.data,
-        loading: state.timeLineReducer.timeLine.loading,
-        error: state.timeLineReducer.timeLine.error
+        data: state.timeLineReducer.data,
+        loading: state.timeLineReducer.loading,
+        error: state.timeLineReducer.error
     }
 }
 

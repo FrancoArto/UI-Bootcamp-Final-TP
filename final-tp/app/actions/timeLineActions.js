@@ -1,39 +1,34 @@
-import { getTwitTimeline } from '../api/apiCalls'
+import { getTweetTimeline } from '../api/apiCalls'
 
 export const FETCH_TIMELINE_BEGIN = 'FETCH_TIMELINE_BEGIN'
 export const FETCH_TIMELINE_SUCCESS = 'FETCH_TIMELINE_SUCCESS'
 export const FETCH_TIMELINE_FAILURE = 'FETCH_TIMELINE_FAILURE'
 
 
-export function fetchTwitsTimeline(){ ///fetchin twits using thunk
-    console.log('entre al action')
+export function fetchTweetsTimeline(){ ///fetchin twits using thunk
     return dispatch => {
-        dispatch(fetchTwitsTimelineBegin())
-        return getTwitTimeline()
-                .then((twitsArray) => {
-                    dispatch(fetchTwitsTimelineSucces(twitsArray))
-                    return twitsArray;
+        dispatch(fetchTweetsTimelineBegin())
+        return getTweetTimeline()
+                .then((tweetsArray) => {
+                    dispatch(fetchTweetsTimelineSuccess(tweetsArray))
+                    return tweetsArray;
                 })
                 .catch( error => 
-                    dispatch(fetchTwitsTimelineError(error))
+                    dispatch(fetchTweetsTimelineError(error))
                 );
         };
 }
 
-
-
-
-
-export const fetchTwitsTimelineBegin = () => ({
+export const fetchTweetsTimelineBegin = () => ({
     type: FETCH_TIMELINE_BEGIN
   });
 
-export const fetchTwitsTimelineSucces = (twitsArray) => ({
+export const fetchTweetsTimelineSuccess = (twitsArray) => ({
     type: FETCH_TIMELINE_SUCCESS,
     payload: twitsArray
 });
 
-export const fetchTwitsTimelineError = error => ({
+export const fetchTweetsTimelineError = error => ({
     type: FETCH_TIMELINE_FAILURE,
     payload: error
   });

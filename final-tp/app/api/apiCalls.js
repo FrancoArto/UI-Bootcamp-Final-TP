@@ -1,4 +1,4 @@
-import { GET_TIMELINE_URL, GET_ARGTRENDS_URL, GET_SEARCHTWITS_URL, GET_SINGLETWIT_URL} from './apiUrls'
+import { GET_TIMELINE_URL, GET_ARGTRENDS_URL, GET_SEARCHTWEETS_URL, GET_SINGLETWEET_URL} from './apiUrls'
 
 const twitTimelineCount = 100; ///number of tweets to require
 
@@ -15,9 +15,8 @@ function apiCall(url){
             .then(res => res.json());
 }
 
-export const getTwitTimeline = () => {
+export const getTweetTimeline = () => {
     const url = GET_TIMELINE_URL(twitTimelineCount);
-    console.log('la url es: '+ url)
     return apiCall(url)
 }
 
@@ -26,12 +25,12 @@ export const getArgTrends = () => {
     return apiCall(url)
 }
 
-export const getSearchTwitsList = (wordToSearch) => {
-    const url = GET_SEARCHTWITS_URL(wordToSearch)
+export const getSearchTweetsList = (wordToSearch) => {
+    const url = GET_SEARCHTWEETS_URL(wordToSearch)
     return apiCall(url)
 }
 
-export const getOneTwit = (twitID) => {
-    const url = GET_SINGLETWIT_URL(twitID)
+export const getOneTweet = (twitID) => {
+    const url = GET_SINGLETWEET_URL(twitID)
     return apiCall(url)
 }
