@@ -1,5 +1,5 @@
 import HomeScreen from '../screens/HomeScreen'
-import CategoriesScreen from '../screens/categoriesScreen'
+import SearchScreen from '../screens/ScreenSearch'
 import TabNavigator from '../components/TabNavigator'
 
 const Routes ={
@@ -10,6 +10,6 @@ const Routes ={
         }) 
     },
     Home: { screen: HomeScreen },
-    Categories: { screen: CategoriesScreen}
+    Search: { screen: SearchScreen}
 };
 export default Routes;
