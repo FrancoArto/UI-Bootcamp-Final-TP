@@ -12,17 +12,25 @@ import { connect } from 'react-redux';
 import * as Actions from '../../actions'; //Import your actions
 import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
+import TrendList from '../../components/TrendList/TrendList';
 
 class SearchContainer extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            searching: false
         };
+
+        this.onSearch = this.onSearch.bind(this);
     }
 
     componentDidMount() {
         this.props.getData();
+    }
+
+    onSearch() {
+       this.setState({ searching: true }); 
     }
 
     render() {
@@ -32,15 +40,23 @@ class SearchContainer extends Component {
                     <ActivityIndicator animating={true}/>
                 </View>
             );
-        } else {
+        } else if (this.state.searching) {
             return (
                 <View style={searchContainerStyle.container}>
-                  <Search />
+                  <Search onSearch={this.onSearch} />
                   <SearchResult data={this.props.data} />                    
+                </View>
+            );
+        } else {
+            return(
+                <View style={searchContainerStyle.container}>
+                    <Search onSearch={this.onSearch} /> 
+                    <TrendList data={this.props.data} />                                      
                 </View>
             );
         }
     }
+
 };
 
 

@@ -15,10 +15,11 @@ class Search extends Component {
         };
 
         this.onChangeText = this.onChangeText.bind(this);
+        this.handleOnPress = this.handleOnPress.bind(this);
     }
     
-    handleOnPress() {
-
+    handleOnPress(event) {
+      this.props.onSearch(event);
     }
 
     onChangeText(value) {
@@ -36,7 +37,9 @@ class Search extends Component {
                   <Input value={this.state.searchText} onChangeText={this.onChangeText} />                
                 </Item>
                 <Item style={[styles.searchButton, styles.hideBottomBorder]}>
-                  <Button info onPress={this.handleOnPress}><Text style={styles.searchButtonText}>Search</Text></Button>                
+                  <Button info onPress={this.handleOnPress}>
+                    <Text style={styles.searchButtonText}>Search</Text>
+                  </Button>                
                 </Item>
               </Item>             
             </Content>
