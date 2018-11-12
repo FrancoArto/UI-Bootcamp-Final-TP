@@ -26,7 +26,7 @@ class SearchContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.getData();
+        //this.props.getData();
     }
 
     onSearch() {
@@ -63,7 +63,7 @@ class SearchContainer extends Component {
 
 function mapStateToProps(state, props) {
     return {
-        data: state.dataReducer.data
+        data: state.timeLineReducer.data
     }
 }
 
