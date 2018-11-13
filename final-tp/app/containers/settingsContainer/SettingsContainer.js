@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-
+import Settings from '../../components/Settings/Settings';
 import * as Actions from '../../actions'; //Import your actions
 import settingsContainerStyle from './settingsContainer.style';
 
@@ -21,6 +21,7 @@ class SettingsContainer extends Component {
   render() {
     return (
         <View style={settingsContainerStyle.container}>
+          <Settings />
         </View>
     );
   }
