@@ -1,20 +1,20 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import SearchContainer from '../containers/searchContainer/SearchContainer';
 import PropTypes from 'prop-types';
+import SettingsContainer from '../containers/settingsContainer/SettingsContainer';
 
-const ScreenSearch = ({ navigation }) => (
+const ScreenSettings = ({ navigation }) => (
   <View style={styles.container}>
-    <SearchContainer />
+    <SettingsContainer />
   </View>
 );
 
-ScreenSearch.propTypes = {
+ScreenSettings.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
 
-ScreenSearch.navigationOptions = {
-  title: 'Search',
+ScreenSettings.navigationOptions = {
+  title: 'Settings',
 };
 
 const styles = StyleSheet.create({
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScreenSearch;
+export default ScreenSettings;

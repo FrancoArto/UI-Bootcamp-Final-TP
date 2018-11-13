@@ -3,8 +3,8 @@ import { createMaterialTopTabNavigator } from 'react-navigation'
 import Icon from 'react-native-vector-icons/Feather'
 import SecondIcon from 'react-native-vector-icons/EvilIcons'
 import HomeScreen from '../screens/HomeScreen'
-import categoriesScreen from '../screens/categoriesScreen'
-import ScreenSearch from '../screens/ScreenSearch';
+import ScreenSearch from '../screens/ScreenSearch'
+import ScreenSettings from '../screens/ScreenSettings';
 
 
 export default createMaterialTopTabNavigator({
@@ -22,5 +22,14 @@ export default createMaterialTopTabNavigator({
       <SecondIcon name="camera" color={tintColor} size={30}/>
     )
         
-  }}   
+  }},
+  Settings: {
+    screen: ScreenSettings,
+    navigationOptions: {
+      tabBarIcon: ({tintColor}) => (
+        <Icon name="settings" color={tintColor} size={24}/>
+      )
+          
+    }
+  }   
 },{ tabBarOptions: { showIcon: true, showLabel: false }})
