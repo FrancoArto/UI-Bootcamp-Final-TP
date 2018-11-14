@@ -30,17 +30,17 @@ class Tweet extends Component {
     }
 
     render() {
-        if (this.state.media.media_url) {
+        if (this.props.media) {
             console.log('entro CON');
             return (
                 <TweetWithImg
-                userName={item.user.name} 
-                mainContent={item.text} 
-                uri={item.user.profile_image_url_https}
-                accountName={item.user.screen_name}
-                favorite_count={item.favorite_count}
-                retweet_count={item.retweet_count}
-                timeAgo={this.toTimeZone(item.created_at)}>
+                userName={this.props.userName} 
+                mainContent={this.props.mainContent} 
+                uri={this.props.uri}
+                accountName={this.props.accountName}
+                favorite_count={this.props.favorite_count}
+                retweet_count={this.props.retweet_count}
+                timeAgo={this.toTimeZone(this.props.created_at)}>
                 </TweetWithImg>
             );
         } else {
@@ -48,13 +48,13 @@ class Tweet extends Component {
             
             return (
                 <TweetWithoutImg
-                userName={item.user.name} 
-                mainContent={item.text} 
-                uri={item.user.profile_image_url_https}
-                accountName={item.user.screen_name}
-                favorite_count={item.favorite_count}
-                retweet_count={item.retweet_count}
-                timeAgo={this.toTimeZone(item.created_at)}>
+                userName={this.props.userName} 
+                mainContent={this.props.mainContent} 
+                uri={this.props.uri}
+                accountName={this.props.accountName}
+                favorite_count={this.props.favorite_count}
+                retweet_count={this.props.retweet_count}
+                timeAgo={this.toTimeZone(this.props.created_at)}>
                 </TweetWithoutImg>
             );
         }

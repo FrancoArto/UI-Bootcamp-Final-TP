@@ -42,6 +42,7 @@ class Home extends Component {
                 </View>
             );
         } else {
+            console.log(this.props.data)
             return (
                 <View style={{flex:1, backgroundColor: '#F5F5F5', paddingTop:20}}>
                     <FlatList
@@ -53,8 +54,8 @@ class Home extends Component {
             );
         }
     }
-
-    renderItem({item}) {    
+    renderItem({item}) {  
+        console.log(item)  
         return (
             <Tweet 
                 userName={item.user.name} 
@@ -62,8 +63,11 @@ class Home extends Component {
                 uri={item.user.profile_image_url_https}
                 accountName={item.user.screen_name}
                 favorite_count={item.favorite_count}
-                retweet_count={item.retweet_count}>
-            </Tweet>
+                retweet_count={item.retweet_count}
+                media={item.entities.media}
+                created_at={item.created_at}
+            />
+            
         )
     }
 
