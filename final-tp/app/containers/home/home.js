@@ -9,10 +9,16 @@ import {
     ActivityIndicator
 } from 'react-native';
 
+
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-import * as Actions from '../../actions'; //Import your actions
+import { fetchTweetsTimeline } from '../../actions/timeLineActions'; //Import your actions
+
+import Tweet from '../../components/Tweet/Tweet'
+
+
+
 
 class Home extends Component {
     constructor(props) {
@@ -25,7 +31,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.props.getData(); //call our action
+       this.props.dispatch(fetchTweetsTimeline()); //call our action
     }
 
     render() {
@@ -42,26 +48,29 @@ class Home extends Component {
                         ref='listRef'
                         data={this.props.data}
                         renderItem={this.renderItem}
-                        keyExtractor={(item, index) => index.toString()}/>
+                        keyExtractor={(item) => item.id.toString()}/>
                 </View>
             );
         }
     }
-
-    renderItem({item, index}) {
+    renderItem({item}) {  
         return (
-            <View style={styles.row}>
-                <Text style={styles.title}>
-                    {(parseInt(index) + 1)}{". "}{item.title}
-                </Text>
-                <Text style={styles.description}>
-                    {item.description}
-                </Text>
-            </View>
+            <Tweet 
+                userName={item.user.name} 
+                mainContent={item.text} 
+                uri={item.user.profile_image_url_https}
+                accountName={item.user.screen_name}
+                favorite_count={item.favorite_count}
+                retweet_count={item.retweet_count}
+                media={item.entities.media}
+                created_at={item.created_at}
+            />
+            
         )
     }
-};
 
+
+};
 
 
 // The function takes data from the app current state,
@@ -69,42 +78,26 @@ class Home extends Component {
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
     return {
-        loading: state.dataReducer.loading,
-        data: state.dataReducer.data
+        data: state.timeLineReducer.data,
+        loading: state.timeLineReducer.loading,
+        error: state.timeLineReducer.error
     }
 }
 
 // Doing this merges our actions into the component’s props,
 // while wrapping them in dispatch() so that they immediately dispatch an Action.
 // Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(Actions, dispatch);
-}
+
+
 
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
 
 const styles = StyleSheet.create({
     activityIndicatorContainer:{
         backgroundColor: "#fff",
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1,
-    },
-
-    row:{
-        borderBottomWidth: 1,
-        borderColor: "#ccc",
-        padding: 10
-    },
-
-    title:{
-        fontSize: 15,
-        fontWeight: "600"
-    },
-
-    description:{
-        marginTop: 5,
-        fontSize: 14,
+        flex: 1
     }
 });
