@@ -50,6 +50,7 @@ class Home extends Component {
 
     renderItem({item}) {
         return (
+            <TouchableOpacity onPress={this.handleOnPress}>
             <View style={styles.row}>
                 <Text style={styles.title}>
                     {item.user.name}
@@ -58,6 +59,7 @@ class Home extends Component {
                     {item.text}
                 </Text>
             </View>
+            </TouchableOpacity>
         )
     }
 };
