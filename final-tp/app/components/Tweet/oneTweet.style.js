@@ -34,12 +34,12 @@ export default StyleSheet.create({
     },
 
     flexTitle: {
-        flex: 1,
+        flex: 0.50,
         flexDirection: 'row',
         justifyContent: 'flex-start',
 
-        paddingTop:  width/60, 
-        paddingBottom: width/60, 
+        paddingTop:  0, 
+        paddingBottom: 0 
     },
     flexContent: {
         flex: 1,
@@ -59,20 +59,20 @@ export default StyleSheet.create({
     },
 
     fontUserName: {
-        fontSize: width/24,
+        fontSize: width/20,
         fontWeight: 'bold',
         color: '#040404'
     },
     fontCountNameAndTime: {
-        fontSize: width/24,
+        fontSize: width/20,
         color: '#D5D5D5'
     },
     fontMainContent: {
-        fontSize: width/28,
+        fontSize: width/8,
         color: '#5D5D5D'
     },
     fontNumberIcons: {
-        fontSize: width/28,
+        fontSize: width/18,
         color: '#5D5D5D',
 
         marginRight: width/45
@@ -88,8 +88,24 @@ export default StyleSheet.create({
     buttonIcons: {
         margin: 0,
         padding: 0
-    }
+    },
     
 
+    flexImage: {
+        flex: 1,
+        flexDirection: 'row',
+        alignSelf: 'center',
+
+        paddingTop: width/80, 
+        paddingBottom: width/80
+    },
+    imageTweet: {
+        borderRadius: 20,
+        width: width
+        
+    },
+    extraMarginWhitImg: {
+        marginRight: width/15
+    }
   });
   

@@ -43,7 +43,7 @@ class Home extends Component {
             );
         } else {
             return (
-                <View style={{flex:1, backgroundColor: '#F5F5F5', paddingTop:20}}>
+                <View style={{flex:1, paddingTop:20}}>
                     <FlatList
                         ref='listRef'
                         data={this.props.data}
@@ -56,14 +56,15 @@ class Home extends Component {
     renderItem({item}) {  
         return (
             <Tweet 
-                userName={item.user.name} 
+                user={item.user} 
                 mainContent={item.text} 
                 uri={item.user.profile_image_url_https}
-                accountName={item.user.screen_name}
                 favorite_count={item.favorite_count}
                 retweet_count={item.retweet_count}
                 media={item.entities.media}
                 created_at={item.created_at}
+                navigationProp={this.props.navigationProp}
+                media={item.entities.media}
             />
             
         )

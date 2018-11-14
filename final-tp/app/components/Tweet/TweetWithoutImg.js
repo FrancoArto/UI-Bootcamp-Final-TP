@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { View, TouchableHighlight } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, TouchableOpacity } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
 import styles from './tweet.style';
 import { Font, AppLoading } from "expo";
 
-class TweetWithoutImg extends Component {
+class TweetWithoutImg extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -37,20 +37,29 @@ class TweetWithoutImg extends Component {
         } else {
 
         return (
-            <TouchableHighlight onPress={() => navigator.navigate('userContainer', this.props.user)}>
+            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('OneTweet',{
+                user: this.props.user.name,
+                uri: this.props.uri,
+                countName: this.props.user.screen_name,
+                timeAgo: this.props.timeAgo,
+                mainContent: this.props.mainContent,
+                userCount: this.props.user,
+                navigationProp: this.props.navigationProp
+                })} >
+
                 <View style={[styles.flexTweet]}>
 
-                    <TouchableHighlight onPress={() => navigator.navigate('userContainer', this.props.user)}>
+                    <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
                         <View style={[styles.flexUserImg]}>
                             <Thumbnail small source={{uri: this.props.uri}} />
                         </View>
-                    </TouchableHighlight> 
+                    </TouchableOpacity> 
 
                     <View style={[styles.flexRightSide]}>
 
                         <View style={[styles.flexTitle]}>
-                            <Text style={[styles.fontUserName]}> {this.props.userName} </Text>
-                            <Text style={[styles.fontCountNameAndTime]}> @{this.props.accountName} - {this.props.timeAgo} </Text>
+                            <Text style={[styles.fontUserName]}> {this.props.user.name} </Text>
+                            <Text style={[styles.fontCountNameAndTime]}> @{this.props.user.screen_name} - {this.props.timeAgo} </Text>
                         </View>
 
                         <View style={[styles.flexContent]}>
@@ -77,7 +86,7 @@ class TweetWithoutImg extends Component {
 
                     </View>
                 </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
             );
         }
     }

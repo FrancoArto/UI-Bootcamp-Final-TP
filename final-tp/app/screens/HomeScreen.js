@@ -3,13 +3,11 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import Home from '../containers/home/home' //Import the component file
 
-const HomeScreen = ({ navigation }) => (
+const HomeScreen = ({ navigation }) =>(
   <View style={styles.container}>
-    <Button
-        title='Check the categories'  
-        onPress={() => navigation.dispatch({ type: 'Categories' })}  
+    <Home 
+      navigationProp={ navigation }
     />
-    <Home />
   </View>
 );
 
@@ -24,7 +22,7 @@ HomeScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FF44'
+    backgroundColor: '#f5f5f5'
   },
 });
 
