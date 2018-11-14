@@ -10,8 +10,8 @@ export function fetchTweetsSearch(wordToSearch){ ///fetchin twits using thunk
         dispatch(fetchSearchBegin())
         return getSearchTweetsList(wordToSearch)
                 .then((tweetsArray) => {
-                    dispatch(fetchSearchSuccess(tweetsArray))
-                    return tweetsArray;
+                    dispatch(fetchSearchSuccess(tweetsArray.statuses))
+                    return tweetsArray.statuses;
                 })
                 .catch( error => 
                     dispatch(fetchSearchError(error))
@@ -20,11 +20,11 @@ export function fetchTweetsSearch(wordToSearch){ ///fetchin twits using thunk
 }
 
 export const fetchSearchBegin = () => ({
-    type: FETCH_SEARCH_FAILURE
+    type: FETCH_SEARCH_BEGIN
   });
 
 export const fetchSearchSuccess = (twitsArray) => ({
-    type: FETCH_SEARCH_FAILURE,
+    type: FETCH_SEARCH_SUCCESS,
     payload: twitsArray
 });
 

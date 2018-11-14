@@ -18,8 +18,8 @@ class Search extends Component {
         this.handleOnPress = this.handleOnPress.bind(this);
     }
     
-    handleOnPress(event) {
-      this.props.onSearch(event);
+    handleOnPress() {
+      this.props.onSearch(this.state.searchText);
     }
 
     onChangeText(value) {

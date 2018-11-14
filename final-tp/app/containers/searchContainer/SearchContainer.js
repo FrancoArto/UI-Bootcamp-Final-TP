@@ -2,7 +2,8 @@
 import React, { Component } from 'react';
 import {
     View,
-    ActivityIndicator
+    ActivityIndicator,
+    BackHandler
 } from 'react-native';
 import searchContainerStyle from './searchContainer.style';
 import { connect } from 'react-redux';
@@ -21,38 +22,44 @@ class SearchContainer extends Component {
         };
 
         this.onSearch = this.onSearch.bind(this);
+        this.handleBackPress = this.handleBackPress.bind(this);
     }
 
     componentDidMount() {
       this.props.dispatch(fetchTrends());
+      BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
     }
 
-    onSearch() {
-       this.setState({ searching: true }); 
+    componentWillUnmount() {
+      BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress() {
+      if (this.state.searching === true) {
+        this.setState({searching: false});
+        return true;
+      }
+    }
+
+    onSearch(searchText) {
+       this.setState({ searching: true });
+       this.props.dispatch(fetchTweetsSearch(searchText)); 
     }
 
     render() {
         if (this.props.trends.loading) {
-            return (
-                <View style={searchContainerStyle.activityIndicatorContainer}>
-                    <ActivityIndicator animating={true}/>
-                </View>
-            );
-        } else if (this.state.searching) {
-            if (this.props.search.loading) {
-              return (
-                <View style={searchContainerStyle.container}>
-                    <ActivityIndicator animating={true}/>
-                </View>
-              );
-            } else {  
-              return (
-                <View style={searchContainerStyle.container}>
-                  <Search onSearch={this.onSearch} />
-                  <SearchResult data={this.props.search.data} />                    
-                </View>
-              );
-            }
+          return (
+            <View style={searchContainerStyle.activityIndicatorContainer}>
+              <ActivityIndicator animating={true}/>
+            </View>
+          );
+        } else if (this.state.searching) {                         
+          return (
+            <View style={searchContainerStyle.container}>
+              <Search onSearch={this.onSearch} />
+              <SearchResult loading={this.props.search.loading} data={this.props.search.data} />                    
+            </View>
+          );        
         } else {
             return(
                 <View style={searchContainerStyle.container}>
