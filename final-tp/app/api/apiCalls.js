@@ -1,4 +1,4 @@
-import { GET_TIMELINE_URL, GET_ARGTRENDS_URL, GET_SEARCHTWEETS_URL, GET_SINGLETWEET_URL} from './apiUrls'
+import { GET_TIMELINE_URL, GET_ARGTRENDS_URL, GET_SEARCHTWEETS_URL, GET_SINGLETWEET_URL, GET_USERTIMELINE_URL} from './apiUrls'
 
 const twitTimelineCount = 50; ///number of tweets to require
 
@@ -32,5 +32,9 @@ export const getSearchTweetsList = (wordToSearch) => {
 
 export const getOneTweet = (twitID) => {
     const url = GET_SINGLETWEET_URL(twitID)
+    return apiCall(url)
+}
+export const getUserTimeline = (userID) => {
+    const url = GET_USERTIMELINE_URL(userID, twitTimelineCount)
     return apiCall(url)
 }

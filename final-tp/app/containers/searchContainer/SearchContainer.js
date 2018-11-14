@@ -2,56 +2,79 @@
 import React, { Component } from 'react';
 import {
     View,
-    ActivityIndicator
+    ActivityIndicator,
+    BackHandler
 } from 'react-native';
-
 import searchContainerStyle from './searchContainer.style';
-import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-
-import * as Actions from '../../actions'; //Import your actions
 import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
+import {fetchTrends} from '../../actions/trendsActions';
+import {fetchTweetsSearch} from '../../actions/searchTweetsActions';
 
 class SearchContainer extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            searching: false
+            searching: false,
+            searchText: ''
         };
 
         this.onSearch = this.onSearch.bind(this);
+        this.handleBackPress = this.handleBackPress.bind(this);
+        this.handleOnTrendPress = this.handleOnTrendPress.bind(this);
+    }
+
+    handleOnTrendPress(event) {
+      this.onSearch(event.query);
+      this.setState({searchText: event.name});
     }
 
     componentDidMount() {
-        //this.props.getData();
+      this.props.dispatch(fetchTrends());
+      BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
     }
 
-    onSearch() {
-       this.setState({ searching: true }); 
+    componentWillUnmount() {
+      BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress() {
+      if (this.state.searching === true) {
+        this.setState({searching: false});
+        return true;
+      }
+    }
+
+    onSearch(searchText) {
+       this.setState({ 
+          searching: true,
+          searchText: searchText
+        });
+       this.props.dispatch(fetchTweetsSearch(searchText)); 
     }
 
     render() {
-        if (this.props.loading) {
-            return (
-                <View style={searchContainerStyle.activityIndicatorContainer}>
-                    <ActivityIndicator animating={true}/>
-                </View>
-            );
-        } else if (this.state.searching) {
-            return (
-                <View style={searchContainerStyle.container}>
-                  <Search onSearch={this.onSearch} />
-                  <SearchResult data={this.props.data} />                    
-                </View>
-            );
+        if (this.props.trends.loading) {
+          return (
+            <View style={searchContainerStyle.activityIndicatorContainer}>
+              <ActivityIndicator animating={true}/>
+            </View>
+          );
+        } else if (this.state.searching) {                         
+          return (
+            <View style={searchContainerStyle.container}>
+              <Search onSearch={this.onSearch} />
+              <SearchResult navigationProp={this.props.navigationProp} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />                    
+            </View>
+          );        
         } else {
             return(
                 <View style={searchContainerStyle.container}>
                     <Search onSearch={this.onSearch} /> 
-                    <TrendList data={this.props.data} />                                      
+                    <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />                                      
                 </View>
             );
         }
@@ -63,14 +86,10 @@ class SearchContainer extends Component {
 
 function mapStateToProps(state, props) {
     return {
-        data: state.timeLineReducer.data
+        trends: state.trendsReducer,
+        search: state.searchTweetsReducer
     }
 }
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(Actions, dispatch);
-}
-
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
+export default connect(mapStateToProps)(SearchContainer);
 

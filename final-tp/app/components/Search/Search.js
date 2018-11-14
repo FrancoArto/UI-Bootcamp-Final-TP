@@ -1,8 +1,8 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { Text } from 'react-native';
-import { Container, Content, Item, Button, Input, Icon } from 'native-base';
+import { Text, View } from 'react-native';
+import { Content, Item, Button, Input, Icon } from 'native-base';
 import styles from './Search.style';
 
 
@@ -18,8 +18,10 @@ class Search extends Component {
         this.handleOnPress = this.handleOnPress.bind(this);
     }
     
-    handleOnPress(event) {
-      this.props.onSearch(event);
+    handleOnPress() {
+      let search = this.state.searchText;
+      search = search.replace(/#/, '%23');
+      this.props.onSearch(search);
     }
 
     onChangeText(value) {
@@ -29,7 +31,7 @@ class Search extends Component {
 
     render() {
         return(
-          <Container style={styles.container}>
+          <View style={styles.container}>
             <Content>
               <Item style={styles.hideBottomBorder}>
                 <Item style={styles.input}> 
@@ -43,7 +45,7 @@ class Search extends Component {
                 </Item>
               </Item>             
             </Content>
-          </Container>
+          </View>
         );
     }
 };

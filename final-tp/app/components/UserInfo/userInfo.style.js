@@ -5,15 +5,15 @@ const height = Dimensions.get('window').height;
 export const styles = StyleSheet.create({
     mainContainer:{
         flex:1,
-        borderBottomColor:'black',
-        borderBottomWidth:1
+        borderBottomColor:'grey',
+        borderBottomWidth:0.5
     },
     bannerContainer:{
-        flex:27
+        flex:22
     },
     banner:{
         width: width,
-        height:height/4
+        height:height/4.5
     },
     userLogoAndNameContainer:{
         flex:20,
@@ -27,8 +27,8 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     userNameAndHash:{
-        marginLeft:5,
-        marginTop:28      
+        marginLeft:10,
+        marginTop:30      
     },
     userDescriptionContainer:{
         flex:35,
