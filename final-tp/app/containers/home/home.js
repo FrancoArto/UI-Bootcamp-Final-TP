@@ -9,10 +9,16 @@ import {
     ActivityIndicator
 } from 'react-native';
 
+
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
 import { fetchTweetsTimeline } from '../../actions/timeLineActions'; //Import your actions
+
+import Tweet from '../../components/Tweet/Tweet'
+
+
+
 
 class Home extends Component {
     constructor(props) {
@@ -47,21 +53,24 @@ class Home extends Component {
             );
         }
     }
-
-    renderItem({item}) {
+    renderItem({item}) {  
         return (
-            <View style={styles.row}>
-                <Text style={styles.title}>
-                    {item.user.name}
-                </Text>
-                <Text style={styles.description}>
-                    {item.text}
-                </Text>
-            </View>
+            <Tweet 
+                userName={item.user.name} 
+                mainContent={item.text} 
+                uri={item.user.profile_image_url_https}
+                accountName={item.user.screen_name}
+                favorite_count={item.favorite_count}
+                retweet_count={item.retweet_count}
+                media={item.entities.media}
+                created_at={item.created_at}
+            />
+            
         )
     }
-};
 
+
+};
 
 
 // The function takes data from the app current state,
@@ -89,22 +98,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1,
-    },
-
-    row:{
-        borderBottomWidth: 1,
-        borderColor: "#ccc",
-        padding: 10
-    },
-
-    title:{
-        fontSize: 15,
-        fontWeight: "600"
-    },
-
-    description:{
-        marginTop: 5,
-        fontSize: 14,
+        flex: 1
     }
 });
