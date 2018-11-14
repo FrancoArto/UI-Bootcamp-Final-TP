@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableHighlight } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
 import styles from './tweet.style';
 import { Font, AppLoading } from "expo";
@@ -37,14 +37,14 @@ class TweetWithoutImg extends Component {
         } else {
 
         return (
-            <TouchableHighlight onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
+            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
                 <View style={[styles.flexTweet]}>
 
-                    <TouchableHighlight onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
+                    <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
                         <View style={[styles.flexUserImg]}>
                             <Thumbnail small source={{uri: this.props.uri}} />
                         </View>
-                    </TouchableHighlight> 
+                    </TouchableOpacity> 
 
                     <View style={[styles.flexRightSide]}>
 
@@ -77,7 +77,7 @@ class TweetWithoutImg extends Component {
 
                     </View>
                 </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
             );
         }
     }

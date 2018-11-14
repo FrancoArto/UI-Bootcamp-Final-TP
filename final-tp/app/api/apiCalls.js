@@ -1,6 +1,6 @@
 import { GET_TIMELINE_URL, GET_ARGTRENDS_URL, GET_SEARCHTWEETS_URL, GET_SINGLETWEET_URL} from './apiUrls'
 
-const twitTimelineCount = 100; ///number of tweets to require
+const twitTimelineCount = 50; ///number of tweets to require
 
 // Handle HTTP errors since fetch won't.
 function handleErrors(response) {
