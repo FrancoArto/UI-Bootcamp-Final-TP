@@ -4,15 +4,13 @@ import {
     View,
     ActivityIndicator
 } from 'react-native';
-
 import searchContainerStyle from './searchContainer.style';
-import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-
-import * as Actions from '../../actions'; //Import your actions
 import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
+import {fetchTrends} from '../../actions/trendsActions';
+import {fetchTweetsSearch} from '../../actions/searchTweetsActions';
 
 class SearchContainer extends Component {
     constructor(props) {
@@ -26,7 +24,7 @@ class SearchContainer extends Component {
     }
 
     componentDidMount() {
-        //this.props.getData();
+      this.props.dispatch(fetchTrends());
     }
 
     onSearch() {
@@ -34,24 +32,32 @@ class SearchContainer extends Component {
     }
 
     render() {
-        if (this.props.loading) {
+        if (this.props.trends.loading) {
             return (
                 <View style={searchContainerStyle.activityIndicatorContainer}>
                     <ActivityIndicator animating={true}/>
                 </View>
             );
         } else if (this.state.searching) {
-            return (
+            if (this.props.search.loading) {
+              return (
+                <View style={searchContainerStyle.container}>
+                    <ActivityIndicator animating={true}/>
+                </View>
+              );
+            } else {  
+              return (
                 <View style={searchContainerStyle.container}>
                   <Search onSearch={this.onSearch} />
-                  <SearchResult data={this.props.data} />                    
+                  <SearchResult data={this.props.search.data} />                    
                 </View>
-            );
+              );
+            }
         } else {
             return(
                 <View style={searchContainerStyle.container}>
                     <Search onSearch={this.onSearch} /> 
-                    <TrendList data={this.props.data} />                                      
+                    <TrendList data={this.props.trends.data} />                                      
                 </View>
             );
         }
@@ -63,14 +69,10 @@ class SearchContainer extends Component {
 
 function mapStateToProps(state, props) {
     return {
-        data: state.timeLineReducer.data
+        trends: state.trendsReducer,
+        search: state.searchTweetsReducer
     }
 }
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(Actions, dispatch);
-}
-
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
+export default connect(mapStateToProps)(SearchContainer);
 

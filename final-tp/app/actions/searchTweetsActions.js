@@ -5,7 +5,7 @@ export const FETCH_SEARCH_SUCCESS = 'FETCH_SEARCH_SUCCESS'
 export const FETCH_SEARCH_FAILURE = 'FETCH_SEARCH_FAILURE'
 
 
-export function fetchTweetsTimeline(wordToSearch){ ///fetchin twits using thunk
+export function fetchTweetsSearch(wordToSearch){ ///fetchin twits using thunk
     return dispatch => {
         dispatch(fetchSearchBegin())
         return getSearchTweetsList(wordToSearch)
