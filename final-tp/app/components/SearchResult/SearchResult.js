@@ -15,7 +15,7 @@ export default class SearchResult extends Component {
   renderItem({item, index}) {
     return (
       <Tweet 
-        userName={item.user.name} 
+        user={item.user} 
         mainContent={item.text} 
         uri={item.user.profile_image_url_https}
         accountName={item.user.screen_name}
