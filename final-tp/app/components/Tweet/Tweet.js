@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import TweetWithoutImg from './TweetWithoutImg'
 import TweetWithImg from './TweetWithImg'
 
@@ -7,7 +7,7 @@ import en from 'javascript-time-ago/locale/en';
 import moment from 'moment-timezone';
 TimeAgo.addLocale(en);
 
-class Tweet extends Component {
+class Tweet extends PureComponent {
 
     constructor(props) {
         super(props);

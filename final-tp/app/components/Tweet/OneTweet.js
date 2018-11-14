@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { View, TouchableOpacity, Image } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
 import styles from './tweet.style';
 import { Font, AppLoading } from "expo";
 
-class TweetWithImg extends PureComponent {
+class OneTweet extends Component {
 
     constructor(props) {
         super(props);
@@ -35,44 +35,37 @@ class TweetWithImg extends PureComponent {
           );
 
         } else {
-            
+            const { navigation } = this.props;
         return (
-            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('OneTweet',{
-                user: this.props.user.name,
-                uri: this.props.uri,
-                countName: this.props.user.screen_name,
-                timeAgo: this.props.timeAgo,
-                mainContent: this.props.mainContent,
-                media: this.props.media[0].media_url_https,
-                userCount: this.props.user,
-                navigationProp: this.props.navigationProp
-                })} >
-
                 <View style={[styles.flexTweet]}>
-
-                    <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
+                    <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: navigation.getParam('userCount', 'USER_ERROR') })}>
                         <View style={[styles.flexUserImg]}>
-                            <Thumbnail small source={{uri: this.props.uri}} />
+                            <Thumbnail large source={{uri: navigation.getParam('uri','URI_ERROR')}} />
                         </View>
                     </TouchableOpacity> 
 
                     <View style={[styles.flexRightSide]}>
 
                         <View style={[styles.flexTitle]}>
-                            <Text style={[styles.fontUserName]}> {this.props.user.name} </Text>
-                            <Text style={[styles.fontCountNameAndTime]}> @{this.props.user.screen_name} - {this.props.timeAgo} </Text>
+                            <Text style={[styles.fontUserName]}> {navigation.getParam('user','USER_ERROR')} </Text>
+                        </View>
+                        <View style={[styles.flexTitle]}>
+                            <Text style={[styles.fontCountNameAndTime]}> @{navigation.getParam('countName','COUNT-USER_ERROR')}</Text>
                         </View>
 
                         <View style={[styles.flexContent]}>
-                            <Text style={[styles.fontMainContent]}> {this.props.mainContent} </Text>
+                            <Text style={[styles.fontMainContent]}> {navigation.getParam('mainContent','MAIN-CONTENT_ERROR')} </Text>
                         </View>
 
                         <View style={[styles.flexImage, styles.extraMarginWhitImg]}>
                             <Image small source={{
-                                uri: this.props.media[0].media_url_https}} 
+                                uri: navigation.getParam('media','MEDIA_ERROR')}} 
                                 style={[styles.imageTweet]}/>
                         </View>
-
+                        
+                        <View style={[styles.flexTitle]}>
+                            <Text style={[styles.fontCountNameAndTime]}>{navigation.getParam('timeAgo','TIME-AGO_ERROR')}</Text>
+                        </View>
 
                         <View style={[styles.flexIcons]}>
                             
@@ -94,9 +87,8 @@ class TweetWithImg extends PureComponent {
 
                     </View>
                 </View>
-            </TouchableOpacity>
             );
         }
     }
 }
-export default TweetWithImg;
+export default OneTweet;

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
 import styles from './tweet.style';
 import { Font, AppLoading } from "expo";
 
-class TweetWithoutImg extends Component {
+class TweetWithoutImg extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -37,7 +37,16 @@ class TweetWithoutImg extends Component {
         } else {
 
         return (
-            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
+            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('OneTweet',{
+                user: this.props.user.name,
+                uri: this.props.uri,
+                countName: this.props.user.screen_name,
+                timeAgo: this.props.timeAgo,
+                mainContent: this.props.mainContent,
+                userCount: this.props.user,
+                navigationProp: this.props.navigationProp
+                })} >
+
                 <View style={[styles.flexTweet]}>
 
                     <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>

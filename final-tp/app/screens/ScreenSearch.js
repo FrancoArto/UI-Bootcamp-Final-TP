@@ -20,7 +20,7 @@ ScreenSearch.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#f5f5f5'
   },
 });
 

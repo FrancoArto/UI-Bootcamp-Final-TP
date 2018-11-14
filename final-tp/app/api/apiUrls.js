@@ -1,5 +1,5 @@
 
-const SERVER_URL = 'http://192.168.0.105:8080'
+const SERVER_URL = 'http://192.168.0.111:8080'
 
 export const GET_TIMELINE_URL = (count) => SERVER_URL + '/timeline?count=' + count; 
 export const GET_ARGTRENDS_URL = () => SERVER_URL + 'trends?id=23424747';
