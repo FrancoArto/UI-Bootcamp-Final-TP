@@ -5,7 +5,8 @@ import {
     ActivityIndicator,
     Image,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    Linking
 } from 'react-native';
 import { styles } from './userInfo.style';
 import { Thumbnail, Icon } from 'native-base';
@@ -16,6 +17,12 @@ export class UserInfo extends Component {
         super(props);
     }
     render() {
+        let userLink = <View></View>;
+        if(this.props.user.url){
+            userLink = <TouchableOpacity onPress={() => Linking.openURL(this.props.user.url)}>
+                            <Text style={{color:'blue'}}><Icon type="EvilIcons" name="link"/> {this.props.user.url}</Text>
+                         </TouchableOpacity>
+        }
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.bannerContainer}>
@@ -37,9 +44,7 @@ export class UserInfo extends Component {
                    <Text style={styles.desciption}>{this.props.user.description}</Text>
                    <View style={styles.userStats}>
                         <Text style={styles.statsColor}><Icon type="EvilIcons" name="location" />{this.props.user.location}</Text>
-                        <TouchableOpacity onPress={() => Linking.openURL(this.props.user.entities.url.urls[0].url)}>
-                            <Text style={{color:'blue'}}><Icon type="EvilIcons" name="link"/> {this.props.user.entities.url.urls[0].display_url}</Text>
-                        </TouchableOpacity>
+                        {userLink}
                     </View>
                     <View style={styles.userStats}>
                         <Text style={styles.statsColor}><Icon type="EvilIcons" name="calendar" />{this.props.user.created_at}</Text>
