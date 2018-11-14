@@ -9,10 +9,18 @@ import {
     ActivityIndicator
 } from 'react-native';
 
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en'
+TimeAgo.addLocale(en)
+
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
 import { fetchTweetsTimeline } from '../../actions/timeLineActions'; //Import your actions
+
+import Tweet from '../../components/Tweet/TweetWithoutImg'
+import tweetWithoutImgStyle from '../../components/Tweet/tweetWithoutImg.style';
+
 
 class Home extends Component {
     constructor(props) {
@@ -48,17 +56,28 @@ class Home extends Component {
         }
     }
 
-    renderItem({item}) {
+    renderItem({item}) {    
         return (
-            <View style={styles.row}>
-                <Text style={styles.title}>
-                    {item.user.name}
-                </Text>
-                <Text style={styles.description}>
-                    {item.text}
-                </Text>
-            </View>
+            <Tweet 
+                userName={item.user.name} 
+                mainContent={item.text} 
+                uri={item.user.profile_image_url_https}
+                accountName={item.user.screen_name}
+                favorite_count={item.favorite_count}
+                retweet_count={item.retweet_count}
+                timeAgo={this.toTimeZone(item.created_at)}>
+            </Tweet>
         )
+    }
+
+    toTimeZone(apiHour) { //"created_at": "Tue Nov 13 17:15:33 +0000 2018",
+        const splitHour = apiHour.split(" ", apiHour.lenght);
+        
+        console.log(splitHour);
+        
+
+        const timeAgo = new TimeAgo('en-EN')
+        return timeAgo.format(Date.now() - 60 * 1000, 'twitter');
     }
 };
 
