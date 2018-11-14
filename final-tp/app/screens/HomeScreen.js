@@ -3,10 +3,11 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import Home from '../containers/home/home' //Import the component file
 
-const HomeScreen = ({ navigation }) => (
+const HomeScreen = ({ navigation }) =>(
   <View style={styles.container}>
-
-    <Home />
+    <Home 
+      navigationProp={ navigation }
+    />
   </View>
 );
 
