@@ -3,38 +3,77 @@ import React, { Component } from 'react';
 import {
     View,
 } from 'react-native';
-import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import Settings from '../../components/Settings/Settings';
-import * as Actions from '../../actions'; //Import your actions
 import settingsContainerStyle from './settingsContainer.style';
+import { settingsChanged } from '../../actions/settingsActions';
 
 class SettingsContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-    };
+    this.onVerifiedChange = this.onVerifiedChange.bind(this);
+    this.onFollowingChange = this.onFollowingChange.bind(this);
+    this.onDefaultInfoChange = this.onDefaultInfoChange.bind(this);
+    this.onWithLinkChange = this.onWithLinkChange.bind(this);
+    this.onWithTruncatedTextChange = this.onWithTruncatedTextChange.bind(this);
+  }
+
+  onVerifiedChange() {
+    let state = Object.assign({}, this.props.settings);
+    state.verified = !state.verified;
+    this.props.SettingsChanged(state);
+  }
+  
+  onFollowingChange() {
+    let state = Object.assign({}, this.props.settings);
+    state.following = !state.following;
+    this.props.SettingsChanged(state);
+  }
+
+  onDefaultInfoChange() {
+    let state = Object.assign({}, this.props.settings);
+    state.defaultInfo = !state.defaultInfo;
+    this.props.SettingsChanged(state);
+  }
+
+  onWithLinkChange() {
+    let state = Object.assign({}, this.props.settings);
+    state.withLink = !state.withLink;
+    this.props.SettingsChanged(state);
+  }
+
+  onWithTruncatedTextChange() {
+    let state = Object.assign({}, this.props.settings);
+    state.withTruncatedText = !state.withTruncatedText;
+    this.props.SettingsChanged(state);
   }
 
 
   render() {
     return (
         <View style={settingsContainerStyle.container}>
-          <Settings />
+          <Settings settings={this.props.settings} 
+          onVerifiedChange={this.onVerifiedChange}
+          onFollowingChange={this.onFollowingChange}
+          onDefaultInfoChange={this.onDefaultInfoChange}
+          onWithLinkChange={this.onWithLinkChange}
+          onWithTruncatedTextChange={this.onWithTruncatedTextChange} />
         </View>
     );
   }
 }
   
-function mapStateToProps(state, props) {
+function mapStateToProps(state) {
   return {
-    data: state.timeLineReducer.data
+    settings: state.settingsReducer
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(Actions, dispatch);
+  return {
+    SettingsChanged: (settings) => {dispatch(settingsChanged(settings))}
+  }
 }
 
   //Connect everything

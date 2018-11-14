@@ -10,9 +10,33 @@ class Settings extends Component {
   constructor(props) {
     super(props);
 
+    this.onVerifiedChange = this.onVerifiedChange.bind(this);
+    this.onFollowingChange = this.onFollowingChange.bind(this);
+    this.onDefaultInfoChange = this.onDefaultInfoChange.bind(this);
+    this.onWithLinkChange = this.onWithLinkChange.bind(this);
+    this.onWithTruncatedTextChange = this.onWithTruncatedTextChange.bind(this);
+
   }
     
-    
+  onVerifiedChange() {
+    this.props.onVerifiedChange();
+  }
+  
+  onFollowingChange() {
+    this.props.onFollowingChange();
+  }
+
+  onDefaultInfoChange() {
+    this.props.onDefaultInfoChange();
+  }
+
+  onWithLinkChange() {
+    this.props.onWithLinkChange();
+  }
+
+  onWithTruncatedTextChange() {
+    this.props.onWithTruncatedTextChange();
+  }
 
   render() {
     return(
@@ -30,31 +54,31 @@ class Settings extends Component {
           <Body>
             <Text>People who have not verified the account</Text>
           </Body>
-          <CheckBox checked={true} />
+          <CheckBox checked={this.props.settings.verified} onPress={this.onVerifiedChange} />
         </ListItem>
         <ListItem>          
           <Body>
             <Text>People who do not follow</Text>
           </Body>
-          <CheckBox checked={false} />
+          <CheckBox checked={this.props.settings.following} onPress={this.onFollowingChange} />
         </ListItem>
         <ListItem>          
           <Body>
             <Text>People who have default profile information</Text>
           </Body>
-          <CheckBox checked={false} />
+          <CheckBox checked={this.props.settings.defaultInfo} onPress={this.onDefaultInfoChange} />
         </ListItem>
         <ListItem>          
           <Body>
             <Text>Tweets that contains a link</Text>
           </Body>
-          <CheckBox checked={false} />
+          <CheckBox checked={this.props.settings.withLink} onPress={this.onWithLinkChange} />
         </ListItem>
         <ListItem>          
           <Body>
             <Text>Tweets that has text truncated</Text>
           </Body>
-          <CheckBox checked={false} />
+          <CheckBox checked={this.props.settings.withTruncatedText} onPress={this.onWithTruncatedTextChange} />
         </ListItem>
       </Content>
     );
