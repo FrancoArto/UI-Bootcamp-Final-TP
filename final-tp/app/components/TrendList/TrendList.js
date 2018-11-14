@@ -9,13 +9,17 @@ export default class TrendList extends Component {
     super(props);
 
     this.renderItem = this.renderItem.bind(this);
+    this.handleOnPress = this.handleOnPress.bind(this);
   }
 
-  //just testing
+  handleOnPress(event) {
+    this.props.handleOnTrendPress(event);
+  }
+
   renderItem({item, index}) {
     return (
         <View style={styles.row}>
-            <Trend index={index} item={item} />
+            <Trend onPress={this.handleOnPress} index={index} item={item} />
         </View>
     )
 }

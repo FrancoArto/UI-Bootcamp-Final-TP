@@ -18,11 +18,18 @@ class SearchContainer extends Component {
         super(props);
 
         this.state = {
-            searching: false
+            searching: false,
+            searchText: ''
         };
 
         this.onSearch = this.onSearch.bind(this);
         this.handleBackPress = this.handleBackPress.bind(this);
+        this.handleOnTrendPress = this.handleOnTrendPress.bind(this);
+    }
+
+    handleOnTrendPress(event) {
+      this.onSearch(event.query);
+      this.setState({searchText: event.name});
     }
 
     componentDidMount() {
@@ -42,7 +49,10 @@ class SearchContainer extends Component {
     }
 
     onSearch(searchText) {
-       this.setState({ searching: true });
+       this.setState({ 
+          searching: true,
+          searchText: searchText
+        });
        this.props.dispatch(fetchTweetsSearch(searchText)); 
     }
 
@@ -57,14 +67,14 @@ class SearchContainer extends Component {
           return (
             <View style={searchContainerStyle.container}>
               <Search onSearch={this.onSearch} />
-              <SearchResult loading={this.props.search.loading} data={this.props.search.data} />                    
+              <SearchResult searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />                    
             </View>
           );        
         } else {
             return(
                 <View style={searchContainerStyle.container}>
                     <Search onSearch={this.onSearch} /> 
-                    <TrendList data={this.props.trends.data} />                                      
+                    <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />                                      
                 </View>
             );
         }

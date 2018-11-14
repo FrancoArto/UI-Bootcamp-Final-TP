@@ -31,14 +31,16 @@ export default class SearchResult extends Component {
   render() {
     if (this.props.loading) {
       return (
-        <View style={styles.container}>
+        <View style={styles.activityIndicatorContainer}>
             <ActivityIndicator animating={true}/>
         </View>
       );
     } else {
+      let searchText = this.props.searchText;
+      searchText = searchText.replace(/%23/, '#');
       return (
         <View style={styles.container}>
-          <Text>Search Results</Text>
+          <Text>Search Results for: {searchText}</Text>
           <FlatList
             ref='searchResult'
             data={this.props.data}
