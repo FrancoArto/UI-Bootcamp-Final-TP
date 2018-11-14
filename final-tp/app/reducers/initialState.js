@@ -3,11 +3,15 @@
     loading: false,
     error: null   
 };
-/*
-not implemented yet
-const appViewsConfigs: {
 
+//False is for 'not checked'
+const appViewsConfigs = {
+    verified: false,
+    following: false,
+    defaultInfo: false,
+    withLink: false,
+    withTruncatedText: false
 }
-*/
 
- export { initialStateFech };
+
+ export { initialStateFech, appViewsConfigs };

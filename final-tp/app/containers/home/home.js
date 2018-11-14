@@ -43,7 +43,7 @@ class Home extends Component {
             );
         } else {
             return (
-                <View style={{flex:1, backgroundColor: '#F5F5F5', paddingTop:20}}>
+                <View style={{flex:1, paddingTop:20}}>
                     <FlatList
                         ref='listRef'
                         data={this.props.data}
