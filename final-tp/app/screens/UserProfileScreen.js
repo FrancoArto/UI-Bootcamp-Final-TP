@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { UserContainer } from '../containers/userContainer/UserContainer';
+import  UserContainer  from '../containers/userContainer/UserContainer';
 import PropTypes from 'prop-types';
 
 const UserProfileScreen = ({ navigation }) =>(

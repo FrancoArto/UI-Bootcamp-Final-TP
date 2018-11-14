@@ -3,12 +3,14 @@ import timeLineReducer from './timeLineReducer'
 import trendsReducer from './trendsReducer'
 import searchTweetsReducer from './searchTweetsReducer'
 import settingsReducer from './settingsReducer'
+import timelineForUserReducer  from './timelineForUserReducer'
 
 const AppReducer = combineReducers({
   timeLineReducer,
   searchTweetsReducer,
   trendsReducer,
-  settingsReducer  
+  settingsReducer,
+  timelineForUserReducer  
 });
 
 export default AppReducer;
