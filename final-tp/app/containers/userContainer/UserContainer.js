@@ -1,17 +1,24 @@
 'use strict';
 import React, { Component } from 'react';
+import { UserInfo } from '../../components/UserInfo/UserInfo'
 import {
     View,
-    ActivityIndicator
+    ActivityIndicator,
+    Text
 } from 'react-native';
 
-
-class UserContainer extends Component {
+export class UserContainer extends Component {
     constructor(props) {
         super(props);
     }
     render() {
-        
-        
+        console.log(this.props.userData)        
+        return(
+            <View style={{flex:1}}>
+                <UserInfo
+                    user={this.props.userData}
+                />
+            </View>
+        )
     }
 }

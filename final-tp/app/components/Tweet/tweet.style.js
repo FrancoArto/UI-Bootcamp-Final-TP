@@ -88,8 +88,27 @@ export default StyleSheet.create({
     buttonIcons: {
         margin: 0,
         padding: 0
-    }
+    },
     
 
+    flexImage: {
+        flex: 1,
+        flexDirection: 'row',
+        alignSelf: 'center',
+
+        paddingTop: width/80, 
+        paddingBottom: width/80
+    },
+    imageTweet: {
+        flex: 1,
+        flexDirection: 'row',
+
+        borderRadius: 20,
+        height: width/3
+        
+    },
+    extraMarginWhitImg: {
+        marginRight: width/15
+    }
   });
   

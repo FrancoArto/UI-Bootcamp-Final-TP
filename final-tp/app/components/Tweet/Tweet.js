@@ -33,25 +33,26 @@ class Tweet extends Component {
         if (this.props.media) {
             return (
                 <TweetWithImg
-                userName={this.props.userName} 
+                user={this.props.user} 
                 mainContent={this.props.mainContent} 
                 uri={this.props.uri}
-                accountName={this.props.accountName}
                 favorite_count={this.props.favorite_count}
                 retweet_count={this.props.retweet_count}
-                timeAgo={this.toTimeZone(this.props.created_at)}>
+                timeAgo={this.toTimeZone(this.props.created_at)}
+                navigationProp={this.props.navigationProp}
+                media={this.props.media}>
                 </TweetWithImg>
             );
         } else {
             return (
                 <TweetWithoutImg
-                userName={this.props.userName} 
+                user={this.props.user} 
                 mainContent={this.props.mainContent} 
                 uri={this.props.uri}
-                accountName={this.props.accountName}
                 favorite_count={this.props.favorite_count}
                 retweet_count={this.props.retweet_count}
-                timeAgo={this.toTimeZone(this.props.created_at)}>
+                timeAgo={this.toTimeZone(this.props.created_at)}
+                navigationProp={this.props.navigationProp}>
                 </TweetWithoutImg>
             );
         }

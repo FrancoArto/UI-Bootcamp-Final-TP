@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, TouchableHighlight } from 'react-native';
+import { View, TouchableHighlight, Image } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
-import styles from './tweetWithImg.style';
+import styles from './tweet.style';
 import { Font, AppLoading } from "expo";
 
 class TweetWithImg extends Component {
@@ -26,21 +26,21 @@ class TweetWithImg extends Component {
 
         return mainContent
       }*/
+      
 
     render() {
-
         if (this.state.loading) {
           return (
               <AppLoading />
           );
 
         } else {
-
+            
         return (
-            <TouchableHighlight onPress={() => navigator.navigate('userContainer', this.props.user)}>
+            <TouchableHighlight onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })} >
                 <View style={[styles.flexTweet]}>
 
-                    <TouchableHighlight onPress={() => navigator.navigate('userContainer', this.props.user)}>
+                    <TouchableHighlight onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
                         <View style={[styles.flexUserImg]}>
                             <Thumbnail small source={{uri: this.props.uri}} />
                         </View>
@@ -49,13 +49,20 @@ class TweetWithImg extends Component {
                     <View style={[styles.flexRightSide]}>
 
                         <View style={[styles.flexTitle]}>
-                            <Text style={[styles.fontUserName]}> {this.props.userName} </Text>
-                            <Text style={[styles.fontCountNameAndTime]}> @{this.props.accountName} - {this.props.timeAgo} </Text>
+                            <Text style={[styles.fontUserName]}> {this.props.user.name} </Text>
+                            <Text style={[styles.fontCountNameAndTime]}> @{this.props.user.screen_name} - {this.props.timeAgo} </Text>
                         </View>
 
                         <View style={[styles.flexContent]}>
                             <Text style={[styles.fontMainContent]}> {this.props.mainContent} </Text>
                         </View>
+
+                        <View style={[styles.flexImage, styles.extraMarginWhitImg]}>
+                            <Image small source={{
+                                uri: this.props.media[0].media_url_https}} 
+                                style={[styles.imageTweet]}/>
+                        </View>
+
 
                         <View style={[styles.flexIcons]}>
                             
