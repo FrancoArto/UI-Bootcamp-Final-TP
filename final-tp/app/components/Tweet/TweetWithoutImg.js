@@ -37,10 +37,10 @@ class TweetWithoutImg extends Component {
         } else {
 
         return (
-            <TouchableHighlight onPress={() => navigator.navigate('userContainer', this.props.user)}>
+            <TouchableHighlight onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
                 <View style={[styles.flexTweet]}>
 
-                    <TouchableHighlight onPress={() => navigator.navigate('userContainer', this.props.user)}>
+                    <TouchableHighlight onPress={() => this.props.navigationProp.navigate('UserProfile',{user: this.props.user })}>
                         <View style={[styles.flexUserImg]}>
                             <Thumbnail small source={{uri: this.props.uri}} />
                         </View>
@@ -49,8 +49,8 @@ class TweetWithoutImg extends Component {
                     <View style={[styles.flexRightSide]}>
 
                         <View style={[styles.flexTitle]}>
-                            <Text style={[styles.fontUserName]}> {this.props.userName} </Text>
-                            <Text style={[styles.fontCountNameAndTime]}> @{this.props.accountName} - {this.props.timeAgo} </Text>
+                            <Text style={[styles.fontUserName]}> {this.props.user.name} </Text>
+                            <Text style={[styles.fontCountNameAndTime]}> @{this.props.user.screen_name} - {this.props.timeAgo} </Text>
                         </View>
 
                         <View style={[styles.flexContent]}>

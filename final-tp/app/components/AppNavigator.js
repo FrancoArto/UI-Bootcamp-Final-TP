@@ -9,19 +9,31 @@ import {
 
 import Routes from '../config/routes';
 
+
+
+export class AppNavigator extends React.Component {
+  render() {
+    return (  
+      <RootNavigator/>
+    );
+  }
+}
+/*
 const middleware = createReactNavigationReduxMiddleware(
   'root',
   state => state.nav
 );
-
+*/
 const RootNavigator = createStackNavigator(Routes);
 
+/*
 const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');
 
 const mapStateToProps = state => ({
   state: state.nav,
 });
+*/
 
-const AppNavigator = connect(mapStateToProps)(AppWithNavigationState);
-
-export { RootNavigator, AppNavigator, middleware };
+//const AppNavigator = connect(mapStateToProps)(AppWithNavigationState);
+//, AppNavigator, middleware
+export { RootNavigator };
