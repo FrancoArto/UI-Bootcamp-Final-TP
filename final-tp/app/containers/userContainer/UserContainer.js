@@ -11,8 +11,7 @@ export class UserContainer extends Component {
     constructor(props) {
         super(props);
     }
-    render() {
-        console.log(this.props.userData)        
+    render() {     
         return(
             <View style={{flex:1}}>
                 <UserInfo

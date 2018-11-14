@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
 import styles from './tweet.style';
 import { Font, AppLoading } from "expo";
 
-class TweetWithoutImg extends Component {
+class TweetWithoutImg extends PureComponent {
 
     constructor(props) {
         super(props);
