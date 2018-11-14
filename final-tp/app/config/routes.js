@@ -6,9 +6,12 @@ import UserProfileScreen from '../screens/UserProfileScreen'
 const Routes ={
     TabNavigator: { 
         screen: TabNavigator,
-        navigationOptions: () => ({
-            title: 'TruchiTwitter'
-        }) 
+        navigationOptions:  {
+            title: 'TruchiTwitter',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name="triangle" color={tintColor} size={24} />
+            )
+        }
     },
     Home: { screen: HomeScreen },
     Search: { screen: SearchScreen},

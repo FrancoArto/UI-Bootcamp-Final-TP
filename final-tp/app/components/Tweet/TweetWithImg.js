@@ -53,7 +53,7 @@ class TweetWithImg extends Component {
                             <Text style={[styles.fontCountNameAndTime]}> @{this.props.accountName} - {this.props.timeAgo} </Text>
                         </View>
 
-                        <View style={[styles.flexContent, styles.extraMarginWhitImg]}>
+                        <View style={[styles.flexContent]}>
                             <Text style={[styles.fontMainContent]}> {this.props.mainContent} </Text>
                         </View>
 
