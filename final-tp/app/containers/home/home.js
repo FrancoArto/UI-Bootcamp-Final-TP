@@ -64,6 +64,7 @@ class Home extends Component {
                 media={item.entities.media}
                 created_at={item.created_at}
                 navigationProp={this.props.navigationProp}
+                media={item.entities.media}
             />
             
         )

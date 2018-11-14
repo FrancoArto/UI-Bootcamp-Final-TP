@@ -39,7 +39,8 @@ class Tweet extends Component {
                 favorite_count={this.props.favorite_count}
                 retweet_count={this.props.retweet_count}
                 timeAgo={this.toTimeZone(this.props.created_at)}
-                navigationProp={this.props.navigationProp}>
+                navigationProp={this.props.navigationProp}
+                media={this.props.media}>
                 </TweetWithImg>
             );
         } else {
