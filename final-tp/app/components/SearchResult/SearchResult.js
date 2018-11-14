@@ -22,6 +22,7 @@ export default class SearchResult extends Component {
         favorite_count={item.favorite_count}
         retweet_count={item.retweet_count}
         media={item.entities.media}
+        navigationProp={this.props.navigationProp}
         created_at={item.created_at}
       />
     )
