@@ -10,8 +10,11 @@ import {
 } from 'react-native';
 
 import TimeAgo from 'javascript-time-ago';
-import en from 'javascript-time-ago/locale/en'
-TimeAgo.addLocale(en)
+import ar from 'javascript-time-ago/locale/ar'
+TimeAgo.addLocale(ar)
+
+import moment from 'moment-timezone'
+
 
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
@@ -19,7 +22,8 @@ import { connect } from 'react-redux';
 import { fetchTweetsTimeline } from '../../actions/timeLineActions'; //Import your actions
 
 import Tweet from '../../components/Tweet/TweetWithoutImg'
-import tweetWithoutImgStyle from '../../components/Tweet/tweetWithoutImg.style';
+
+
 
 
 class Home extends Component {
@@ -70,14 +74,19 @@ class Home extends Component {
         )
     }
 
-    toTimeZone(apiHour) { //"created_at": "Tue Nov 13 17:15:33 +0000 2018",
-        const splitHour = apiHour.split(" ", apiHour.lenght);
+    toTimeZone(apiHour) {
+        const timeAgo = new TimeAgo('en-EN');
+        let splitCompleteHour = apiHour.split(" ", apiHour.lenght);
         
-        console.log(splitHour);
+        let momentFormat = moment(splitCompleteHour[1]+" "+splitCompleteHour[2]+", "+splitCompleteHour[5]+" "+splitCompleteHour[3])
         
+        let EN = momentFormat.tz('Europe/London')
+        let ARG = EN.clone().tz('America/Argentina/Buenos_Aires');
 
-        const timeAgo = new TimeAgo('en-EN')
-        return timeAgo.format(Date.now() - 60 * 1000, 'twitter');
+        let parseFormat = moment(ARG).format('HH mm ss');
+        let splitARGhour = parseFormat.split(" ", parseFormat.length);
+        
+        return timeAgo.format(Date.now() -  splitARGhour[0] * splitARGhour[1] * splitARGhour[2] * 1000, 'twitter')
     }
 };
 
