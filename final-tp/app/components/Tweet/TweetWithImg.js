@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, TouchableHighlight } from 'react-native';
+import { View, TouchableHighlight, Image } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
-import styles from './tweetWithImg.style';
+import styles from './tweet.style';
 import { Font, AppLoading } from "expo";
 
 class TweetWithImg extends Component {
@@ -35,7 +35,7 @@ class TweetWithImg extends Component {
           );
 
         } else {
-
+            
         return (
             <TouchableHighlight onPress={() => navigator.navigate('userContainer', this.props.user)}>
                 <View style={[styles.flexTweet]}>
@@ -48,14 +48,21 @@ class TweetWithImg extends Component {
 
                     <View style={[styles.flexRightSide]}>
 
-                        <View style={[styles.flexTitle]}>
+                        <View style={[styles.flexTitle, styles.extraMarginWhitImg]}>
                             <Text style={[styles.fontUserName]}> {this.props.userName} </Text>
                             <Text style={[styles.fontCountNameAndTime]}> @{this.props.accountName} - {this.props.timeAgo} </Text>
                         </View>
 
-                        <View style={[styles.flexContent]}>
+                        <View style={[styles.flexContent, styles.extraMarginWhitImg]}>
                             <Text style={[styles.fontMainContent]}> {this.props.mainContent} </Text>
                         </View>
+
+                        <View style={[styles.flexImage, styles.extraMarginWhitImg]}>
+                            <Image small source={{
+                                uri: this.props.media[0].media_url_https}} 
+                                style={[styles.imageTweet]}/>
+                        </View>
+
 
                         <View style={[styles.flexIcons]}>
                             

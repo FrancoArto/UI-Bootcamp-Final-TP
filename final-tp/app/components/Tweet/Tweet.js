@@ -39,7 +39,8 @@ class Tweet extends Component {
                 accountName={this.props.accountName}
                 favorite_count={this.props.favorite_count}
                 retweet_count={this.props.retweet_count}
-                timeAgo={this.toTimeZone(this.props.created_at)}>
+                timeAgo={this.toTimeZone(this.props.created_at)}
+                media={this.props.media}>
                 </TweetWithImg>
             );
         } else {

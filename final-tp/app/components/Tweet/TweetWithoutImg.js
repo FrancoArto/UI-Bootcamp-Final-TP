@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableHighlight } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
-import styles from './tweetWithoutImg.style';
+import styles from './tweet.style';
 import { Font, AppLoading } from "expo";
 
 class TweetWithoutImg extends Component {
