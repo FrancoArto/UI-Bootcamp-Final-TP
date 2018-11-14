@@ -7,6 +7,7 @@ const UserProfileScreen = ({ navigation }) =>(
   <View style={styles.container}>
     <UserContainer
         userData={navigation.getParam('user')}
+        navigationProp={ navigation }
     />
   </View>
 );

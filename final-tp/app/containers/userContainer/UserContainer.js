@@ -4,13 +4,12 @@ import { UserInfo } from '../../components/UserInfo/UserInfo'
 import {
     View,
     ActivityIndicator,
-    Text,
-    StyleSheet,
     FlatList
 } from 'react-native';
 import { fetchTimelineForUser } from '../../actions/timelineForUserActions'
 import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
+import { styles } from './userContainer.style'
 
  class UserContainer extends Component {
     constructor(props) {
@@ -38,13 +37,13 @@ import Tweet from '../../components/Tweet/Tweet'
             
         }     
         return(
-            <View style={{flex:1}}>
-                <View style={{flex:65}}>
+            <View style={styles.mainContainer}>
+                <View style={styles.userData}>
                     <UserInfo
                         user={this.props.userData}
                     />
                 </View>
-                <View style={{flex:35}}>
+                <View style={styles.tweetsZone}>
                     {tweetView}
                 </View>
             </View>
@@ -84,12 +83,3 @@ function mapStateToProps(state, props) {
 
 //Connect everything
 export default connect(mapStateToProps)(UserContainer);
-
-const styles = StyleSheet.create({
-    activityIndicatorContainer:{
-        backgroundColor: "#fff",
-        alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1
-    }
-});
