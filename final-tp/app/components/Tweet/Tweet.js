@@ -18,7 +18,7 @@ class Tweet extends Component {
         const timeAgo = new TimeAgo('en-EN');
         let splitCompleteHour = apiHour.split(" ", apiHour.lenght);
         
-        let momentFormat = moment(splitCompleteHour[1]+" "+splitCompleteHour[2]+", "+splitCompleteHour[5]+" "+splitCompleteHour[3])
+        let momentFormat = moment(splitCompleteHour[1]+" "+splitCompleteHour[2]+", "+splitCompleteHour[5]+" "+splitCompleteHour[3], "MMM ddd YYYY HH:mm:ss")
         
         let EN = momentFormat.tz('Europe/London')
         let ARG = EN.clone().tz('America/Argentina/Buenos_Aires');
@@ -31,7 +31,6 @@ class Tweet extends Component {
 
     render() {
         if (this.props.media) {
-            console.log('entro CON');
             return (
                 <TweetWithImg
                 userName={this.props.userName} 
@@ -44,8 +43,6 @@ class Tweet extends Component {
                 </TweetWithImg>
             );
         } else {
-            console.log('entro SIN');
-            
             return (
                 <TweetWithoutImg
                 userName={this.props.userName} 

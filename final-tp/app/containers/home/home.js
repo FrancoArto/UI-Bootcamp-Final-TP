@@ -42,7 +42,6 @@ class Home extends Component {
                 </View>
             );
         } else {
-            console.log(this.props.data)
             return (
                 <View style={{flex:1, backgroundColor: '#F5F5F5', paddingTop:20}}>
                     <FlatList
@@ -55,7 +54,6 @@ class Home extends Component {
         }
     }
     renderItem({item}) {  
-        console.log(item)  
         return (
             <Tweet 
                 userName={item.user.name} 
