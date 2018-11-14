@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 
 const ScreenSearch = ({ navigation }) => (
   <View style={styles.container}>
-    <SearchContainer />
+    <SearchContainer
+    navigationProp={ navigation } />
   </View>
 );
 

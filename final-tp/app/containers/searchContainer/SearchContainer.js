@@ -67,7 +67,7 @@ class SearchContainer extends Component {
           return (
             <View style={searchContainerStyle.container}>
               <Search onSearch={this.onSearch} />
-              <SearchResult searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />                    
+              <SearchResult navigationProp={this.props.navigationProp} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />                    
             </View>
           );        
         } else {
