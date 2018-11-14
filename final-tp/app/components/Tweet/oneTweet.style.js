@@ -68,7 +68,7 @@ export default StyleSheet.create({
         color: '#D5D5D5'
     },
     fontMainContent: {
-        fontSize: width/8,
+        fontSize: width/20,
         color: '#5D5D5D'
     },
     fontNumberIcons: {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity, Image } from 'react-native';
 import { Thumbnail, Text, Icon, Button } from 'native-base';
-import styles from './tweet.style';
+import styles from './oneTweet.style';
 import { Font, AppLoading } from "expo";
 
 class OneTweet extends Component {
@@ -19,6 +19,7 @@ class OneTweet extends Component {
         this.setState({ loading: false });
       }
 
+
       /*Ejersicio panteado para continuar (Si es que tenemos tiempo)
       urlInMainContent (mainContent) {
         let re = new RegExp('/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/');
@@ -29,13 +30,14 @@ class OneTweet extends Component {
       
 
     render() {
+        
+        const { navigation } = this.props;
+
         if (this.state.loading) {
           return (
               <AppLoading />
           );
-
         } else {
-            const { navigation } = this.props;
         return (
                 <View style={[styles.flexTweet]}>
                     <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: navigation.getParam('userCount', 'USER_ERROR') })}>
