@@ -9,10 +9,7 @@ const Routes ={
     TabNavigator: { 
         screen: TabNavigator,
         navigationOptions:  {
-            title: 'TruchiTwitter',
-            tabBarIcon: ({ tintColor }) => (
-                <Icon name="triangle" color={tintColor} size={24} />
-            )
+            title: 'TruchiTwitter'            
         }
     },
     Home: { screen: HomeScreen },

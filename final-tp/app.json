@@ -1,7 +1,13 @@
 {
   "expo": {
-    "name": "Globant Bootcamp APP",
+    "name": "TruchiTwitter",
     "sdkVersion": "27.0.0",
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "icon": "./public/icon.png",
+    "splash": {
+      "image": "./public/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    }
   }
 }
