@@ -37,7 +37,6 @@ class TweetWithImg extends PureComponent {
 
         return mainContent
       }*/
-      
 
     render() {
         if (this.state.loading) {
@@ -49,14 +48,12 @@ class TweetWithImg extends PureComponent {
             
         return (
             <TouchableOpacity onPress={() => this.props.navigationProp.navigate('OneTweetWhitImg',{
-                user: this.props.user.name,
+                user: this.props.user,
                 uri: this.props.uri,
                 countName: this.props.user.screen_name,
                 timeAgo: this.props.timeAgo,
                 mainContent: this.props.mainContent,
-                media: this.props.media[0].media_url_https,
-                userCount: this.props.user,
-                navigationProp: this.props.navigationProp
+                media: this.props.media[0].media_url_https
                 })} >
 
                 <View style={[styles.flexTweet]}>

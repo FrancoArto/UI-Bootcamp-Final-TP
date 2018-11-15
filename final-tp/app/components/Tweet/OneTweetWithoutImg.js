@@ -43,14 +43,14 @@ class OneTweetWhitoutImg extends Component {
 
                     <View style={[styles.flexHead]}>
                         <View style={[styles.flexUserImg]}>
-                            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: navigation.getParam('userCount', 'USER_ERROR') })}>
+                            <TouchableOpacity  onPress={() => navigation.navigate('UserProfile',{user: navigation.getParam('user','USER_ERROR') })}>
                                     <Thumbnail large source={{uri: navigation.getParam('uri','URI_ERROR')}} />
                             </TouchableOpacity> 
                         </View>
 
                         <View style={[styles.flexTitleColumn]}>
                             <View style={[styles.flexTitle]}>
-                                <Text style={[styles.fontUserName]}> {navigation.getParam('user','USER_ERROR')} </Text>
+                                <Text style={[styles.fontUserName]}> {navigation.getParam('user','USER_ERROR').name} </Text>
                             </View>
 
                             <View style={[styles.flexTitle]}>
