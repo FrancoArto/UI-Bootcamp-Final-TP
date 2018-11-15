@@ -2,7 +2,8 @@ import HomeScreen from '../screens/HomeScreen'
 import SearchScreen from '../screens/ScreenSearch'
 import TabNavigator from '../components/TabNavigator'
 import UserProfileScreen from '../screens/UserProfileScreen'
-import OneTweet from '../components/Tweet/OneTweet';
+import OneTweetWhitImg from '../components/Tweet/OneTweetWhitImg';
+import OneTweetWhitoutImg from '../components/Tweet/OneTweetWithoutImg';
 
 const Routes ={
     TabNavigator: { 
@@ -17,7 +18,7 @@ const Routes ={
     Home: { screen: HomeScreen },
     Search: { screen: SearchScreen},
     UserProfile: { screen: UserProfileScreen},
-    OneTweet: { screen: OneTweet}
-    
+    OneTweetWhitImg: { screen: OneTweetWhitImg},
+    OneTweetWhitoutImg: { screen: OneTweetWhitoutImg}
 };
 export default Routes;

@@ -48,7 +48,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
 
-        padding:  0, 
+        padding: 0, 
         margin: 0
     },
 

@@ -46,7 +46,7 @@ class TweetWithoutImg extends PureComponent {
         } else {
 
         return (
-            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('OneTweet',{
+            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('OneTweetWhitoutImg',{
                 user: this.props.user.name,
                 uri: this.props.uri,
                 countName: this.props.user.screen_name,
