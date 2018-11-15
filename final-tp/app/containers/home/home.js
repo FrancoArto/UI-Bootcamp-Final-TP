@@ -35,6 +35,14 @@ class Home extends Component {
        this.props.dispatch(fetchTweetsTimeline()); //call our action
     }
 
+    /* should check this
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.settings !== this.props.settings) {
+        this.props.dispatch(fetchTweetsTimeline());
+      }
+    }
+    */
+
     render() {
         if (this.props.loading) {
             return (
@@ -72,11 +80,20 @@ class Home extends Component {
             )
         } 
     }
-    
-    
-    
-    
-    renderItem({item}) {  
+
+    renderItem({item}) {        
+      //on settings, true is for checked, so 'silence notifications from'
+      if ((this.props.settings.verified === true) && (item.user.verified === false)) {
+        return null;
+      } else if ((this.props.settings.following === true) && (item.user.following === false)) {
+        return null;
+      } else if ((this.props.settings.defaultInfo === true) && (item.user.default_profile === true)) {
+        return null;
+      } else if ((this.props.settings.withLink === true) && (item.entities.urls.length > 0)) {
+        return null;
+      } else if ((this.props.settings.withTruncatedText === true) && (item.truncated === true)) {
+        return null;
+      } else {
         return (
             <Tweet 
                 user={item.user} 
@@ -88,9 +105,9 @@ class Home extends Component {
                 created_at={item.created_at}
                 navigationProp={this.props.navigationProp}
                 media={item.entities.media}
-            />
-            
+            />              
         )
+      }
     }
 
 
@@ -104,7 +121,8 @@ function mapStateToProps(state, props) {
     return {
         data: state.timeLineReducer.data,
         loading: state.timeLineReducer.loading,
-        error: state.timeLineReducer.error
+        error: state.timeLineReducer.error,
+        settings: state.settingsReducer
     }
 }
 
