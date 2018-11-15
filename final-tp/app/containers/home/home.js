@@ -26,6 +26,7 @@ class Home extends Component {
         super(props);
 
         this.state = {
+            refreshing: false
         };
 
         this.renderItem = this.renderItem.bind(this);
@@ -42,9 +43,20 @@ class Home extends Component {
       }
     }
     */
+   loadMore = () => {
+       this.setState({refreshing: true}, () => {
+        this.props.dispatch(fetchTweetsTimeline());
+        if(!this.props.loading){
+            this.loadFinish()
+        }
+       })
+       
+   }
+
+   loadFinish = () => this.setState({refreshing: false});
 
     render() {
-        if (this.props.loading) {
+        if (this.props.loading && !this.state.refreshing) {
             return (
                 <View style={styles.activityIndicatorContainer}>
                     <ActivityIndicator animating={true}/>
@@ -57,7 +69,10 @@ class Home extends Component {
                         ref='listRef'
                         data={this.props.data}
                         renderItem={this.renderItem}
-                        keyExtractor={(item) => item.id.toString()}/>
+                        keyExtractor={(item) => item.id.toString()}
+                        refreshing={ this.state.refreshing } 
+                        onRefresh={ this.loadMore }
+                        />
                 </View>
             );
         } else {

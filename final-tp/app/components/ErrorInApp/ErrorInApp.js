@@ -12,7 +12,9 @@ class ErrorInApp extends Component {
     render() {
         return(
           <View style={styles.container}>
-            <Text style={styles.errorMessage}>Ups! we have a error in : {this.props.errorMesagge.toString()} </Text>
+            <View style={styles.errorContainer}>
+                <Text style={styles.errorMessage}>Ups! we have a error in : {this.props.errorMesagge.toString()} </Text>
+            </View>
           </View>
         );
     }

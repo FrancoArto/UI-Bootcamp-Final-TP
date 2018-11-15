@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
     errorMessage:{
         color: 'white',
         fontWeight:'bold'
+    },
+    errorContainer:{
+        marginLeft: 8
     }
 
 });
