@@ -53,7 +53,8 @@ class TweetWithoutImg extends PureComponent {
                 timeAgo: this.props.timeAgo,
                 mainContent: this.props.mainContent,
                 userCount: this.props.user,
-                navigationProp: this.props.navigationProp
+                navigationProp: this.props.navigationProp,
+                truncated: this.props.truncated
                 })} >
 
                 <View style={[styles.flexTweet]}>
