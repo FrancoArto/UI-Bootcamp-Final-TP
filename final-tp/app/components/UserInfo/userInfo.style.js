@@ -23,12 +23,12 @@ export const styles = StyleSheet.create({
         
     },
     userName:{
-        fontSize: 25,
+        fontSize: width/18,
         fontWeight: 'bold'
     },
     userNameAndHash:{
-        marginLeft:10,
-        marginTop:30      
+        marginLeft:width/22,
+        marginTop:width/10      
     },
     userDescriptionContainer:{
         flex:35,
@@ -45,12 +45,12 @@ export const styles = StyleSheet.create({
         marginTop:5
     },
     desciption:{
-        fontSize:16,
+        fontSize:width/26,
         fontWeight:'400'
     },
     statsColor:{
         color: '#989898',
-        fontSize:13
+        fontSize:width/28
     },
     iconStyle: {
         fontSize: 20

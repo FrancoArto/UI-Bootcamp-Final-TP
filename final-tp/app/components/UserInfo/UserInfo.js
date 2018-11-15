@@ -18,10 +18,15 @@ export class UserInfo extends Component {
     }
     render() {
         let userLink = <View></View>;
+        let userLocation = <View></View>;
+        let formatDescription = this.props.user.description.replace(/\n|\r/g, "").trim(); ///to delete all spacesJump
         if(this.props.user.url){
             userLink = <TouchableOpacity onPress={() => Linking.openURL(this.props.user.url)}>
                             <Text style={{color:'blue'}}><Icon type="EvilIcons" name="link"/> {this.props.user.url}</Text>
                          </TouchableOpacity>
+        }
+        if(this.props.location){
+            userLocation = <Text style={styles.statsColor}><Icon type="EvilIcons" name="location" />{this.props.user.location}</Text>
         }
         return (
             <View style={styles.mainContainer}>
@@ -41,9 +46,9 @@ export class UserInfo extends Component {
                     </View>
                 </View>
                 <View style={styles.userDescriptionContainer}>
-                   <Text style={styles.desciption}>{this.props.user.description}</Text>
+                   <Text style={styles.desciption}>{formatDescription}</Text>
                    <View style={styles.userStats}>
-                        <Text style={styles.statsColor}><Icon type="EvilIcons" name="location" />{this.props.user.location}</Text>
+                        {userLocation}
                         {userLink}
                     </View>
                     <View style={styles.userStats}>
