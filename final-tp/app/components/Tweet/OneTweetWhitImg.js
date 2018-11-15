@@ -38,7 +38,6 @@ class OneTweetWhitImg extends Component {
               <AppLoading />
           );
         } else {   
-            console.log(this.props.userCount);
               
         return (
                 <View style={[styles.flexTweet]}>
