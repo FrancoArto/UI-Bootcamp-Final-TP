@@ -16,6 +16,7 @@ import { connect } from 'react-redux';
 import { fetchTweetsTimeline } from '../../actions/timeLineActions'; //Import your actions
 
 import Tweet from '../../components/Tweet/Tweet'
+import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 
 
 
@@ -41,7 +42,7 @@ class Home extends Component {
                     <ActivityIndicator animating={true}/>
                 </View>
             );
-        } else {
+        } else if(this.props.data && !this.props.error){
             return (
                 <View style={{flex:1, paddingTop:20}}>
                     <FlatList
@@ -51,8 +52,30 @@ class Home extends Component {
                         keyExtractor={(item) => item.id.toString()}/>
                 </View>
             );
-        }
+        } else {
+            return (
+                <View style={{flex:1}}>
+                    <View style={{flex:10}}>
+                        <ErrorInApp
+                            errorMesagge = {this.props.error} 
+                         />
+                    </View>
+                    <View style={{flex:90}}>
+                        <FlatList
+                            ref='listRef'
+                            data={this.props.data}
+                            renderItem={this.renderItem}
+                            keyExtractor={(item) => item.id.toString()}/>
+                    </View>
+                </View>
+
+            )
+        } 
     }
+    
+    
+    
+    
     renderItem({item}) {  
         return (
             <Tweet 

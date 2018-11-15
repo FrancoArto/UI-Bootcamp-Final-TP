@@ -5,7 +5,7 @@ const height = Dimensions.get('window').height;
 export const styles = StyleSheet.create({
     mainContainer:{
         flex:1,
-        borderBottomColor:'grey',
+        borderBottomColor:'#AAA',
         borderBottomWidth:0.5
     },
     bannerContainer:{
@@ -17,22 +17,31 @@ export const styles = StyleSheet.create({
     },
     userLogoAndNameContainer:{
         flex:20,
-        flexDirection:'row'
+        flexDirection:'row',
+        marginLeft: width/65
     },
     userImage: {
+        borderColor: 'white',
+        borderWidth: 3
         
     },
     userName:{
         fontSize: width/18,
         fontWeight: 'bold'
     },
+    userDispayedName:{
+        color: '#9c9c9c'
+    },
     userNameAndHash:{
         marginLeft:width/22,
         marginTop:width/10      
     },
+    desciptionView:{
+        marginTop:width/55
+    },
     userDescriptionContainer:{
         flex:35,
-        marginLeft:4
+        marginLeft:width/30
     },
     userInfo:{
         flex:22
@@ -42,11 +51,12 @@ export const styles = StyleSheet.create({
     },
     userStats:{
         flexDirection:'row',
-        marginTop:5
+        marginTop:5        
     },
     desciption:{
         fontSize:width/26,
-        fontWeight:'400'
+        fontWeight:'400',
+        color: '#5D5D5D'
     },
     statsColor:{
         color: '#989898',
