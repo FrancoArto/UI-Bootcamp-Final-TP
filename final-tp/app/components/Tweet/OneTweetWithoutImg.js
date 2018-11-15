@@ -4,7 +4,7 @@ import { Thumbnail, Text, Icon, Button } from 'native-base';
 import styles from './oneTweet.style';
 import { Font, AppLoading } from "expo";
 
-class OneTweet extends Component {
+class OneTweetWhitoutImg extends Component {
 
     constructor(props) {
         super(props);
@@ -60,18 +60,9 @@ class OneTweet extends Component {
                         </View>
                     </View>
 
-
                     <View style={[styles.flexContent]}>
                         <Text style={[styles.fontMainContent]}> {navigation.getParam('mainContent','MAIN-CONTENT_ERROR')} </Text>
                     </View>
-
-
-                    <View style={[styles.flexImage]}>
-                        <Image small source={{
-                            uri: navigation.getParam('media','MEDIA_ERROR')}} 
-                            style={[styles.imageTweet]}/>
-                    </View>
-
 
                     <View style={[styles.flexIcons]}> 
                         <Button iconLeft transparent primary style={[styles.buttonIcons]}>
@@ -94,4 +85,4 @@ class OneTweet extends Component {
         }
     }
 }
-export default OneTweet;
+export default OneTweetWhitoutImg;
