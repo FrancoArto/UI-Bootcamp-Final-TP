@@ -9,6 +9,7 @@ class TweetWithImg extends PureComponent {
     constructor(props) {
         super(props);
         this.state = { loading: true };
+        _isMounted = false
       }
 
       async componentWillMount() {
@@ -16,8 +17,18 @@ class TweetWithImg extends PureComponent {
           Roboto: require("native-base/Fonts/Roboto.ttf"),
           Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
         });
-        this.setState({ loading: false });
+        if(this._isMounted){
+            this.setState({ loading: false });
+        }
       }
+      componentDidMount() {
+          this._isMounted = true;
+      }
+      componentWillUnmount() {
+          this._isMounted = false;
+      }
+
+
 
       /*Ejersicio panteado para continuar (Si es que tenemos tiempo)
       urlInMainContent (mainContent) {

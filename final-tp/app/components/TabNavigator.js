@@ -12,14 +12,14 @@ export default createMaterialTopTabNavigator({
         screen: HomeScreen,
         navigationOptions: {
             tabBarIcon: ({ tintColor }) => (
-                <Icon name="triangle" color={tintColor} size={24} />
+                <Icon name="twitter" color={tintColor} size={24} />
             )
   }},
   Other:{ 
     screen: ScreenSearch,
     navigationOptions: {
     tabBarIcon: ({tintColor}) => (
-      <SecondIcon name="camera" color={tintColor} size={30}/>
+      <SecondIcon name="search" color={tintColor} size={32}/>
     )
         
   }},
