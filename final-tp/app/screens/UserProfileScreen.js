@@ -17,7 +17,7 @@ UserProfileScreen.propTypes = {
 };
 
 UserProfileScreen.navigationOptions = {
-  title: 'UserProfileScreen',
+  title: 'User Profile and Tweets',
 };
 
 const styles = StyleSheet.create({
