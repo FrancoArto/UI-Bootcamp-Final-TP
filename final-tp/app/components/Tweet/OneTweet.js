@@ -40,53 +40,54 @@ class OneTweet extends Component {
         } else {
         return (
                 <View style={[styles.flexTweet]}>
-                    <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: navigation.getParam('userCount', 'USER_ERROR') })}>
+
+                    <View style={[styles.flexHead]}>
                         <View style={[styles.flexUserImg]}>
-                            <Thumbnail large source={{uri: navigation.getParam('uri','URI_ERROR')}} />
-                        </View>
-                    </TouchableOpacity> 
-
-                    <View style={[styles.flexRightSide]}>
-
-                        <View style={[styles.flexTitle]}>
-                            <Text style={[styles.fontUserName]}> {navigation.getParam('user','USER_ERROR')} </Text>
-                        </View>
-                        <View style={[styles.flexTitle]}>
-                            <Text style={[styles.fontCountNameAndTime]}> @{navigation.getParam('countName','COUNT-USER_ERROR')}</Text>
+                            <TouchableOpacity onPress={() => this.props.navigationProp.navigate('UserProfile',{user: navigation.getParam('userCount', 'USER_ERROR') })}>
+                                    <Thumbnail large source={{uri: navigation.getParam('uri','URI_ERROR')}} />
+                            </TouchableOpacity> 
                         </View>
 
-                        <View style={[styles.flexContent]}>
-                            <Text style={[styles.fontMainContent]}> {navigation.getParam('mainContent','MAIN-CONTENT_ERROR')} </Text>
+                        <View style={[styles.flexTitleColumn]}>
+                            <View style={[styles.flexTitle]}>
+                                <Text style={[styles.fontUserName]}> {navigation.getParam('user','USER_ERROR')} </Text>
+                            </View>
+
+                            <View style={[styles.flexTitle]}>
+                                <Text style={[styles.fontCountNameAndTime]}> @{navigation.getParam('countName','COUNT-USER_ERROR')}</Text>
+                                <Text style={[styles.fontCountNameAndTime]}> - {navigation.getParam('timeAgo','TIME-AGO_ERROR')}</Text>
+                            </View>
                         </View>
+                    </View>
 
-                        <View style={[styles.flexImage, styles.extraMarginWhitImg]}>
-                            <Image small source={{
-                                uri: navigation.getParam('media','MEDIA_ERROR')}} 
-                                style={[styles.imageTweet]}/>
-                        </View>
-                        
-                        <View style={[styles.flexTitle]}>
-                            <Text style={[styles.fontCountNameAndTime]}>{navigation.getParam('timeAgo','TIME-AGO_ERROR')}</Text>
-                        </View>
 
-                        <View style={[styles.flexIcons]}>
-                            
-                            <Button iconLeft transparent primary style={[styles.buttonIcons]}>
-                                <Icon type="SimpleLineIcons" name="heart" style={[styles.sizeIcons]}/>
-                                <Text style={[styles.fontNumberIcons]}>{this.props.favorite_count}</Text>
-                            </Button>
+                    <View style={[styles.flexContent]}>
+                        <Text style={[styles.fontMainContent]}> {navigation.getParam('mainContent','MAIN-CONTENT_ERROR')} </Text>
+                    </View>
 
-                            <Button iconLeft transparent primary style={[styles.buttonIcons]}>
-                                <Icon type="SimpleLineIcons" name="refresh" style={[styles.sizeIcons]}/>
-                                <Text style={[styles.fontNumberIcons]}>{this.props.retweet_count}</Text>
-                            </Button>
 
-                            <Button iconLeft transparent primary style={[styles.buttonIcons]}>
-                                <Icon type="SimpleLineIcons" name="bubble" style={[styles.sizeIcons]}/>
-                                <Text style={[styles.fontNumberIcons]}></Text>
-                            </Button>
-                        </View>
+                    <View style={[styles.flexImage]}>
+                        <Image small source={{
+                            uri: navigation.getParam('media','MEDIA_ERROR')}} 
+                            style={[styles.imageTweet]}/>
+                    </View>
 
+
+                    <View style={[styles.flexIcons]}> 
+                        <Button iconLeft transparent primary style={[styles.buttonIcons]}>
+                            <Icon type="SimpleLineIcons" name="heart" style={[styles.sizeIcons]}/>
+                            <Text style={[styles.fontNumberIcons]}>{this.props.favorite_count}</Text>
+                        </Button>
+
+                        <Button iconLeft transparent primary style={[styles.buttonIcons]}>
+                            <Icon type="SimpleLineIcons" name="refresh" style={[styles.sizeIcons]}/>
+                            <Text style={[styles.fontNumberIcons]}>{this.props.retweet_count}</Text>
+                        </Button>
+
+                        <Button iconLeft transparent primary style={[styles.buttonIcons]}>
+                            <Icon type="SimpleLineIcons" name="bubble" style={[styles.sizeIcons]}/>
+                            <Text style={[styles.fontNumberIcons]}></Text>
+                        </Button>
                     </View>
                 </View>
             );

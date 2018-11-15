@@ -10,7 +10,6 @@ class ErrorInApp extends Component {
     }
 
     render() {
-        console.log("holis"+this.props.errorMesagge)
         return(
           <View style={styles.container}>
             <Text style={styles.errorMessage}>Ups! we have a error in : {this.props.errorMesagge.toString()} </Text>
