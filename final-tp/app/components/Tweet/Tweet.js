@@ -29,6 +29,11 @@ class Tweet extends PureComponent {
         return timeAgo.format(Date.now() -  splitARGhour[0] * splitARGhour[1] * splitARGhour[2] * 1000, 'twitter')
     }
 
+    navigationProp() {
+        return this.props.navigationProp
+    }
+
+
     render() {
         if (this.props.media) {
             return (
@@ -39,7 +44,7 @@ class Tweet extends PureComponent {
                 favorite_count={this.props.favorite_count}
                 retweet_count={this.props.retweet_count}
                 timeAgo={this.toTimeZone(this.props.created_at)}
-                navigationProp={this.props.navigationProp}
+                navigationProp={this.navigationProp()}
                 media={this.props.media}>
                 </TweetWithImg>
             );
@@ -52,7 +57,7 @@ class Tweet extends PureComponent {
                 favorite_count={this.props.favorite_count}
                 retweet_count={this.props.retweet_count}
                 timeAgo={this.toTimeZone(this.props.created_at)}
-                navigationProp={this.props.navigationProp}>
+                navigationProp={this.navigationProp()}>
                 </TweetWithoutImg>
             );
         }

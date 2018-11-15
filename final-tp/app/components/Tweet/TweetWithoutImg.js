@@ -43,18 +43,14 @@ class TweetWithoutImg extends PureComponent {
               <AppLoading />
           );
 
-        } else {
-
+        } else {        
         return (
             <TouchableOpacity onPress={() => this.props.navigationProp.navigate('OneTweetWhitoutImg',{
-                user: this.props.user.name,
+                user: this.props.user,
                 uri: this.props.uri,
                 countName: this.props.user.screen_name,
                 timeAgo: this.props.timeAgo,
-                mainContent: this.props.mainContent,
-                userCount: this.props.user,
-                navigationProp: this.props.navigationProp,
-                truncated: this.props.truncated
+                mainContent: this.props.mainContent
                 })} >
 
                 <View style={[styles.flexTweet]}>
