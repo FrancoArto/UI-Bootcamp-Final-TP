@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
     mainContainer:{
         flex:1,
         borderBottomColor:'#AAA',
-        borderBottomWidth:0.5
+        borderBottomWidth:0.5,
+        backgroundColor:'white'
     },
     bannerContainer:{
         flex:22
