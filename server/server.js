@@ -67,5 +67,11 @@ app.get('/show', function (req, res) {
     return res.json(data);
   })
 });
+//http://localhost:8080/show?id=1011417658833551361
+app.get('/statuses/user_time', function (req, res) {
+  T.get('statuses/user_timeline',req.query, function(err, data, response) {
+    return res.json(data);
+  })
+});
 
 app.listen(8080);
