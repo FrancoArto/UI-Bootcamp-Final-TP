@@ -33,7 +33,7 @@ class SearchContainer extends Component {
     }
 
     componentDidMount() {
-      this.props.dispatch(fetchTrends());
+      //this.props.dispatch(fetchTrends());
       BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
     }
 
@@ -49,11 +49,11 @@ class SearchContainer extends Component {
     }
 
     onSearch(searchText) {
-       this.setState({ 
+       this.setState({
           searching: true,
           searchText: searchText
         });
-       this.props.dispatch(fetchTweetsSearch(searchText)); 
+       //this.props.dispatch(fetchTweetsSearch(searchText));
     }
 
     render() {
@@ -63,18 +63,18 @@ class SearchContainer extends Component {
               <ActivityIndicator animating={true}/>
             </View>
           );
-        } else if (this.state.searching) {                         
+        } else if (this.state.searching) {
           return (
             <View style={searchContainerStyle.container}>
               <Search onSearch={this.onSearch} />
-              <SearchResult navigationProp={this.props.navigationProp} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />                    
+              <SearchResult navigationProp={this.props.navigationProp} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />
             </View>
-          );        
+          );
         } else {
             return(
                 <View style={searchContainerStyle.container}>
-                    <Search onSearch={this.onSearch} /> 
-                    <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />                                      
+                    <Search onSearch={this.onSearch} />
+                    <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />
                 </View>
             );
         }
@@ -92,4 +92,3 @@ function mapStateToProps(state, props) {
 }
 //Connect everything
 export default connect(mapStateToProps)(SearchContainer);
-
