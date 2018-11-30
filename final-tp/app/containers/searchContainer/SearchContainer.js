@@ -10,8 +10,9 @@ import { connect } from 'react-redux';
 import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
-import {fetchTrends} from '../../actions/trendsActions';
-import {fetchTweetsSearch} from '../../actions/searchTweetsActions';
+import {fetchTrendsBegin} from '../../actions/trendsActions';
+import { fetchSearchBegin } from '../../actions/searchTweetsActions';
+
 
 class SearchContainer extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class SearchContainer extends Component {
     }
 
     componentDidMount() {
-      //this.props.dispatch(fetchTrends());
+      this.props.dispatch(fetchTrendsBegin());
       BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
     }
 
@@ -53,7 +54,7 @@ class SearchContainer extends Component {
           searching: true,
           searchText: searchText
         });
-       //this.props.dispatch(fetchTweetsSearch(searchText));
+       this.props.dispatch(fetchSearchBegin(searchText));
     }
 
     render() {

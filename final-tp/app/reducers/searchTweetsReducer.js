@@ -7,7 +7,8 @@ const searchTweetsReducer = (state = initialStateFech, action) => {
             return {
                 ...state,
                  loading:true,
-                 error: null 
+                 error: null,
+                 searchText: action.payload 
               }
         }           
         case FETCH_SEARCH_SUCCESS:{
@@ -15,7 +16,8 @@ const searchTweetsReducer = (state = initialStateFech, action) => {
                 ...state,
                 loading: false,
                 error: null,
-                data: action.payload
+                data: action.payload,
+                searchText: null
             }
         }
         case FETCH_SEARCH_FAILURE:{
@@ -23,7 +25,8 @@ const searchTweetsReducer = (state = initialStateFech, action) => {
                 ...state,
                 loading: false,
                 error: action.payload,
-                data: [] 
+                data: [],
+                searchText: null 
             }
         }                
         default:

@@ -1,7 +1,9 @@
  const initialStateFech = { 
     data: [],
     loading: false,
-    error: null   
+    error: null,
+    searchText: null,
+    userId: null   
 };
 
 //False is for 'not checked'

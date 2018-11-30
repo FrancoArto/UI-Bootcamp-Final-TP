@@ -1,9 +1,6 @@
-import { all } from 'redux-saga'
+import { GET_TIMELINE_URL } from '../api/apiUrls';
+import { FETCH_TIMELINE_BEGIN, fetchTimelineSuccess, fetchTimelineFailure } from '../actions/timeLineActions'
 import { takeLatest, put, call } from 'redux-saga/effects';
-import { GET_TIMELINE_URL } from './api/apiUrls';
-import { FETCH_TIMELINE_BEGIN, fetchTimelineSuccess, fetchTimelineFailure } from './actions/timeLineActions'
-
-
 
 function* fetchTimeline() {
   const twitTimelineCount = 50;
@@ -16,11 +13,6 @@ function* fetchTimeline() {
   }
 }
 
-function* timelineSaga() {
-    yield takeLatest(FETCH_TIMELINE_BEGIN, fetchTimeline)      
-    
-}
-
-export default function* rootSaga() {
-  yield timelineSaga()
+export function* timelineSaga() {
+    yield takeLatest(FETCH_TIMELINE_BEGIN, fetchTimeline)   
 }

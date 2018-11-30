@@ -1,23 +1,6 @@
-import { getArgTrends } from '../api/apiCalls'
-
 export const FETCH_TRENDS_BEGIN = 'FETCH_TRENDS_BEGIN'
 export const FETCH_TRENDS_SUCCESS = 'FETCH_TRENDS_SUCCESS'
 export const FETCH_TRENDS_FAILURE = 'FETCH_TRENDS_FAILURE'
-
-
-export function fetchTrends(){ ///fetchin twits using thunk
-    return dispatch => {
-        dispatch(fetchTrendsBegin())
-        return getArgTrends()
-                .then((trendsArray) => {
-                    dispatch(fetchTrendsSuccess(trendsArray[0].trends))
-                    return trendsArray[0].trends;
-                })
-                .catch(error => 
-                    dispatch(fetchTrendsError(error))
-                );
-        };
-}
 
 export const fetchTrendsBegin = () => ({
     type: FETCH_TRENDS_BEGIN

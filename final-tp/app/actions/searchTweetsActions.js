@@ -4,23 +4,9 @@ export const FETCH_SEARCH_BEGIN = 'FETCH_SEARCH_BEGIN'
 export const FETCH_SEARCH_SUCCESS = 'FETCH_SEARCH_SUCCESS'
 export const FETCH_SEARCH_FAILURE = 'FETCH_SEARCH_FAILURE'
 
-
-export function fetchTweetsSearch(wordToSearch){ ///fetchin twits using thunk
-    return dispatch => {
-        dispatch(fetchSearchBegin())
-        return getSearchTweetsList(wordToSearch)
-                .then((tweetsArray) => {
-                    dispatch(fetchSearchSuccess(tweetsArray.statuses))
-                    return tweetsArray.statuses;
-                })
-                .catch( error => 
-                    dispatch(fetchSearchError(error))
-                );
-        };
-}
-
-export const fetchSearchBegin = () => ({
-    type: FETCH_SEARCH_BEGIN
+export const fetchSearchBegin = (searchText) => ({
+    type: FETCH_SEARCH_BEGIN,
+    payload: searchText
   });
 
 export const fetchSearchSuccess = (twitsArray) => ({
@@ -31,4 +17,4 @@ export const fetchSearchSuccess = (twitsArray) => ({
 export const fetchSearchError = error => ({
     type: FETCH_SEARCH_FAILURE,
     payload: error
-  });
+});

@@ -8,7 +8,8 @@ const timeLineReducer = (state = initialStateFech, action) => {
             return {
                 ...state,
                  loading:true,
-                 error: null 
+                 error: null,
+                 searchText: null 
               }
         }           
         case FETCH_TIMELINE_SUCCESS:{
@@ -16,7 +17,8 @@ const timeLineReducer = (state = initialStateFech, action) => {
                 ...state,
                 loading: false,
                 error: null,
-                data: action.payload
+                data: action.payload,
+                searchText: null
             }
         }
         case FETCH_TIMELINE_FAILURE:{
@@ -24,7 +26,8 @@ const timeLineReducer = (state = initialStateFech, action) => {
                 ...state,
                 loading: false,
                 error: action.payload,
-                data: [] 
+                data: [],
+                searchText: null 
             }
         }                
         default:
