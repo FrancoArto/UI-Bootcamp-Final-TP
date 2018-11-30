@@ -9,13 +9,13 @@ export const fetchTweetsTimeline = () => ({
     type: FETCH_TIMELINE_BEGIN
 })
 
-
-export const fetchTweetsTimelineSuccess = (twitsArray) => ({
+export const fetchTimelineSuccess = (data) => ({
     type: FETCH_TIMELINE_SUCCESS,
-    payload: twitsArray
-});
+    payload: data
+})
 
-export const fetchTweetsTimelineError = error => ({
+export const fetchTimelineFailure = (error) => ({
     type: FETCH_TIMELINE_FAILURE,
     payload: error
-  });
+})
+

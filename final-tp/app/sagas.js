@@ -1,23 +1,24 @@
 import { all } from 'redux-saga'
-import { take, takeLatest, put, call } from 'redux-saga/effects';
+import { takeLatest, put, call } from 'redux-saga/effects';
 import { GET_TIMELINE_URL } from './api/apiUrls';
-import { FETCH_TIMELINE_BEGIN, FETCH_TIMELINE_SUCCESS, FETCH_TIMELINE_FAILURE, fetchTweetsTimelineSuccess } from './actions/timeLineActions'
+import { FETCH_TIMELINE_BEGIN, fetchTimelineSuccess, fetchTimelineFailure } from './actions/timeLineActions'
 
-const twitTimelineCount = 50;
+
+
+function* fetchTimeline() {
+  const twitTimelineCount = 50;
+  try {
+    const response = yield call(fetch, GET_TIMELINE_URL(twitTimelineCount))
+    const data = yield call([response, "json"]);
+    yield put(fetchTimelineSuccess(data))
+  } catch (er) {
+    yield put(fetchTimelineFailure(er))
+  }
+}
 
 function* timelineSaga() {
-  while (true) {
-    console.log('hola')
-    yield take(FETCH_TIMELINE_BEGIN)
-    try {
-      console.log('hola')
-      const response = yield call(fetch, GET_TIMELINE_URL(twitTimelineCount))
-      const data = yield call([response, "json"]);
-      yield put({ type: FETCH_TIMELINE_SUCCESS, payload: data })
-    } catch (er) {
-      yield put({ type: FETCH_TIMELINE_FAILURE, payload: er })
-    }
-  }  
+    yield takeLatest(FETCH_TIMELINE_BEGIN, fetchTimeline)      
+    
 }
 
 export default function* rootSaga() {
