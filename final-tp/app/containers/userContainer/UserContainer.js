@@ -4,7 +4,8 @@ import { UserInfo } from '../../components/UserInfo/UserInfo'
 import {
     View,
     ActivityIndicator,
-    FlatList
+    FlatList,
+    ScrollView
 } from 'react-native';
 import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
@@ -37,7 +38,7 @@ import { fetchTimelineForUserBegin } from '../../actions/timelineForUserActions'
             
         }     
         return(
-            <View style={styles.mainContainer}>
+            <ScrollView style={styles.mainContainer}>
                 <View style={styles.userData}>
                     <UserInfo
                         user={this.props.userData}
@@ -46,7 +47,7 @@ import { fetchTimelineForUserBegin } from '../../actions/timelineForUserActions'
                 <View style={styles.tweetsZone}>
                     {tweetView}
                 </View>
-            </View>
+            </ScrollView>
         )
     }
     renderItem({item}) {  
