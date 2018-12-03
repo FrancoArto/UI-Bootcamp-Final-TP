@@ -1,6 +1,14 @@
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
- 
+import createSagaMiddleware from 'redux-saga'
 import AppReducer from './reducers/index'; //Import the reducer
- 
-export default createStore(AppReducer, applyMiddleware(thunk));
+import rootSaga from './sagas/index';
+import reactotron from './reactotronConfig'
+
+const sagaMonitor = reactotron.createSagaMonitor()
+
+
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor })
+
+export default reactotron.createStore(AppReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga)

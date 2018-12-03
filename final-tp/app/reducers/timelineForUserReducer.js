@@ -8,7 +8,8 @@ const timelineForUserReducer = (state = initialStateFech, action) => {
             return {
                 ...state,
                  loading:true,
-                 error: null 
+                 error: null,
+                 userId: action.payload 
               }
         }           
         case FETCH_TimelineForUser_SUCCESS:{
@@ -16,7 +17,8 @@ const timelineForUserReducer = (state = initialStateFech, action) => {
                 ...state,
                 loading: false,
                 error: null,
-                data: action.payload
+                data: action.payload,
+                userId: null 
             }
         }
         case FETCH_TimelineForUser_FAILURE:{
@@ -24,7 +26,8 @@ const timelineForUserReducer = (state = initialStateFech, action) => {
                 ...state,
                 loading: false,
                 error: action.payload,
-                data: [] 
+                data: [],
+                userId: null
             }
         }                
         default:

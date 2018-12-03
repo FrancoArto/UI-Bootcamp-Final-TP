@@ -4,12 +4,13 @@ import { UserInfo } from '../../components/UserInfo/UserInfo'
 import {
     View,
     ActivityIndicator,
-    FlatList
+    FlatList,
+    ScrollView
 } from 'react-native';
-import { fetchTimelineForUser } from '../../actions/timelineForUserActions'
 import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
 import { styles } from './userContainer.style'
+import { fetchTimelineForUserBegin } from '../../actions/timelineForUserActions';
 
  class UserContainer extends Component {
     constructor(props) {
@@ -17,7 +18,7 @@ import { styles } from './userContainer.style'
         this.renderItem = this.renderItem.bind(this);
     }
     componentDidMount(){
-        this.props.dispatch(fetchTimelineForUser(this.props.userData.id));
+        this.props.dispatch(fetchTimelineForUserBegin(this.props.userData.id));
     }
 
     render() {
@@ -37,7 +38,7 @@ import { styles } from './userContainer.style'
             
         }     
         return(
-            <View style={styles.mainContainer}>
+            <ScrollView style={styles.mainContainer}>
                 <View style={styles.userData}>
                     <UserInfo
                         user={this.props.userData}
@@ -46,7 +47,7 @@ import { styles } from './userContainer.style'
                 <View style={styles.tweetsZone}>
                     {tweetView}
                 </View>
-            </View>
+            </ScrollView>
         )
     }
     renderItem({item}) {  

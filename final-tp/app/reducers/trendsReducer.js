@@ -8,7 +8,8 @@ const trendsReducer = (state = initialStateFech, action) => {
             return {
                 ...state,
                  loading:true,
-                 error: null 
+                 error: null,
+                 searchText: null 
               }
         }           
         case FETCH_TRENDS_SUCCESS:{
@@ -16,7 +17,8 @@ const trendsReducer = (state = initialStateFech, action) => {
                 ...state,
                 loading: false,
                 error: null,
-                data: action.payload
+                data: action.payload,
+                searchText: null
             }
         }
         case FETCH_TRENDS_FAILURE:{
@@ -24,7 +26,8 @@ const trendsReducer = (state = initialStateFech, action) => {
                 ...state,
                 loading: false,
                 error: action.payload,
-                data: [] 
+                data: [],
+                searchText: null 
             }
         }                
         default:

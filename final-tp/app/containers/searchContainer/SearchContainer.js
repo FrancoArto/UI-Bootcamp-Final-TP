@@ -10,8 +10,9 @@ import { connect } from 'react-redux';
 import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
-import {fetchTrends} from '../../actions/trendsActions';
-import {fetchTweetsSearch} from '../../actions/searchTweetsActions';
+import {fetchTrendsBegin} from '../../actions/trendsActions';
+import { fetchSearchBegin, fetchMoreResults } from '../../actions/searchTweetsActions';
+
 
 class SearchContainer extends Component {
     constructor(props) {
@@ -25,6 +26,11 @@ class SearchContainer extends Component {
         this.onSearch = this.onSearch.bind(this);
         this.handleBackPress = this.handleBackPress.bind(this);
         this.handleOnTrendPress = this.handleOnTrendPress.bind(this);
+        this.handleOnEndReached = this.handleOnEndReached.bind(this);
+    }
+
+    handleOnEndReached() {
+      this.props.dispatch(fetchMoreResults());
     }
 
     handleOnTrendPress(event) {
@@ -33,7 +39,7 @@ class SearchContainer extends Component {
     }
 
     componentDidMount() {
-      this.props.dispatch(fetchTrends());
+      this.props.dispatch(fetchTrendsBegin());
       BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
     }
 
@@ -49,11 +55,11 @@ class SearchContainer extends Component {
     }
 
     onSearch(searchText) {
-       this.setState({ 
+       this.setState({
           searching: true,
           searchText: searchText
         });
-       this.props.dispatch(fetchTweetsSearch(searchText)); 
+       this.props.dispatch(fetchSearchBegin(searchText));
     }
 
     render() {
@@ -63,18 +69,18 @@ class SearchContainer extends Component {
               <ActivityIndicator animating={true}/>
             </View>
           );
-        } else if (this.state.searching) {                         
+        } else if (this.state.searching) {
           return (
             <View style={searchContainerStyle.container}>
               <Search onSearch={this.onSearch} />
-              <SearchResult navigationProp={this.props.navigationProp} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />                    
+              <SearchResult handleOnEndReached={this.handleOnEndReached} navigationProp={this.props.navigationProp} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />
             </View>
-          );        
+          );
         } else {
             return(
                 <View style={searchContainerStyle.container}>
-                    <Search onSearch={this.onSearch} /> 
-                    <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />                                      
+                    <Search onSearch={this.onSearch} />
+                    <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />
                 </View>
             );
         }
@@ -92,4 +98,3 @@ function mapStateToProps(state, props) {
 }
 //Connect everything
 export default connect(mapStateToProps)(SearchContainer);
-

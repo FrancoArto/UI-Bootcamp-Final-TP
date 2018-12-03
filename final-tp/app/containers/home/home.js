@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 
 
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { fetchTweetsTimeline } from '../../actions/timeLineActions'; //Import your actions
+import { fetchTweetsTimeline, fetchMoreTweets } from '../../actions/timeLineActions'; //Import your actions
 
 import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
@@ -30,10 +30,15 @@ class Home extends Component {
         };
 
         this.renderItem = this.renderItem.bind(this);
+        this.handleOnEndReached = this.handleOnEndReached.bind(this);
     }
 
     componentDidMount() {
-       this.props.dispatch(fetchTweetsTimeline()); //call our action
+        this.props.dispatch(fetchTweetsTimeline()); //call our action
+    }
+
+    handleOnEndReached() {
+        this.props.dispatch(fetchMoreTweets());
     }
 
     /* should check this
@@ -43,86 +48,92 @@ class Home extends Component {
       }
     }
     */
-   loadMore = () => {
-       this.setState({refreshing: true}, () => {
-        this.props.dispatch(fetchTweetsTimeline());
-        if(!this.props.loading){
-            this.loadFinish()
-        }
-       })
-       
-   }
+    loadMore = () => {
+        this.setState({ refreshing: true }, () => {
+            this.props.dispatch(fetchTweetsTimeline());
+            if (!this.props.loading) {
+                this.loadFinish()
+            }
+        })
 
-   loadFinish = () => this.setState({refreshing: false});
+    }
+
+    loadFinish = () => this.setState({ refreshing: false });
 
     render() {
         if (this.props.loading && !this.state.refreshing) {
             return (
                 <View style={styles.activityIndicatorContainer}>
-                    <ActivityIndicator animating={true}/>
+                    <ActivityIndicator animating={true} />
                 </View>
             );
-        } else if(this.props.data && !this.props.error){
+        } else if (this.props.data && !this.props.error) {
             return (
-                <View style={{flex:1, paddingTop:20}}>
+                <View style={{ flex: 1, paddingTop: 20 }}>
                     <FlatList
                         ref='listRef'
                         data={this.props.data}
                         renderItem={this.renderItem}
                         keyExtractor={(item) => item.id.toString()}
-                        refreshing={ this.state.refreshing } 
-                        onRefresh={ this.loadMore }
-                        />
+                        refreshing={this.state.refreshing}
+                        onRefresh={this.loadMore}
+                        onEndReachedThreshold={5}
+                        onEndReached={() => {
+                            if (!this.props.scrolling) {
+                                this.handleOnEndReached()
+                            }
+                        }}
+                    />
                 </View>
             );
         } else {
             return (
-                <View style={{flex:1}}>
-                    <View style={{flex:10}}>
+                <View style={{ flex: 1 }}>
+                    <View style={{ flex: 10 }}>
                         <ErrorInApp
-                            errorMesagge = {this.props.error} 
-                         />
+                            errorMesagge={this.props.error}
+                        />
                     </View>
-                    <View style={{flex:90}}>
+                    <View style={{ flex: 90 }}>
                         <FlatList
                             ref='listRef'
                             data={this.props.data}
                             renderItem={this.renderItem}
-                            keyExtractor={(item) => item.id.toString()}/>
+                            keyExtractor={(item) => item.id.toString()} />
                     </View>
                 </View>
 
             )
-        } 
+        }
     }
 
-    renderItem({item}) {        
-      //on settings, true is for checked, so 'silence notifications from'
-      if ((this.props.settings.verified === true) && (item.user.verified === false)) {
-        return null;
-      } else if ((this.props.settings.following === true) && (item.user.following === false)) {
-        return null;
-      } else if ((this.props.settings.defaultInfo === true) && (item.user.default_profile === true)) {
-        return null;
-      } else if ((this.props.settings.withLink === true) && (item.entities.urls.length > 0)) {
-        return null;
-      } else if ((this.props.settings.withTruncatedText === true) && (item.truncated === true)) {
-        return null;
-      } else {
-        return (
-            <Tweet 
-                user={item.user} 
-                mainContent={item.text} 
-                uri={item.user.profile_image_url_https}
-                favorite_count={item.favorite_count}
-                retweet_count={item.retweet_count}
-                media={item.entities.media}
-                created_at={item.created_at}
-                navigationProp={this.props.navigationProp}
-                media={item.entities.media}
-            />              
-        )
-      }
+    renderItem({ item }) {
+        //on settings, true is for checked, so 'silence notifications from'
+        if ((this.props.settings.verified === true) && (item.user.verified === false)) {
+            return null;
+        } else if ((this.props.settings.following === true) && (item.user.following === false)) {
+            return null;
+        } else if ((this.props.settings.defaultInfo === true) && (item.user.default_profile === true)) {
+            return null;
+        } else if ((this.props.settings.withLink === true) && (item.entities.urls.length > 0)) {
+            return null;
+        } else if ((this.props.settings.withTruncatedText === true) && (item.truncated === true)) {
+            return null;
+        } else {
+            return (
+                <Tweet
+                    user={item.user}
+                    mainContent={item.text}
+                    uri={item.user.profile_image_url_https}
+                    favorite_count={item.favorite_count}
+                    retweet_count={item.retweet_count}
+                    media={item.entities.media}
+                    created_at={item.created_at}
+                    navigationProp={this.props.navigationProp}
+                    media={item.entities.media}
+                />
+            )
+        }
     }
 
 
@@ -137,7 +148,8 @@ function mapStateToProps(state, props) {
         data: state.timeLineReducer.data,
         loading: state.timeLineReducer.loading,
         error: state.timeLineReducer.error,
-        settings: state.settingsReducer
+        settings: state.settingsReducer,
+        scrolling: state.timeLineReducer.scrolling
     }
 }
 
@@ -151,7 +163,7 @@ function mapStateToProps(state, props) {
 export default connect(mapStateToProps)(Home);
 
 const styles = StyleSheet.create({
-    activityIndicatorContainer:{
+    activityIndicatorContainer: {
         backgroundColor: "#fff",
         alignItems: 'center',
         justifyContent: 'center',
