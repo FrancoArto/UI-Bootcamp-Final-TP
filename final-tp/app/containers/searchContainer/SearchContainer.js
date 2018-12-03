@@ -11,7 +11,7 @@ import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
 import {fetchTrendsBegin} from '../../actions/trendsActions';
-import { fetchSearchBegin } from '../../actions/searchTweetsActions';
+import { fetchSearchBegin, fetchMoreResults } from '../../actions/searchTweetsActions';
 
 
 class SearchContainer extends Component {
@@ -26,6 +26,11 @@ class SearchContainer extends Component {
         this.onSearch = this.onSearch.bind(this);
         this.handleBackPress = this.handleBackPress.bind(this);
         this.handleOnTrendPress = this.handleOnTrendPress.bind(this);
+        this.handleOnEndReached = this.handleOnEndReached.bind(this);
+    }
+
+    handleOnEndReached() {
+      this.props.dispatch(fetchMoreResults());
     }
 
     handleOnTrendPress(event) {
@@ -68,7 +73,7 @@ class SearchContainer extends Component {
           return (
             <View style={searchContainerStyle.container}>
               <Search onSearch={this.onSearch} />
-              <SearchResult navigationProp={this.props.navigationProp} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />
+              <SearchResult handleOnEndReached={this.handleOnEndReached} navigationProp={this.props.navigationProp} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />
             </View>
           );
         } else {

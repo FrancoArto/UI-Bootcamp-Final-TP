@@ -9,9 +9,13 @@ export default class SearchResult extends Component {
     super(props);
 
     this.renderItem = this.renderItem.bind(this);
+    this.handleOnEndReached = this.handleOnEndReached.bind(this);
   }
 
-  //just testing
+  handleOnEndReached() {
+    this.props.handleOnEndReached();
+  }
+
   renderItem({item, index}) {
     return (
       <Tweet 
@@ -46,7 +50,11 @@ export default class SearchResult extends Component {
             ref='searchResult'
             data={this.props.data}
             renderItem={this.renderItem}
-            keyExtractor={(item, index) => index.toString()}/>
+            keyExtractor={(item, index) => index.toString()}
+            onEndReachedThreshold = {5}
+            onEndReached = {() => {
+              this.handleOnEndReached()
+            }}/>
         </View>
         );    
     }

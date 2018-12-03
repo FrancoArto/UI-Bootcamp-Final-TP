@@ -1,4 +1,3 @@
-import { getUserTimeline } from '../api/apiCalls'
 
 export const FETCH_TimelineForUser_BEGIN = 'FETCH_TimelineForUser_BEGIN'
 export const FETCH_TimelineForUser_SUCCESS = 'FETCH_TimelineForUser_SUCCESS'
