@@ -2,9 +2,9 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation'
 import Icon from 'react-native-vector-icons/Feather'
 import SecondIcon from 'react-native-vector-icons/EvilIcons'
-import HomeScreen from '../screens/HomeScreen'
-import ScreenSearch from '../screens/ScreenSearch'
-import ScreenSettings from '../screens/ScreenSettings';
+import HomeScreen from '../screens/HomeScreen/HomeScreen'
+import SearchScreen from '../screens/SearchScreen/SearchScreen';
+import SettingsScreen from '../screens/SettingsScreen/SettingsScreen';
 
 
 export default createMaterialTopTabNavigator({
@@ -16,7 +16,7 @@ export default createMaterialTopTabNavigator({
             )
   }},
   Other:{ 
-    screen: ScreenSearch,
+    screen: SearchScreen,
     navigationOptions: {
     tabBarIcon: ({tintColor}) => (
       <SecondIcon name="search" color={tintColor} size={32}/>
@@ -24,7 +24,7 @@ export default createMaterialTopTabNavigator({
         
   }},
   Settings: {
-    screen: ScreenSettings,
+    screen: SettingsScreen,
     navigationOptions: {
       tabBarIcon: ({tintColor}) => (
         <Icon name="settings" color={tintColor} size={24}/>

@@ -8,7 +8,9 @@ export const styles = StyleSheet.create({
         flex: 1
     },
     mainContainer: {
-        flex:1
+        flex:1,
+    backgroundColor: '#F5F5F5'
+
     },
     userData: {
         flex: 65

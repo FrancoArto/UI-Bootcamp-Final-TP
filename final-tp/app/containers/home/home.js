@@ -8,9 +8,6 @@ import {
     Text,
     ActivityIndicator
 } from 'react-native';
-
-
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { fetchTweetsTimeline, fetchMoreTweets } from '../../actions/timeLineActions'; //Import your actions
@@ -21,7 +18,7 @@ import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 
 
 
-class Home extends Component {
+class HomeScreen extends Component {
     constructor(props) {
         super(props);
 

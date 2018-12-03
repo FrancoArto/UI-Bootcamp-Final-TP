@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const searchContainerStyle = StyleSheet.create({
+const styles = StyleSheet.create({
   activityIndicatorContainer:{
       alignItems: 'center',
       justifyContent: 'center',
@@ -10,8 +10,9 @@ const searchContainerStyle = StyleSheet.create({
   container: {
     flex:1, 
     paddingTop:20,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+    backgroundColor: '#f5f5f5'
   }
 });
 
-export default searchContainerStyle;
+export default styles;
