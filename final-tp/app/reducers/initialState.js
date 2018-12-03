@@ -3,7 +3,8 @@
     loading: false,
     error: null,
     searchText: null,
-    userId: null   
+    userId: null,
+    scrolling: false   
 };
 
 //False is for 'not checked'
