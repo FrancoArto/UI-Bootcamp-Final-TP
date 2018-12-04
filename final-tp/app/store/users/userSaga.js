@@ -1,6 +1,6 @@
 import { takeLatest, put, call, select } from 'redux-saga/effects';
-import { FETCH_TimelineForUser_BEGIN, fetchTimelineForUserSuccess, fetchTimelineForUserError } from '../actions/timelineForUserActions';
-import { GET_USERTIMELINE_URL } from '../api/apiUrls';
+import { FETCH_TimelineForUser_BEGIN, fetchTimelineForUserSuccess, fetchTimelineForUserError } from './userActions';
+import { GET_USERTIMELINE_URL } from '../../api/apiUrls';
 
 const getUser = state => state.timelineForUserReducer.userId
 

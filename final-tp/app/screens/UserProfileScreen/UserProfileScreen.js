@@ -10,7 +10,7 @@ import {
 import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
 import { styles } from './userProfileScreen.style'
-import { fetchTimelineForUserBegin } from '../../actions/timelineForUserActions';
+import { fetchTimelineForUserBegin } from '../../store/users/userActions';
 import PropTypes from 'prop-types';
 
 

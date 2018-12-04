@@ -3,7 +3,7 @@ import timeLineReducer from './timeLineReducer'
 import trendsReducer from '../store/trends/trendsReducer'
 import searchTweetsReducer from './searchTweetsReducer'
 import settingsReducer from '../store/settings/settingsReducer'
-import timelineForUserReducer  from './timelineForUserReducer'
+import timelineForUserReducer  from '../store/users/userReducer'
 
 const AppReducer = combineReducers({
   timeLineReducer,
