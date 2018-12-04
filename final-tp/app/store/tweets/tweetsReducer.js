@@ -53,7 +53,7 @@ const tweetsReducer = (state = initialStateFech, action) => {
         ...state,
         loading: false,
         error: null,
-        searchResults: state.data.concat(...action.payload),
+        searchResults: state.searchResults.concat(...action.payload),
       }
     }
     case FETCH_MORE_RESULTS_FAILURE: {
