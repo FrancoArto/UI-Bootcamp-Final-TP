@@ -17,10 +17,15 @@ import PropTypes from 'prop-types';
 class UserProfileScreen extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      userData: this.props.navigation.getParam('user')
+    }
+    
     this.renderItem = this.renderItem.bind(this);
   }
   componentDidMount() {
-    this.props.dispatch(fetchTimelineForUserBegin(this.props.userData.id));
+    this.props.dispatch(fetchTimelineForUserBegin(this.state.userData.id));
   }
 
   render() {
@@ -43,7 +48,7 @@ class UserProfileScreen extends Component {
       <ScrollView style={styles.mainContainer}>
         <View style={styles.userData}>
           <UserInfo
-            user={this.props.userData}
+            user={this.state.userData}
           />
         </View>
         <View style={styles.tweetsZone}>
@@ -62,7 +67,7 @@ class UserProfileScreen extends Component {
         retweet_count={item.retweet_count}
         media={item.entities.media}
         created_at={item.created_at}
-        navigationProp={this.props.navigationProp}
+        navigationProp={this.props.navigation}
         media={item.entities.media}
       />
 
@@ -78,18 +83,17 @@ function mapStateToProps(state, props) {
   }
 }
 
-// Doing this merges our actions into the component’s props,
-// while wrapping them in dispatch() so that they immediately dispatch an Action.
-// Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
 
+
+UserProfileScreen.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 
 //Connect everything
 export default connect(mapStateToProps)(UserProfileScreen);
 
 
-UserProfileScreen.propTypes = {
-  navigation: PropTypes.object.isRequired,
-};
+
 
 

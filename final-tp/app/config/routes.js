@@ -14,7 +14,7 @@ const Routes ={
     },
     Home: { screen: HomeScreen },
     Search: { screen: SearchScreen},
-    UserProfile: { screen: UserProfileScreen},
+    UserProfile: {screen: UserProfileScreen},
     OneTweetWhitImg: { screen: OneTweetWhitImg},
     OneTweetWhitoutImg: { screen: OneTweetWhitoutImg}
 };
