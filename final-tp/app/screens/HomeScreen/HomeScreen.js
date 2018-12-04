@@ -10,6 +10,7 @@ import { fetchTweetsTimeline, fetchMoreTweets } from '../../store/tweets/tweetsA
 import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 import styles from './homeScreen.styles';
+import { getFilteredTweets } from '../../store/tweets/tweetsSelector';
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -68,7 +69,7 @@ class HomeScreen extends Component {
             refreshing={this.state.refreshing}
             onRefresh={this.loadMore}
             onEndReachedThreshold={5}
-            onEndReached={() => {this.handleOnEndReached}}
+            onEndReached={() => { this.handleOnEndReached }}
           />
         </View>
       );
@@ -94,32 +95,19 @@ class HomeScreen extends Component {
   }
 
   renderItem({ item }) {
-    //on settings, true is for checked, so 'silence notifications from'
-    if ((this.props.settings.verified === true) && (item.user.verified === false)) {
-      return null;
-    } else if ((this.props.settings.following === true) && (item.user.following === false)) {
-      return null;
-    } else if ((this.props.settings.defaultInfo === true) && (item.user.default_profile === true)) {
-      return null;
-    } else if ((this.props.settings.withLink === true) && (item.entities.urls.length > 0)) {
-      return null;
-    } else if ((this.props.settings.withTruncatedText === true) && (item.truncated === true)) {
-      return null;
-    } else {
-      return (
-        <Tweet
-          user={item.user}
-          mainContent={item.text}
-          uri={item.user.profile_image_url_https}
-          favorite_count={item.favorite_count}
-          retweet_count={item.retweet_count}
-          media={item.entities.media}
-          created_at={item.created_at}
-          navigationProp={this.props.navigation}
-          media={item.entities.media}
-        />
-      )
-    }
+    return (
+      <Tweet
+        user={item.user}
+        mainContent={item.text}
+        uri={item.user.profile_image_url_https}
+        favorite_count={item.favorite_count}
+        retweet_count={item.retweet_count}
+        media={item.entities.media}
+        created_at={item.created_at}
+        navigationProp={this.props.navigation}
+        media={item.entities.media}
+      />
+    )
   }
 
 
@@ -131,10 +119,9 @@ class HomeScreen extends Component {
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
   return {
-    data: state.tweetsReducer.data,
+    data: getFilteredTweets(state),
     loading: state.tweetsReducer.loading,
     error: state.tweetsReducer.error,
-    settings: state.settingsReducer,
   }
 }
 

@@ -13,9 +13,8 @@ import { FETCH_SEARCH_BEGIN,
   fetchMoreTweetsSuccess, 
   fetchMoreTweetsFailure
 } from './tweetsActions';
+import { getMaxId, getSearchText } from './tweetsSelector';
 
-const getSearchText = state => state.tweetsReducer.searchText
-const getMaxId = state => state.tweetsReducer.data[state.tweetsReducer.data.length - 1].id
 const count = 50
 
 
