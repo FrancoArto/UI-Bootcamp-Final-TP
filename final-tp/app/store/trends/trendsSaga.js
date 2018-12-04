@@ -1,6 +1,6 @@
-import { FETCH_TRENDS_BEGIN, fetchTrendsSuccess, fetchTrendsError } from '../actions/trendsActions';
+import { FETCH_TRENDS_BEGIN, fetchTrendsSuccess, fetchTrendsError } from './trendsActions';
 import { takeLatest, put, call } from 'redux-saga/effects';
-import { GET_ARGTRENDS_URL } from '../api/apiUrls';
+import { GET_ARGTRENDS_URL } from '../../api/apiUrls';
 
 export function* trendsSaga() {
   yield takeLatest(FETCH_TRENDS_BEGIN, fetchTrends)  

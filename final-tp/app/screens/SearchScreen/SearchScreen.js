@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
-import { fetchTrendsBegin } from '../../actions/trendsActions';
+import { fetchTrendsBegin } from '../../store/trends/trendsActions';
 import { fetchSearchBegin, fetchMoreResults } from '../../actions/searchTweetsActions';
 import styles from './searchScreen.style';
 

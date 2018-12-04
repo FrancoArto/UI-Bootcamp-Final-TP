@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import Settings from '../../components/Settings/Settings';
-import { settingsChanged } from '../../actions/settingsActions';
+import { settingsChanged } from '../../store/settings/settingsActions';
 import PropTypes from 'prop-types'
 import styles from './settingsScreen.style';
 

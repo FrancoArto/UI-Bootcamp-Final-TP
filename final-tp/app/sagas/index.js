@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects'
 import {timelineSaga} from './timelineSaga'
-import {trendsSaga} from './trendsSaga'
+import {trendsSaga} from '../store/trends/trendsSaga'
 import { searchSaga } from './searchSaga';
 import { userTimelineSaga } from './userTimelineSaga';
 
