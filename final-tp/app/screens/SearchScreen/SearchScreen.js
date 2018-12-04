@@ -10,7 +10,7 @@ import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
 import { fetchTrendsBegin } from '../../store/trends/trendsActions';
-import { fetchSearchBegin, fetchMoreResults } from '../../actions/searchTweetsActions';
+import { fetchSearchBegin, fetchMoreResults } from '../../store/tweets/searchTweetsActions';
 import styles from './searchScreen.style';
 
 

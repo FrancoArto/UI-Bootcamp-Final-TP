@@ -1,5 +1,5 @@
-import { GET_TIMELINE_URL, GET_APPENDTWEETS_URL } from '../api/apiUrls';
-import { FETCH_TIMELINE_BEGIN, fetchTimelineSuccess, fetchTimelineFailure, FETCH_MORE_TWEETS_REQUEST, fetchMoreTweetsSuccess, fetchMoreTweetsFailure } from '../actions/timeLineActions'
+import { GET_TIMELINE_URL, GET_APPENDTWEETS_URL } from '../../api/apiUrls';
+import { FETCH_TIMELINE_BEGIN, fetchTimelineSuccess, fetchTimelineFailure, FETCH_MORE_TWEETS_REQUEST, fetchMoreTweetsSuccess, fetchMoreTweetsFailure } from './timeLineActions'
 import { takeLatest, put, call, all, select } from 'redux-saga/effects';
 
 const twitTimelineCount = 50;

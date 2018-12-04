@@ -1,6 +1,6 @@
 
 import { FETCH_TimelineForUser_BEGIN, FETCH_TimelineForUser_SUCCESS, FETCH_TimelineForUser_FAILURE} from './userActions'
-import { initialStateFech } from '../../reducers/initialState'
+import { initialStateFech } from '../initialState'
  
 const timelineForUserReducer = (state = initialStateFech, action) => {
     switch (action.type) {

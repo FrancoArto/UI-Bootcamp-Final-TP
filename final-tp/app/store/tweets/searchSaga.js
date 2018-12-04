@@ -1,6 +1,6 @@
-import { GET_SEARCHTWEETS_URL, GET_APPENDRESULTS_URL } from '../api/apiUrls';
+import { GET_SEARCHTWEETS_URL, GET_APPENDRESULTS_URL } from '../../api/apiUrls';
 import { takeLatest, put, call, select, all } from 'redux-saga/effects';
-import { FETCH_SEARCH_BEGIN, fetchSearchSuccess, fetchSearchError, FETCH_MORE_RESULTS_REQUEST, fetchMoreResultsSuccess, fetchMoreResultsFailure } from '../actions/searchTweetsActions';
+import { FETCH_SEARCH_BEGIN, fetchSearchSuccess, fetchSearchError, FETCH_MORE_RESULTS_REQUEST, fetchMoreResultsSuccess, fetchMoreResultsFailure } from './searchTweetsActions';
 
 const getSearchText = state => state.searchTweetsReducer.searchText
 const getMaxId = state => state.searchTweetsReducer.data[state.searchTweetsReducer.data.length - 1].id

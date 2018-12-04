@@ -1,6 +1,6 @@
 
 import {SETTINGS_CHANGED} from './settingsActions'
-import { appViewsConfigs } from '../../reducers/initialState'
+import { appViewsConfigs } from '../initialState'
  
 const settingsReducer = (state = appViewsConfigs, action) => {
     if (action.type === SETTINGS_CHANGED) {

@@ -1,6 +1,6 @@
 
-import { FETCH_TIMELINE_BEGIN, FETCH_TIMELINE_SUCCESS, FETCH_TIMELINE_FAILURE, FETCH_MORE_TWEETS_REQUEST, FETCH_MORE_TWEETS_SUCCESS, FETCH_MORE_TWEETS_FAILURE} from '../actions/timeLineActions'
-import { initialStateFech } from './initialState'
+import { FETCH_TIMELINE_BEGIN, FETCH_TIMELINE_SUCCESS, FETCH_TIMELINE_FAILURE, FETCH_MORE_TWEETS_REQUEST, FETCH_MORE_TWEETS_SUCCESS, FETCH_MORE_TWEETS_FAILURE} from './timeLineActions'
+import { initialStateFech } from '../initialState'
  
 const timeLineReducer = (state = initialStateFech, action) => {
     switch (action.type) {

@@ -7,7 +7,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchTweetsTimeline, fetchMoreTweets } from '../../actions/timeLineActions'; //Import your actions
+import { fetchTweetsTimeline, fetchMoreTweets } from '../../store/tweets/timeLineActions'; //Import your actions
 import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 import styles from './homeScreen.styles';

@@ -1,5 +1,5 @@
-import { FETCH_SEARCH_BEGIN, FETCH_SEARCH_SUCCESS, FETCH_SEARCH_FAILURE, FETCH_MORE_RESULTS_REQUEST, FETCH_MORE_RESULTS_SUCCESS, FETCH_MORE_RESULTS_FAILURE} from '../actions/searchTweetsActions'
-import { initialStateFech } from './initialState'
+import { FETCH_SEARCH_BEGIN, FETCH_SEARCH_SUCCESS, FETCH_SEARCH_FAILURE, FETCH_MORE_RESULTS_REQUEST, FETCH_MORE_RESULTS_SUCCESS, FETCH_MORE_RESULTS_FAILURE} from './searchTweetsActions'
+import { initialStateFech } from '../initialState'
  
 const searchTweetsReducer = (state = initialStateFech, action) => {
     switch (action.type) {
