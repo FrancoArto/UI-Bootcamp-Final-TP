@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 import {
   FlatList,
   View,
-  Text,
   ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchTweetsTimeline, fetchMoreTweets } from '../../store/tweets/timeLineActions'; //Import your actions
+import { fetchTweetsTimeline, fetchMoreTweets } from '../../store/tweets/tweetsActions'; //Import your actions
 import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 import styles from './homeScreen.styles';
@@ -69,11 +68,7 @@ class HomeScreen extends Component {
             refreshing={this.state.refreshing}
             onRefresh={this.loadMore}
             onEndReachedThreshold={5}
-            onEndReached={() => {
-              if (!this.props.scrolling) {
-                this.handleOnEndReached()
-              }
-            }}
+            onEndReached={() => {this.handleOnEndReached}}
           />
         </View>
       );
@@ -136,19 +131,12 @@ class HomeScreen extends Component {
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
   return {
-    data: state.timeLineReducer.data,
-    loading: state.timeLineReducer.loading,
-    error: state.timeLineReducer.error,
+    data: state.tweetsReducer.data,
+    loading: state.tweetsReducer.loading,
+    error: state.tweetsReducer.error,
     settings: state.settingsReducer,
-    scrolling: state.timeLineReducer.scrolling
   }
 }
-
-// Doing this merges our actions into the component’s props,
-// while wrapping them in dispatch() so that they immediately dispatch an Action.
-// Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
-
-
 
 //Connect everything
 export default connect(mapStateToProps)(HomeScreen);

@@ -1,13 +1,11 @@
 import { combineReducers } from 'redux';
-import timeLineReducer from './tweets/timeLineReducer'
+import tweetsReducer from './tweets/tweetsReducer'
 import trendsReducer from './trends/trendsReducer'
-import searchTweetsReducer from './tweets/searchTweetsReducer'
 import settingsReducer from './settings/settingsReducer'
 import timelineForUserReducer  from './users/userReducer'
 
 const AppReducer = combineReducers({
-  timeLineReducer,
-  searchTweetsReducer,
+  tweetsReducer,
   trendsReducer,
   settingsReducer,
   timelineForUserReducer  

@@ -1,14 +1,12 @@
 import { all } from 'redux-saga/effects'
-import {timelineSaga} from './tweets/timelineSaga'
 import {trendsSaga} from './trends/trendsSaga'
-import { searchSaga } from './tweets/searchSaga';
 import { userTimelineSaga } from './users/userSaga';
+import { tweetsSaga } from './tweets/tweetsSaga';
 
 export default function* rootSaga() {
   yield all([
-    timelineSaga(),
+    tweetsSaga(),
     trendsSaga(),
-    searchSaga(),
     userTimelineSaga()
   ])
 }

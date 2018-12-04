@@ -4,7 +4,7 @@
     error: null,
     searchText: null,
     userId: null,
-    scrolling: false   
+    searchResults: []
 };
 
 //False is for 'not checked'

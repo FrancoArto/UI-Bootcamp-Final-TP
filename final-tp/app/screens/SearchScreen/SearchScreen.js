@@ -10,7 +10,7 @@ import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
 import { fetchTrendsBegin } from '../../store/trends/trendsActions';
-import { fetchSearchBegin, fetchMoreResults } from '../../store/tweets/searchTweetsActions';
+import { fetchSearchBegin, fetchMoreResults } from '../../store/tweets/tweetsActions';
 import styles from './searchScreen.style';
 
 
@@ -73,7 +73,7 @@ class SearchScreen extends Component {
       return (
         <View style={styles.container}>
           <Search onSearch={this.onSearch} />
-          <SearchResult handleOnEndReached={this.handleOnEndReached} navigationProp={this.props.navigation} searchText={this.state.searchText} loading={this.props.search.loading} data={this.props.search.data} />
+          <SearchResult handleOnEndReached={this.handleOnEndReached} navigationProp={this.props.navigation} searchText={this.state.searchText} loading={this.props.tweets.loading} data={this.props.tweets.searchResults} />
         </View>
       );
     } else {
@@ -93,7 +93,7 @@ class SearchScreen extends Component {
 function mapStateToProps(state, props) {
   return {
     trends: state.trendsReducer,
-    search: state.searchTweetsReducer
+    tweets: state.tweetsReducer
   }
 }
 //Connect everything
