@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import moment from 'moment-timezone';
+import { fetchUserDataRequest } from '../../store/users/userActions';
 
 
 class SingleTweetScreen extends Component {
@@ -14,6 +15,13 @@ class SingleTweetScreen extends Component {
     constructor(props) {
         super(props);
         this.state = { loading: true };
+
+        this.goToUserProfile = this.goToUserProfile.bind(this)
+    }
+
+    goToUserProfile() {
+        this.props.dispatch(fetchUserDataRequest(this.props.tweet.user.id))
+        this.props.navigation.navigate('UserProfile')
     }
 
     async componentWillMount() {
@@ -72,7 +80,7 @@ class SingleTweetScreen extends Component {
 
                         <View style={[styles.flexHead]}>
                             <View style={[styles.flexUserImg]}>
-                                <TouchableOpacity onPress={() => navigation.navigate('UserProfile', { user: navigation.getParam('user', 'USER_ERROR') })}>
+                                <TouchableOpacity onPress={this.goToUserProfile}>
                                     <Thumbnail large source={{ uri: this.props.tweet.user.profile_image_url_https }} />
                                 </TouchableOpacity>
                             </View>

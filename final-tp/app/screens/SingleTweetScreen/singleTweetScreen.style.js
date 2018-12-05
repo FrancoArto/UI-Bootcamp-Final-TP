@@ -60,7 +60,7 @@ export default StyleSheet.create({
 
 
     flexContent: {
-        flex: 0.5,
+        flex: 0.6,
         flexDirection: 'row',
 
         borderWidth: 0,

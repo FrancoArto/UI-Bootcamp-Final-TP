@@ -25,12 +25,12 @@ class UserProfileScreen extends Component {
 
   handleOnTweetWithImgPress(event) {
     this.props.dispatch(fetchSingleTweetBegin(event))
-    this.props.navigation.navigate('OneTweetWithImg')
+    this.props.navigation.navigate('SingleTweet')
   }
 
   handleOnTweetWithoutImgPress(event) {
     this.props.dispatch(fetchSingleTweetBegin(event))
-    this.props.navigation.navigate('OneTweetWithoutImg')
+    this.props.navigation.navigate('SingleTweet')
   }
 
   render() {
