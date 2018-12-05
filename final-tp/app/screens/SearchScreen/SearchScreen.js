@@ -30,6 +30,9 @@ class SearchScreen extends Component {
     this.goToUserProfile = this.goToUserProfile.bind(this)
     this.handleOnTweetWithImgPress = this.handleOnTweetWithImgPress.bind(this)
     this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
+    this.handleClearPress = this.handleClearPress.bind(this);
+    this.handleOnChangeText = this.handleOnChangeText.bind(this)
+
 
   }
 
@@ -81,6 +84,19 @@ class SearchScreen extends Component {
     this.props.dispatch(fetchSearchBegin(searchText));
   }
 
+  handleClearPress() {
+    this.setState({
+      searching: false,
+      searchText: ''
+    })
+  }
+
+  handleOnChangeText(value) {
+    this.setState({
+      searchText: value
+    })
+  }
+
   render() {
     if (this.props.trends.loading) {
       return (
@@ -91,21 +107,27 @@ class SearchScreen extends Component {
     } else if (this.state.searching) {
       return (
         <View style={styles.container}>
-          <Search onSearch={this.onSearch} />
+          <Search onSearch={this.onSearch}
+            searchText={this.state.searchText}
+            onChangeText={this.handleOnChangeText}
+            onClearPress={this.handleClearPress} />
           <SearchResult goToUserProfile={this.goToUserProfile}
-          handleOnEndReached={this.handleOnEndReached} 
-          navigationProp={this.props.navigation} 
-          searchText={this.state.searchText} 
-          loading={this.props.tweets.loading} 
-          data={this.props.tweets.searchResults}
-          onTweetWithImgPress={this.handleOnTweetWithImgPress}
-          onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress} />
+            handleOnEndReached={this.handleOnEndReached}
+            navigationProp={this.props.navigation}
+            searchText={this.state.searchText}
+            loading={this.props.tweets.loading}
+            data={this.props.tweets.searchResults}
+            onTweetWithImgPress={this.handleOnTweetWithImgPress}
+            onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress} />
         </View>
       );
     } else {
       return (
         <View style={styles.container}>
-          <Search onSearch={this.onSearch} />
+          <Search onSearch={this.onSearch}
+          searchText={this.state.searchText}
+          onChangeText={this.handleOnChangeText}
+          onClearPress={this.handleClearPress} />
           <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />
         </View>
       );
