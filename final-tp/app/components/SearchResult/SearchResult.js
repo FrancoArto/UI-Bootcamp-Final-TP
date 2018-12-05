@@ -10,17 +10,23 @@ export default class SearchResult extends Component {
 
     this.renderItem = this.renderItem.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
+    this.goToUserProfile = this.goToUserProfile.bind(this)
+
   }
 
   handleOnEndReached() {
     this.props.handleOnEndReached();
   }
 
-  renderItem({item, index}) {
+  goToUserProfile(event) {
+    this.props.goToUserProfile(event);
+  }
+
+  renderItem({ item, index }) {
     return (
-      <Tweet 
-        user={item.user} 
-        mainContent={item.text} 
+      <Tweet
+        user={item.user}
+        mainContent={item.text}
         uri={item.user.profile_image_url_https}
         accountName={item.user.screen_name}
         favorite_count={item.favorite_count}
@@ -28,16 +34,17 @@ export default class SearchResult extends Component {
         media={item.entities.media}
         navigationProp={this.props.navigationProp}
         created_at={item.created_at}
+        goToUserProfile={this.goToUserProfile}
       />
     )
-}
+  }
 
 
   render() {
     if (this.props.loading) {
       return (
         <View style={styles.activityIndicatorContainer}>
-            <ActivityIndicator animating={true}/>
+          <ActivityIndicator animating={true} />
         </View>
       );
     } else {
@@ -51,12 +58,12 @@ export default class SearchResult extends Component {
             data={this.props.data}
             renderItem={this.renderItem}
             keyExtractor={(item, index) => index.toString()}
-            onEndReachedThreshold = {5}
-            onEndReached = {() => {
+            onEndReachedThreshold={5}
+            onEndReached={() => {
               this.handleOnEndReached()
-            }}/>
+            }} />
         </View>
-        );    
+      );
     }
   }
 }

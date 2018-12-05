@@ -1,8 +1,8 @@
 
 import { FETCH_TRENDS_BEGIN, FETCH_TRENDS_SUCCESS, FETCH_TRENDS_FAILURE} from './trendsActions'
-import { initialStateFech } from '../initialState'
+import { trendsInitialState } from '../initialState'
  
-const trendsReducer = (state = initialStateFech, action) => {
+const trendsReducer = (state = trendsInitialState, action) => {
     switch (action.type) {
         case FETCH_TRENDS_BEGIN:{
             return {

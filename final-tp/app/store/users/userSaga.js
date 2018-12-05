@@ -1,22 +1,20 @@
 import { takeLatest, put, call, select } from 'redux-saga/effects';
-import { FETCH_TimelineForUser_BEGIN, fetchTimelineForUserSuccess, fetchTimelineForUserError } from './userActions';
-import { GET_USERTIMELINE_URL } from '../../api/apiUrls';
+import { FETCH_TimelineForUser_BEGIN, fetchTimelineForUserSuccess, fetchTimelineForUserError, FETCH_USERDATA_REQUEST, fetchUserDataSuccess, fetchUserDataFailure } from './userActions';
+import { GET_USERTIMELINE_URL, GET_USERDATA_URL } from '../../api/apiUrls';
+import { getUser } from './userSelector';
 
-const getUser = state => state.timelineForUserReducer.userId
-
-function* fetchUserTimeline() {
-  const twitTimelineCount = 50;
+function* fetchUserData() {
   try {
-    const user = yield select(getUser)
-    console.log(user)
-    const response = yield call(fetch, GET_USERTIMELINE_URL(user, twitTimelineCount))
+    const userId = yield select(getUser)
+    const response = yield call(fetch, GET_USERDATA_URL(userId))
     const data = yield call([response, "json"]);
-    yield put(fetchTimelineForUserSuccess(data))
+    yield put(fetchUserDataSuccess(data))
   } catch (er) {
-    yield put(fetchTimelineForUserError(er))
+    yield put(fetchUserDataFailure(er))
   }
 }
 
-export function* userTimelineSaga() {
-    yield takeLatest(FETCH_TimelineForUser_BEGIN, fetchUserTimeline)   
+
+export function* userSaga() {
+    yield takeLatest(FETCH_USERDATA_REQUEST, fetchUserData)   
 }

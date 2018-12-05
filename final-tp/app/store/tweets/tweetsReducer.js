@@ -9,12 +9,15 @@ import { FETCH_SEARCH_BEGIN,
   FETCH_TIMELINE_FAILURE, 
   FETCH_MORE_TWEETS_REQUEST, 
   FETCH_MORE_TWEETS_SUCCESS, 
-  FETCH_MORE_TWEETS_FAILURE
+  FETCH_MORE_TWEETS_FAILURE,
+  FETCH_USERTIMELINE_BEGIN,
+  FETCH_USERTIMELINE_SUCCESS,
+  FETCH_USERTIMELINE_FAILURE
 } from './tweetsActions'
-import { initialStateFech } from '../initialState'
+import { tweetsInitialState } from '../initialState'
 
 
-const tweetsReducer = (state = initialStateFech, action) => {
+const tweetsReducer = (state = tweetsInitialState, action) => {
   switch (action.type) {
     case FETCH_SEARCH_BEGIN: {
       return {
@@ -110,6 +113,30 @@ const tweetsReducer = (state = initialStateFech, action) => {
         data: [],
       }
     }
+    case FETCH_USERTIMELINE_BEGIN:{
+      return {
+          ...state,
+           loading:true,
+           error: null,
+        }
+  }           
+  case FETCH_USERTIMELINE_SUCCESS:{
+      return {
+          ...state,
+          loading: false,
+          error: null,
+          userTimeline: action.payload,
+      }
+  }
+  case FETCH_USERTIMELINE_FAILURE:{
+      return {
+          ...state,
+          loading: false,
+          error: action.payload,
+          userTimeline: [],
+          userId: null
+      }
+  }                
     default:
       return state;
   }

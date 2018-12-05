@@ -12,6 +12,7 @@ class Tweet extends PureComponent {
     constructor(props) {
         super(props);
         this.state = { loading: true };
+        this.goToUserProfile = this.goToUserProfile.bind(this)
     }
 
     toTimeZone(apiHour) {
@@ -33,6 +34,10 @@ class Tweet extends PureComponent {
         return this.props.navigationProp
     }
 
+    goToUserProfile(event) {
+        this.props.goToUserProfile(event);
+    }
+
 
     render() {
         if (this.props.media) {
@@ -45,7 +50,9 @@ class Tweet extends PureComponent {
                 retweet_count={this.props.retweet_count}
                 timeAgo={this.toTimeZone(this.props.created_at)}
                 navigationProp={this.navigationProp()}
-                media={this.props.media}>
+                media={this.props.media}
+                goToUserProfile={this.goToUserProfile}
+                >
                 </TweetWithImg>
             );
         } else {
@@ -57,7 +64,9 @@ class Tweet extends PureComponent {
                 favorite_count={this.props.favorite_count}
                 retweet_count={this.props.retweet_count}
                 timeAgo={this.toTimeZone(this.props.created_at)}
-                navigationProp={this.navigationProp()}>
+                navigationProp={this.navigationProp()}
+                goToUserProfile={this.goToUserProfile}
+                >
                 </TweetWithoutImg>
             );
         }

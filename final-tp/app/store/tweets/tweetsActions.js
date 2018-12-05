@@ -10,6 +10,9 @@ export const FETCH_TIMELINE_FAILURE = 'FETCH_TIMELINE_FAILURE'
 export const FETCH_MORE_TWEETS_REQUEST = 'FETCH_MORE_TWEETS_REQUEST'
 export const FETCH_MORE_TWEETS_SUCCESS = 'FETCH_MORE_TWEETS_SUCCESS'
 export const FETCH_MORE_TWEETS_FAILURE = 'FETCH_MORE_TWEETS_FAILURE'
+export const FETCH_USERTIMELINE_BEGIN = 'FETCH_USERTIMELINE_BEGIN'
+export const FETCH_USERTIMELINE_SUCCESS = 'FETCH_USERTIMELINE_SUCCESS'
+export const FETCH_USERTIMELINE_FAILURE = 'FETCH_USERTIMELINE_FAILURE'
 
 
 export const fetchTweetsTimeline = () => ({
@@ -68,3 +71,18 @@ export const fetchMoreResultsFailure = (error) => ({
     type: FETCH_MORE_RESULTS_FAILURE,
     payload: error
 })
+
+export const fetchUserTimelineBegin = (userId) => ({
+    type: FETCH_USERTIMELINE_BEGIN,
+    payload: userId
+  });
+
+export const fetchUserTimelineSuccess = (twitsArray) => ({
+    type: FETCH_USERTIMELINE_SUCCESS,
+    payload: twitsArray
+});
+
+export const fetchUserTimelineError = error => ({
+    type: FETCH_USERTIMELINE_FAILURE,
+    payload: error
+  });

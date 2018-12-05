@@ -11,6 +11,7 @@ import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 import styles from './homeScreen.styles';
 import { getFilteredTweets } from '../../store/tweets/tweetsSelector';
+import { fetchUserDataRequest } from '../../store/users/userActions';
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class HomeScreen extends Component {
 
     this.renderItem = this.renderItem.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
+    this.goToUserProfile = this.goToUserProfile.bind(this)
   }
 
   componentDidMount() {
@@ -32,13 +34,6 @@ class HomeScreen extends Component {
     this.props.dispatch(fetchMoreTweets());
   }
 
-  /* should check this
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.settings !== this.props.settings) {
-      this.props.dispatch(fetchTweetsTimeline());
-    }
-  }
-  */
   loadMore = () => {
     this.setState({ refreshing: true }, () => {
       this.props.dispatch(fetchTweetsTimeline());
@@ -50,6 +45,11 @@ class HomeScreen extends Component {
   }
 
   loadFinish = () => this.setState({ refreshing: false });
+
+  goToUserProfile(event) {
+    this.props.dispatch(fetchUserDataRequest(event))
+    this.props.navigation.navigate('UserProfile')
+  }
 
   render() {
     if (this.props.loading && !this.state.refreshing) {
@@ -106,6 +106,7 @@ class HomeScreen extends Component {
         created_at={item.created_at}
         navigationProp={this.props.navigation}
         media={item.entities.media}
+        goToUserProfile={this.goToUserProfile}
       />
     )
   }

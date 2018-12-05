@@ -10,7 +10,6 @@ import {
 import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
 import { styles } from './userProfileScreen.style'
-import { fetchTimelineForUserBegin } from '../../store/users/userActions';
 import PropTypes from 'prop-types';
 
 
@@ -18,44 +17,37 @@ class UserProfileScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      userData: this.props.navigation.getParam('user')
-    }
-    
     this.renderItem = this.renderItem.bind(this);
-  }
-  componentDidMount() {
-    this.props.dispatch(fetchTimelineForUserBegin(this.state.userData.id));
   }
 
   render() {
-    let tweetView;
-    if (this.props.loading) {
-      tweetView = <View style={styles.activityIndicatorContainer}>
-        <ActivityIndicator animating={true} />
-      </View>
+    if ((this.props.loadingInfo) || (this.props.loadingTimeline)) {
+      return (
+        <View style={styles.activityIndicatorContainer}>
+          <ActivityIndicator animating={true} />
+        </View>
+      )
     } else {
-      tweetView =
-        <FlatList
-          ref='listRef'
-          data={this.props.data}
-          renderItem={this.renderItem}
-          keyExtractor={(item) => item.id.toString()}
-        />
-
+      return (
+        <ScrollView style={styles.mainContainer}>
+          <View style={styles.userData}>
+            <UserInfo
+              user={this.props.userData}
+            />
+          </View>
+          <View style={styles.tweetsZone}>
+            <FlatList
+              ref='listRef'
+              data={this.props.data}
+              renderItem={this.renderItem}
+              keyExtractor={(item) => item.id.toString()}
+            />
+          </View>
+        </ScrollView>
+      )
     }
-    return (
-      <ScrollView style={styles.mainContainer}>
-        <View style={styles.userData}>
-          <UserInfo
-            user={this.state.userData}
-          />
-        </View>
-        <View style={styles.tweetsZone}>
-          {tweetView}
-        </View>
-      </ScrollView>
-    )
+
+
   }
   renderItem({ item }) {
     return (
@@ -69,6 +61,7 @@ class UserProfileScreen extends Component {
         created_at={item.created_at}
         navigationProp={this.props.navigation}
         media={item.entities.media}
+        goToUserProfile={() => {}}
       />
 
     )
@@ -77,9 +70,11 @@ class UserProfileScreen extends Component {
 
 function mapStateToProps(state, props) {
   return {
-    data: state.timelineForUserReducer.data,
-    loading: state.timelineForUserReducer.loading,
-    error: state.timelineForUserReducer.error
+    userData: state.userReducer.userData,
+    loadingInfo : state.userReducer.loading,
+    data: state.tweetsReducer.userTimeline,
+    loadingTimeline: state.tweetsReducer.loading,
+    error: state.tweetsReducer.error
   }
 }
 

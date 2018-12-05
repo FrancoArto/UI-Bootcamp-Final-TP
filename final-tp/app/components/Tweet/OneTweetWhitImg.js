@@ -18,15 +18,6 @@ class OneTweetWhitImg extends Component {
         });
         this.setState({ loading: false });
       }
-
-
-      /*Ejersicio panteado para continuar (Si es que tenemos tiempo)
-      urlInMainContent (mainContent) {
-        let re = new RegExp('/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/');
-        mainContent.match(re)
-
-        return mainContent
-      }*/
       
 
     render() {

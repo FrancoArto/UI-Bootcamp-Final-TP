@@ -1,4 +1,4 @@
-import { GET_SEARCHTWEETS_URL, GET_APPENDRESULTS_URL, GET_TIMELINE_URL, GET_APPENDTWEETS_URL } from '../../api/apiUrls';
+import { GET_SEARCHTWEETS_URL, GET_APPENDRESULTS_URL, GET_TIMELINE_URL, GET_APPENDTWEETS_URL, GET_USERTIMELINE_URL } from '../../api/apiUrls';
 import { takeLatest, put, call, select, all } from 'redux-saga/effects';
 import { FETCH_SEARCH_BEGIN, 
   fetchSearchSuccess, 
@@ -11,9 +11,15 @@ import { FETCH_SEARCH_BEGIN,
   fetchTimelineFailure, 
   FETCH_MORE_TWEETS_REQUEST, 
   fetchMoreTweetsSuccess, 
-  fetchMoreTweetsFailure
+  fetchMoreTweetsFailure,
+  fetchUserTimelineSuccess,
+  fetchUserTimelineError,
+  FETCH_USERTIMELINE_BEGIN,
+  fetchUserTimelineBegin
 } from './tweetsActions';
 import { getMaxId, getSearchText } from './tweetsSelector';
+import { FETCH_USERDATA_SUCCESS } from '../users/userActions';
+import { getUser } from '../users/userSelector';
 
 const count = 50
 
@@ -87,8 +93,30 @@ function* appendTweets() {
   yield takeLatest(FETCH_MORE_TWEETS_REQUEST, fetchTweetsToAppend)   
 }
 
+function* fetchUserTimeline() {
+  const twitTimelineCount = 50;
+  try {
+    const user = yield select(getUser)
+    const response = yield call(fetch, GET_USERTIMELINE_URL(user, twitTimelineCount))
+    const data = yield call([response, "json"]);
+    yield put(fetchUserTimelineSuccess(data))
+  } catch (er) {
+    yield put(fetchUserTimelineError(er))
+  }
+}
+
+function* userDataSucceeded() {
+  yield takeLatest(FETCH_USERDATA_SUCCESS, requestUserTimelineFetch)
+}
+
+function* requestUserTimelineFetch() {
+  yield put(fetchUserTimelineBegin(getUser))
+}
 
 
+function* userTimeline() {
+  yield takeLatest(FETCH_USERTIMELINE_BEGIN, fetchUserTimeline)
+}
 
 
 export function* tweetsSaga() {
@@ -96,6 +124,8 @@ export function* tweetsSaga() {
     loadTimeline(),
     appendTweets(),
     searchTweets(),
-    appendResults()
+    appendResults(),
+    userDataSucceeded(),
+    userTimeline(),
   ])
 }

@@ -27,6 +27,8 @@ class SearchScreen extends Component {
     this.handleBackPress = this.handleBackPress.bind(this);
     this.handleOnTrendPress = this.handleOnTrendPress.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
+    this.goToUserProfile = this.goToUserProfile.bind(this)
+
   }
 
   handleOnEndReached() {
@@ -54,6 +56,11 @@ class SearchScreen extends Component {
     }
   }
 
+  goToUserProfile(event) {
+    this.props.dispatch(fetchUserDataRequest(event))
+    this.props.navigation.navigate('UserProfile')
+  }
+
   onSearch(searchText) {
     this.setState({
       searching: true,
@@ -73,7 +80,7 @@ class SearchScreen extends Component {
       return (
         <View style={styles.container}>
           <Search onSearch={this.onSearch} />
-          <SearchResult handleOnEndReached={this.handleOnEndReached} navigationProp={this.props.navigation} searchText={this.state.searchText} loading={this.props.tweets.loading} data={this.props.tweets.searchResults} />
+          <SearchResult goToUserProfile={this.goToUserProfile} handleOnEndReached={this.handleOnEndReached} navigationProp={this.props.navigation} searchText={this.state.searchText} loading={this.props.tweets.loading} data={this.props.tweets.searchResults} />
         </View>
       );
     } else {

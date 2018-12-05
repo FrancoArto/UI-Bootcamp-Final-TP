@@ -1,11 +1,25 @@
- const initialStateFech = { 
+const tweetsInitialState = {
     data: [],
     loading: false,
     error: null,
     searchText: null,
-    userId: null,
-    searchResults: []
+    searchResults: [],
+    userTimeline: []
 };
+
+const userInitialState = {
+    loading: false,
+    error: null,
+    userId: null,
+    userData: {}
+}
+
+const trendsInitialState = {
+    data: [],
+    loading: false,
+    error: null,
+    searchText: null,
+}
 
 //False is for 'not checked'
 const appViewsConfigs = {
@@ -17,4 +31,4 @@ const appViewsConfigs = {
 }
 
 
- export { initialStateFech, appViewsConfigs };
+export { tweetsInitialState, appViewsConfigs, userInitialState, trendsInitialState };

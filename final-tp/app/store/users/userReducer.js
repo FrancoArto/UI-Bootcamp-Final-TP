@@ -1,10 +1,10 @@
 
-import { FETCH_TimelineForUser_BEGIN, FETCH_TimelineForUser_SUCCESS, FETCH_TimelineForUser_FAILURE} from './userActions'
-import { initialStateFech } from '../initialState'
+import { FETCH_USERDATA_REQUEST, FETCH_USERDATA_SUCCESS, FETCH_USERDATA_FAILURE} from './userActions'
+import { userInitialState } from '../initialState'
  
-const timelineForUserReducer = (state = initialStateFech, action) => {
+const userReducer = (state = userInitialState, action) => {
     switch (action.type) {
-        case FETCH_TimelineForUser_BEGIN:{
+        case FETCH_USERDATA_REQUEST:{
             return {
                 ...state,
                  loading:true,
@@ -12,21 +12,20 @@ const timelineForUserReducer = (state = initialStateFech, action) => {
                  userId: action.payload 
               }
         }           
-        case FETCH_TimelineForUser_SUCCESS:{
+        case FETCH_USERDATA_SUCCESS:{
             return {
                 ...state,
                 loading: false,
                 error: null,
-                data: action.payload,
-                userId: null 
+                userData: action.payload,
             }
         }
-        case FETCH_TimelineForUser_FAILURE:{
+        case FETCH_USERDATA_FAILURE:{
             return {
                 ...state,
                 loading: false,
                 error: action.payload,
-                data: [],
+                userData: {},
                 userId: null
             }
         }                
@@ -34,4 +33,4 @@ const timelineForUserReducer = (state = initialStateFech, action) => {
             return state;
     }
 };
-export default timelineForUserReducer;
+export default userReducer;
