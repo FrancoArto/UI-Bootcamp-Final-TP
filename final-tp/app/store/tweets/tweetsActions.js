@@ -13,6 +13,9 @@ export const FETCH_MORE_TWEETS_FAILURE = 'FETCH_MORE_TWEETS_FAILURE'
 export const FETCH_USERTIMELINE_BEGIN = 'FETCH_USERTIMELINE_BEGIN'
 export const FETCH_USERTIMELINE_SUCCESS = 'FETCH_USERTIMELINE_SUCCESS'
 export const FETCH_USERTIMELINE_FAILURE = 'FETCH_USERTIMELINE_FAILURE'
+export const FETCH_SINGLETWEET_BEGIN = 'FETCH_SINGLETWEET_BEGIN'
+export const FETCH_SINGLETWEET_SUCCESS = 'FETCH_SINGLETWEET_SUCCESS'
+export const FETCH_SINGLETWEET_FAILURE = 'FETCH_SINGLETWEET_FAILURE'
 
 
 export const fetchTweetsTimeline = () => ({
@@ -46,7 +49,7 @@ export const fetchMoreTweetsFailure = (error) => ({
 export const fetchSearchBegin = (searchText) => ({
     type: FETCH_SEARCH_BEGIN,
     payload: searchText
-  });
+});
 
 export const fetchSearchSuccess = (twitsArray) => ({
     type: FETCH_SEARCH_SUCCESS,
@@ -75,7 +78,7 @@ export const fetchMoreResultsFailure = (error) => ({
 export const fetchUserTimelineBegin = (userId) => ({
     type: FETCH_USERTIMELINE_BEGIN,
     payload: userId
-  });
+});
 
 export const fetchUserTimelineSuccess = (twitsArray) => ({
     type: FETCH_USERTIMELINE_SUCCESS,
@@ -85,4 +88,19 @@ export const fetchUserTimelineSuccess = (twitsArray) => ({
 export const fetchUserTimelineError = error => ({
     type: FETCH_USERTIMELINE_FAILURE,
     payload: error
-  });
+});
+
+export const fetchSingleTweetBegin = (tweetId) => ({
+    type: FETCH_SINGLETWEET_BEGIN,
+    payload: tweetId
+});
+
+export const fetchSingleTweetSuccess = (tweet) => ({
+    type: FETCH_SINGLETWEET_SUCCESS,
+    payload: tweet
+});
+
+export const fetchSingleTweetError = error => ({
+    type: FETCH_SINGLETWEET_FAILURE,
+    payload: error
+});

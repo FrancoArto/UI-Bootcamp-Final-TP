@@ -6,7 +6,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchTweetsTimeline, fetchMoreTweets } from '../../store/tweets/tweetsActions'; //Import your actions
+import { fetchTweetsTimeline, fetchMoreTweets, fetchSingleTweetBegin } from '../../store/tweets/tweetsActions'; //Import your actions
 import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 import styles from './homeScreen.styles';
@@ -24,6 +24,18 @@ class HomeScreen extends Component {
     this.renderItem = this.renderItem.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
     this.goToUserProfile = this.goToUserProfile.bind(this)
+    this.handleOnTweetWithImgPress = this.handleOnTweetWithImgPress.bind(this)
+    this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
+  }
+
+  handleOnTweetWithImgPress(event) {
+    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.navigation.navigate('SingleTweet')
+  }
+
+  handleOnTweetWithoutImgPress(event) {
+    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.navigation.navigate('SingleTweet')
   }
 
   componentDidMount() {
@@ -97,6 +109,7 @@ class HomeScreen extends Component {
   renderItem({ item }) {
     return (
       <Tweet
+        id_str={item.id_str}
         user={item.user}
         mainContent={item.text}
         uri={item.user.profile_image_url_https}
@@ -107,6 +120,8 @@ class HomeScreen extends Component {
         navigationProp={this.props.navigation}
         media={item.entities.media}
         goToUserProfile={this.goToUserProfile}
+        onTweetWithImgPress={this.handleOnTweetWithImgPress}
+        onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress}
       />
     )
   }

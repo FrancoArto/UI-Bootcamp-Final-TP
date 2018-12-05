@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
 import { styles } from './userProfileScreen.style'
 import PropTypes from 'prop-types';
+import {fetchSingleTweetBegin} from '../../store/tweets/tweetsActions'
 
 
 class UserProfileScreen extends Component {
@@ -18,6 +19,18 @@ class UserProfileScreen extends Component {
     super(props);
 
     this.renderItem = this.renderItem.bind(this);
+    this.handleOnTweetWithImgPress = this.handleOnTweetWithImgPress.bind(this)
+    this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
+  }
+
+  handleOnTweetWithImgPress(event) {
+    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.navigation.navigate('OneTweetWithImg')
+  }
+
+  handleOnTweetWithoutImgPress(event) {
+    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.navigation.navigate('OneTweetWithoutImg')
   }
 
   render() {
@@ -52,6 +65,7 @@ class UserProfileScreen extends Component {
   renderItem({ item }) {
     return (
       <Tweet
+        id_str={item.id_str}
         user={item.user}
         mainContent={item.text}
         uri={item.user.profile_image_url_https}
@@ -61,7 +75,9 @@ class UserProfileScreen extends Component {
         created_at={item.created_at}
         navigationProp={this.props.navigation}
         media={item.entities.media}
-        goToUserProfile={() => {}}
+        goToUserProfile={() => { }}
+        onTweetWithImgPress={this.handleOnTweetWithImgPress}
+        onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress}
       />
 
     )
@@ -71,7 +87,7 @@ class UserProfileScreen extends Component {
 function mapStateToProps(state, props) {
   return {
     userData: state.userReducer.userData,
-    loadingInfo : state.userReducer.loading,
+    loadingInfo: state.userReducer.loading,
     data: state.tweetsReducer.userTimeline,
     loadingTimeline: state.tweetsReducer.loading,
     error: state.tweetsReducer.error

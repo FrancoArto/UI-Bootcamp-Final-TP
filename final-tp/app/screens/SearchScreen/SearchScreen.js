@@ -10,7 +10,7 @@ import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
 import { fetchTrendsBegin } from '../../store/trends/trendsActions';
-import { fetchSearchBegin, fetchMoreResults } from '../../store/tweets/tweetsActions';
+import { fetchSearchBegin, fetchMoreResults, fetchSingleTweetBegin } from '../../store/tweets/tweetsActions';
 import styles from './searchScreen.style';
 
 
@@ -28,7 +28,19 @@ class SearchScreen extends Component {
     this.handleOnTrendPress = this.handleOnTrendPress.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
     this.goToUserProfile = this.goToUserProfile.bind(this)
+    this.handleOnTweetWithImgPress = this.handleOnTweetWithImgPress.bind(this)
+    this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
 
+  }
+
+  handleOnTweetWithImgPress(event) {
+    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.navigation.navigate('SingleTweet')
+  }
+
+  handleOnTweetWithoutImgPress(event) {
+    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.navigation.navigate('SingleTweet')
   }
 
   handleOnEndReached() {
@@ -80,7 +92,14 @@ class SearchScreen extends Component {
       return (
         <View style={styles.container}>
           <Search onSearch={this.onSearch} />
-          <SearchResult goToUserProfile={this.goToUserProfile} handleOnEndReached={this.handleOnEndReached} navigationProp={this.props.navigation} searchText={this.state.searchText} loading={this.props.tweets.loading} data={this.props.tweets.searchResults} />
+          <SearchResult goToUserProfile={this.goToUserProfile}
+          handleOnEndReached={this.handleOnEndReached} 
+          navigationProp={this.props.navigation} 
+          searchText={this.state.searchText} 
+          loading={this.props.tweets.loading} 
+          data={this.props.tweets.searchResults}
+          onTweetWithImgPress={this.handleOnTweetWithImgPress}
+          onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress} />
         </View>
       );
     } else {

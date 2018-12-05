@@ -11,7 +11,16 @@ export default class SearchResult extends Component {
     this.renderItem = this.renderItem.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
     this.goToUserProfile = this.goToUserProfile.bind(this)
+    this.handleOnTweetWithImgPress = this.handleOnTweetWithImgPress.bind(this)
+    this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
+  }
 
+  handleOnTweetWithImgPress(event) {
+    this.props.onTweetWithImgPress(event)
+  }
+
+  handleOnTweetWithoutImgPress(event) {
+    this.props.onTweetWithoutImgPress(event)
   }
 
   handleOnEndReached() {
@@ -25,6 +34,7 @@ export default class SearchResult extends Component {
   renderItem({ item, index }) {
     return (
       <Tweet
+        id_str={item.id_str}
         user={item.user}
         mainContent={item.text}
         uri={item.user.profile_image_url_https}
@@ -35,6 +45,8 @@ export default class SearchResult extends Component {
         navigationProp={this.props.navigationProp}
         created_at={item.created_at}
         goToUserProfile={this.goToUserProfile}
+        onTweetWithImgPress={this.handleOnTweetWithImgPress}
+        onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress}
       />
     )
   }

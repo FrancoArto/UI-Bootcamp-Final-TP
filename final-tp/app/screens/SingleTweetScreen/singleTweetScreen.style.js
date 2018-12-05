@@ -5,11 +5,17 @@ const height = Dimensions.get('window').height;
 
 
 export default StyleSheet.create({
+    activityIndicatorContainer: {
+        backgroundColor: "#fff",
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1
+    },
 
     flexTweet: {
         flex: 1,
         flexDirection: 'column',
-        
+
         backgroundColor: '#f4f4f4'
     },
 
@@ -19,7 +25,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
 
         borderWidth: 0,
-        paddingTop: width/60,
+        paddingTop: width / 60,
         paddingBottom: 0,
         margin: 0
     },
@@ -29,8 +35,8 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-start',
 
-        width: width/4,
-        padding: width/60
+        width: width / 4,
+        padding: width / 60
     },
 
     flexTitleColumn: {
@@ -38,17 +44,17 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-end',
 
-        width: (width*3)/4,
-        padding: width/60,
-        marginRight: width/3,
-        marginTop: width/60
+        width: (width * 3) / 4,
+        padding: width / 60,
+        marginRight: width / 3,
+        marginTop: width / 60
     },
     flexTitle: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
 
-        padding: 0, 
+        padding: 0,
         margin: 0
     },
 
@@ -58,10 +64,10 @@ export default StyleSheet.create({
         flexDirection: 'row',
 
         borderWidth: 0,
-        paddingRight: width/60,
-        marginRight: width/60,
-        paddingLeft: width/60,
-        marginLeft: width/60,
+        paddingRight: width / 60,
+        marginRight: width / 60,
+        paddingLeft: width / 60,
+        marginLeft: width / 60,
         marginBottom: 0,
         paddingBottom: 0,
         marginTop: 0,
@@ -74,40 +80,40 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignSelf: 'center',
         justifyContent: 'center',
-        height: height/6,
+        height: height / 6,
 
         marginLeft: 0,
         marginRight: 0,
         paddingLeft: 0,
         paddingRight: 0,
 
-        paddingTop: width/80, 
+        paddingTop: width / 80,
         margin: 0
     },
 
     fontUserName: {
-        fontSize: width/20,
+        fontSize: width / 20,
         fontWeight: 'bold',
         color: '#040404'
     },
     fontCountNameAndTime: {
-        fontSize: width/26,
+        fontSize: width / 26,
         color: '#D5D5D5'
     },
     fontMainContent: {
-        fontSize: width/20,
+        fontSize: width / 20,
         color: '#5D5D5D'
     },
     fontNumberIcons: {
-        fontSize: width/18,
+        fontSize: width / 18,
         color: '#5D5D5D'
     },
 
     sizeIcons: {
-        marginLeft: width/80,
-        marginRight:  width/80,
+        marginLeft: width / 80,
+        marginRight: width / 80,
 
-        fontSize: width/10,
+        fontSize: width / 10,
         color: "#909090"
     },
     buttonIcons: {
@@ -118,7 +124,7 @@ export default StyleSheet.create({
         margin: 0,
         padding: 0
     },
-    
+
 
     flexImage: {
         flex: 1,
@@ -126,16 +132,15 @@ export default StyleSheet.create({
 
         marginTop: 0,
         paddingTop: 0,
-        paddingBottom: width/80
+        paddingBottom: width / 80
     },
     imageTweet: {
         marginBottom: 0,
         paddingBottom: 0,
-        marginTop: 0,
+        marginTop: '2%',
         paddingTop: 0,
 
-        height: height/3,
-        width: width
+        height: '90%',
+        flex: 1
     },
-  });
-  
+});

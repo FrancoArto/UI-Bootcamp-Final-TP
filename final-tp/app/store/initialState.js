@@ -4,7 +4,9 @@ const tweetsInitialState = {
     error: null,
     searchText: null,
     searchResults: [],
-    userTimeline: []
+    userTimeline: [],
+    singleTweetId: null,
+    singleTweet: {}
 };
 
 const userInitialState = {

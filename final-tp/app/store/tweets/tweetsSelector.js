@@ -18,3 +18,4 @@ export const getFilteredTweets = state => {
     }
   })
 }
+export const getSingleTweetId = state => state.tweetsReducer.singleTweetId

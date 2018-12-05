@@ -12,6 +12,7 @@ class TweetWithImg extends PureComponent {
         _isMounted = false
 
         this.goToUserProfile = this.goToUserProfile.bind(this)
+        this.handleOnPress = this.handleOnPress.bind(this)
     }
 
     async componentWillMount() {
@@ -34,6 +35,10 @@ class TweetWithImg extends PureComponent {
         this.props.goToUserProfile(this.props.user.id)
     }
 
+    handleOnPress() {
+        this.props.onPress(this.props.id_str)
+    }
+
     render() {
         if (this.state.loading) {
             return (
@@ -43,14 +48,7 @@ class TweetWithImg extends PureComponent {
         } else {
 
             return (
-                <TouchableOpacity onPress={() => this.props.navigationProp.navigate('OneTweetWhitImg', {
-                    user: this.props.user,
-                    uri: this.props.uri,
-                    countName: this.props.user.screen_name,
-                    timeAgo: this.props.timeAgo,
-                    mainContent: this.props.mainContent,
-                    media: this.props.media[0].media_url_https
-                })} >
+                <TouchableOpacity onPress={this.handleOnPress} >
 
                     <View style={[styles.flexTweet]}>
 
