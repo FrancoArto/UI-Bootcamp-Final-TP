@@ -113,7 +113,7 @@ function* userDataSucceeded() {
 }
 
 function* requestUserTimelineFetch() {
-  yield put(fetchUserTimelineBegin(getUser))
+  yield put(fetchUserTimelineBegin())
 }
 
 

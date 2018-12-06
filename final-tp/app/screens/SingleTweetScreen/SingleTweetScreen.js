@@ -8,6 +8,7 @@ import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import moment from 'moment-timezone';
 import { fetchUserDataRequest } from '../../store/users/userActions';
+import Hyperlink from 'react-native-hyperlink'
 
 
 class SingleTweetScreen extends Component {
@@ -99,7 +100,9 @@ class SingleTweetScreen extends Component {
 
 
                         <View style={[styles.flexContent]}>
-                            <Text style={[styles.fontMainContent]}> {this.props.tweet.text} </Text>
+                            <Hyperlink linkDefault={ true } linkStyle={styles.linkStyle}> 
+                                <Text style={[styles.fontMainContent]}> {this.props.tweet.text} </Text>
+                            </Hyperlink>
                         </View>
 
 

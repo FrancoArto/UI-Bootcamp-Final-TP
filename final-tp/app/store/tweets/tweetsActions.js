@@ -75,9 +75,8 @@ export const fetchMoreResultsFailure = (error) => ({
     payload: error
 })
 
-export const fetchUserTimelineBegin = (userId) => ({
+export const fetchUserTimelineBegin = () => ({
     type: FETCH_USERTIMELINE_BEGIN,
-    payload: userId
 });
 
 export const fetchUserTimelineSuccess = (twitsArray) => ({

@@ -98,7 +98,7 @@ export default StyleSheet.create({
     },
     fontCountNameAndTime: {
         fontSize: width / 26,
-        color: '#D5D5D5'
+        color: '#5D5D5D'
     },
     fontMainContent: {
         fontSize: width / 20,
@@ -132,15 +132,19 @@ export default StyleSheet.create({
 
         marginTop: 0,
         paddingTop: 0,
-        paddingBottom: width / 80
+        paddingBottom: width / 80,
+        justifyContent: 'center'
     },
     imageTweet: {
         marginBottom: 0,
         paddingBottom: 0,
         marginTop: '2%',
         paddingTop: 0,
-
+        borderRadius: 20,       
         height: '90%',
-        flex: 1
+        flex: 0.98,
     },
+    linkStyle: {
+        color: '#2980b9',
+    }
 });
