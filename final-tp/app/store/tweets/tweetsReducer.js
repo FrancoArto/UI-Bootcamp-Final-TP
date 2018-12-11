@@ -143,7 +143,7 @@ const tweetsReducer = (state = tweetsInitialState, action) => {
     case FETCH_SINGLETWEET_BEGIN: {
       return {
         ...state,
-        loading: true,
+        loadingSingleTweet: true,
         error: null,
         singleTweetId: action.payload
       }
@@ -151,7 +151,7 @@ const tweetsReducer = (state = tweetsInitialState, action) => {
     case FETCH_SINGLETWEET_SUCCESS: {
       return {
         ...state,
-        loading: false,
+        loadingSingleTweet: false,
         error: null,
         singleTweet: action.payload,
       }
@@ -159,7 +159,7 @@ const tweetsReducer = (state = tweetsInitialState, action) => {
     case FETCH_SINGLETWEET_FAILURE: {
       return {
         ...state,
-        loading: false,
+        loadingSingleTweet: false,
         error: action.payload,
         singleTweet: {},
         singleTweetId: null

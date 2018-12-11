@@ -1,6 +1,7 @@
 const tweetsInitialState = {
     data: [],
     loading: false,
+    loadingSingleTweet: false,
     error: null,
     searchText: null,
     searchResults: [],

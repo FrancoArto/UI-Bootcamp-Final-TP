@@ -134,7 +134,7 @@ class SingleTweetScreen extends Component {
 
 function mapStateToProps(state, props) {
     return {
-        loading: state.tweetsReducer.loading,
+        loading: state.tweetsReducer.loadingSingleTweet,
         tweet: state.tweetsReducer.singleTweet,
     }
 }
