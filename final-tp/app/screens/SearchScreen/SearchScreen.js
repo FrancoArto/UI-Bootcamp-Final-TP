@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import {
   View,
   ActivityIndicator,
-  BackHandler,
+  Easing,
+  Animated,
 } from 'react-native';
 import { connect } from 'react-redux';
 import Search from '../../components/Search/Search';
@@ -12,6 +13,7 @@ import TrendList from '../../components/TrendList/TrendList';
 import { fetchTrendsBegin } from '../../store/trends/trendsActions';
 import { fetchSearchBegin, fetchMoreResults, fetchSingleTweetBegin } from '../../store/tweets/tweetsActions';
 import styles from './searchScreen.style';
+import Fade from '../../components/Fade/Fade';
 
 
 class SearchScreen extends Component {
@@ -23,8 +25,9 @@ class SearchScreen extends Component {
       searchText: ''
     };
 
+    this.searchDispatched = false
+
     this.onSearch = this.onSearch.bind(this);
-    this.handleBackPress = this.handleBackPress.bind(this);
     this.handleOnTrendPress = this.handleOnTrendPress.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
     this.goToUserProfile = this.goToUserProfile.bind(this)
@@ -32,9 +35,9 @@ class SearchScreen extends Component {
     this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
     this.handleClearPress = this.handleClearPress.bind(this);
     this.handleOnChangeText = this.handleOnChangeText.bind(this)
-
-
+    this.handleFading = this.handleFading.bind(this)
   }
+
 
   handleOnTweetWithImgPress(event) {
     this.props.dispatch(fetchSingleTweetBegin(event))
@@ -57,18 +60,6 @@ class SearchScreen extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchTrendsBegin());
-    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
-  }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
-  }
-
-  handleBackPress() {
-    if (this.state.searching === true) {
-      this.setState({ searching: false });
-      return true;
-    }
   }
 
   goToUserProfile(event) {
@@ -77,16 +68,19 @@ class SearchScreen extends Component {
   }
 
   onSearch(searchText) {
-    this.setState({
-      searching: true,
-      searchText: searchText
-    });
     this.props.dispatch(fetchSearchBegin(searchText));
+    this.searchDispatched = true
+  }
+
+  handleFading() {
+    this.setState({
+      searching: !this.state.searching
+    })
   }
 
   handleClearPress() {
+    this.searchDispatched = false
     this.setState({
-      searching: false,
       searchText: ''
     })
   }
@@ -104,37 +98,36 @@ class SearchScreen extends Component {
           <ActivityIndicator animating={true} />
         </View>
       );
-    } else if (this.state.searching) {
+    } else {
       return (
         <View style={styles.container}>
           <Search onSearch={this.onSearch}
             searchText={this.state.searchText}
             onChangeText={this.handleOnChangeText}
             onClearPress={this.handleClearPress} />
-          <SearchResult goToUserProfile={this.goToUserProfile}
-            handleOnEndReached={this.handleOnEndReached}
-            navigationProp={this.props.navigation}
-            searchText={this.state.searchText}
-            loading={this.props.tweets.loading}
-            data={this.props.tweets.searchResults}
-            onTweetWithImgPress={this.handleOnTweetWithImgPress}
-            onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress} />
-        </View>
-      );
-    } else {
-      return (
-        <View style={styles.container}>
-          <Search onSearch={this.onSearch}
-          searchText={this.state.searchText}
-          onChangeText={this.handleOnChangeText}
-          onClearPress={this.handleClearPress} />
-          <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />
+          {this.state.searching && !this.props.tweets.loading &&
+            <Fade fading={this.handleFading} visible={this.searchDispatched} style={styles.container}>
+              <SearchResult goToUserProfile={this.goToUserProfile}
+                handleOnEndReached={this.handleOnEndReached}
+                navigationProp={this.props.navigation}
+                searchText={this.state.searchText}
+                loading={this.props.tweets.loading}
+                data={this.props.tweets.searchResults}
+                onTweetWithImgPress={this.handleOnTweetWithImgPress}
+                onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress} />
+            </Fade>
+          }
+          {!this.state.searching &&
+            <Fade fading={this.handleFading} visible={!this.searchDispatched} style={styles.container}>
+              <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />
+            </Fade>
+          }
         </View>
       );
     }
   }
-
 };
+
 
 
 

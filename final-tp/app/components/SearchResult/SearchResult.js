@@ -15,6 +15,7 @@ export default class SearchResult extends Component {
     this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
   }
 
+
   handleOnTweetWithImgPress(event) {
     this.props.onTweetWithImgPress(event)
   }
@@ -53,29 +54,21 @@ export default class SearchResult extends Component {
 
 
   render() {
-    if (this.props.loading) {
-      return (
-        <View style={styles.activityIndicatorContainer}>
-          <ActivityIndicator animating={true} />
-        </View>
-      );
-    } else {
-      let searchText = this.props.searchText;
-      searchText = searchText.replace(/%23/, '#');
-      return (
-        <View style={styles.container}>
-          <Text>Search Results for: {searchText}</Text>
-          <FlatList
-            ref='searchResult'
-            data={this.props.data}
-            renderItem={this.renderItem}
-            keyExtractor={(item, index) => index.toString()}
-            onEndReachedThreshold={5}
-            onEndReached={() => {
-              this.handleOnEndReached()
-            }} />
-        </View>
-      );
-    }
+    let searchText = this.props.searchText;
+    searchText = searchText.replace(/%23/, '#');
+    return (
+      <View style={styles.container}>
+        <Text>Search Results for: {searchText}</Text>
+        <FlatList
+          ref='searchResult'
+          data={this.props.data}
+          renderItem={this.renderItem}
+          keyExtractor={(item, index) => index.toString()}
+          onEndReachedThreshold={5}
+          onEndReached={() => {
+            this.handleOnEndReached()
+          }} />
+      </View>
+    );
   }
 }
