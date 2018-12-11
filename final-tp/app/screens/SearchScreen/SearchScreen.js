@@ -105,8 +105,8 @@ class SearchScreen extends Component {
             searchText={this.state.searchText}
             onChangeText={this.handleOnChangeText}
             onClearPress={this.handleClearPress} />
-          {this.state.searching && !this.props.tweets.loading &&
-            <Fade fading={this.handleFading} visible={this.searchDispatched} style={styles.container}>
+          {this.state.searching  &&
+            <Fade fading={this.handleFading} visible={this.searchDispatched && !this.props.tweets.loading} style={styles.container}>
               <SearchResult goToUserProfile={this.goToUserProfile}
                 handleOnEndReached={this.handleOnEndReached}
                 navigationProp={this.props.navigation}
