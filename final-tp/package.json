@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "jest-expo": "~27.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-polyfill": "^6.26.0",
+    "jest-expo": "^27.0.1",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1",
     "reactotron-react-native": "^2.1.0",
@@ -16,14 +18,21 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "node_modules/.bin/jest"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!react-native|native-base|native-base-shoutem-theme|@shoutem/animation|@shoutem/ui|tcomb-form-native|react-native-vector-icons|react-navigation|react-native/Libraries/Interaction|expo|@expo/vector-icons|glyphmaps|Ionicons)"
+    ]
   },
   "dependencies": {
     "expo": "^27.0.1",
     "javascript-time-ago": "^1.0.32",
+    "mock-socket": "^8.0.5",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
     "native-base": "^2.8.1",
