@@ -21,7 +21,6 @@ const trendsInitialState = {
     data: [],
     loading: false,
     error: null,
-    searchText: null,
 }
 
 //False is for 'not checked'

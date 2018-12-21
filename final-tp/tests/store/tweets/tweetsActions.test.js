@@ -168,9 +168,10 @@ it('action should return an object with an error payload', () => {
 const tweetId = '4898354987'
 it('action should request a single tweet\'s data', () => {
   const actionOutput = {
-    type: FETCH_SINGLETWEET_BEGIN
+    type: FETCH_SINGLETWEET_BEGIN,
+    payload: tweetId
   }
-  expect(fetchSingleTweetBegin()).toEqual(actionOutput)
+  expect(fetchSingleTweetBegin(tweetId)).toEqual(actionOutput)
 });
 
 it('action should return an object with a tweet\'s data', () => {

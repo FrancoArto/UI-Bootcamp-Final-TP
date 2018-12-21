@@ -9,12 +9,14 @@ import { userData } from "./userMock";
 
 const inputObject = userData
 const error = 'Something happened'
+const userId = '8105922'
 
 it('action should request user data', () => {
   const actionOutput = {
-    type: FETCH_USERDATA_REQUEST
+    type: FETCH_USERDATA_REQUEST,
+    payload: userId
   }
-  expect(fetchUserDataRequest()).toEqual(actionOutput)
+  expect(fetchUserDataRequest(userId)).toEqual(actionOutput)
 });
 
 it('action should return an object with user data', () => {
