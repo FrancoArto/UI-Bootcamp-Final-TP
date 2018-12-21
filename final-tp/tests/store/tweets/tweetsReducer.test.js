@@ -1,24 +1,7 @@
 import tweetsReducer from "../../../app/store/tweets/tweetsReducer";
-import { fetchTweetsTimeline, 
-  fetchTimelineSuccess, 
-  fetchTimelineFailure, 
-  fetchUserTimelineBegin, 
-  fetchUserTimelineSuccess, 
-  fetchUserTimelineError, 
-  fetchMoreTweets, 
-  fetchMoreTweetsSuccess, 
-  fetchMoreTweetsFailure, 
-  fetchSearchBegin, 
-  fetchSearchSuccess, 
-  fetchSearchError, 
-  fetchMoreResults, 
-  fetchMoreResultsSuccess, 
-  fetchMoreResultsFailure, 
-  fetchSingleTweetBegin, 
-  fetchSingleTweetSuccess, 
-  fetchSingleTweetError } from "../../../app/store/tweets/tweetsActions";
 import { singleTweetData, tweetsArray } from "./tweetsMock";
 import { tweetsInitialState } from "../../../app/store/initialState";
+import { FETCH_TIMELINE_BEGIN, FETCH_TIMELINE_SUCCESS, FETCH_TIMELINE_FAILURE, FETCH_USERTIMELINE_BEGIN, FETCH_USERTIMELINE_SUCCESS, FETCH_USERTIMELINE_FAILURE, FETCH_MORE_TWEETS_REQUEST, FETCH_MORE_TWEETS_SUCCESS, FETCH_MORE_TWEETS_FAILURE, FETCH_SEARCH_BEGIN, FETCH_SEARCH_SUCCESS, FETCH_SEARCH_FAILURE, FETCH_MORE_RESULTS_REQUEST, FETCH_MORE_RESULTS_SUCCESS, FETCH_MORE_RESULTS_FAILURE, FETCH_SINGLETWEET_BEGIN, FETCH_SINGLETWEET_SUCCESS, FETCH_SINGLETWEET_FAILURE } from "../../../app/store/tweets/tweetsActions";
 
 const inputObject = singleTweetData
 const inputArray = tweetsArray
@@ -31,7 +14,10 @@ it('should request timeline', () => {
     loading: true,
     error: null,
   }
-  expect(tweetsReducer(initialState, fetchTweetsTimeline())).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_TIMELINE_BEGIN
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should save an array of timeline tweets to state', () => {
@@ -41,7 +27,11 @@ it('should save an array of timeline tweets to state', () => {
     error: null,
     data: inputArray
   }
-  expect(tweetsReducer(initialState, fetchTimelineSuccess(inputArray))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_TIMELINE_SUCCESS,
+    payload: inputArray
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an error message to state', () => {
@@ -51,7 +41,11 @@ it('should set an error message to state', () => {
     error: error,
     data: []
   }
-  expect(tweetsReducer(initialState, fetchTimelineFailure(error))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_TIMELINE_FAILURE,
+    payload: error
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 //User timeline
@@ -61,7 +55,10 @@ it('should request user timeline', () => {
     loading: true,
     error: null,
   }
-  expect(tweetsReducer(initialState, fetchUserTimelineBegin())).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_USERTIMELINE_BEGIN,
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an array of user timeline tweets to state', () => {
@@ -71,7 +68,11 @@ it('should set an array of user timeline tweets to state', () => {
     error: null,
     userTimeline: inputArray
   }
-  expect(tweetsReducer(initialState, fetchUserTimelineSuccess(inputArray))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_USERTIMELINE_SUCCESS,
+    payload: inputArray
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an error message to state', () => {
@@ -81,17 +82,24 @@ it('should set an error message to state', () => {
     error: error,
     userTimeline: []
   }
-  expect(tweetsReducer(initialState, fetchUserTimelineError(error))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_USERTIMELINE_FAILURE,
+    payload: error
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 //Timeline infinite scroll
-it('action should request tweets to append to timeline', () => {
+it('should request tweets to append to timeline', () => {
   const expectedOutput = {
     ...initialState,
     loading: false,
     error: null,
   }
-  expect(tweetsReducer(initialState, fetchMoreTweets())).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_MORE_TWEETS_REQUEST,
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should append tweets to timeline', () => {
@@ -101,7 +109,11 @@ it('should append tweets to timeline', () => {
     error: null,
     data: inputArray
   }
-  expect(tweetsReducer(initialState, fetchMoreTweetsSuccess(inputArray))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_MORE_TWEETS_SUCCESS,
+    payload: inputArray
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an error message to state', () => {
@@ -111,7 +123,11 @@ it('should set an error message to state', () => {
     error: error,
     data: []
   }
-  expect(tweetsReducer(initialState, fetchMoreTweetsFailure(error))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_MORE_TWEETS_FAILURE,
+    payload: error
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 
@@ -124,7 +140,11 @@ it('should request search results', () => {
     error: null,
     searchText: searchText
   }
-  expect(tweetsReducer(initialState, fetchSearchBegin(searchText))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_SEARCH_BEGIN,
+    payload: searchText
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an array of results to state', () => {
@@ -134,7 +154,11 @@ it('should set an array of results to state', () => {
     error: null,
     searchResults: inputArray,
   }
-  expect(tweetsReducer(initialState, fetchSearchSuccess(inputArray))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_SEARCH_SUCCESS,
+    payload: inputArray
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an error message to state', () => {
@@ -144,7 +168,11 @@ it('should set an error message to state', () => {
     error: error,
     searchResults: []
   }
-  expect(tweetsReducer(initialState, fetchSearchError(error))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_SEARCH_FAILURE,
+    payload: error
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 
@@ -155,7 +183,10 @@ it('should request more search results', () => {
     loading: false,
     error: null,
   }
-  expect(tweetsReducer(initialState, fetchMoreResults())).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_MORE_RESULTS_REQUEST,
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should append an array of results', () => {
@@ -165,7 +196,11 @@ it('should append an array of results', () => {
     error: null,
     searchResults: inputArray,
   }
-  expect(tweetsReducer(initialState, fetchMoreResultsSuccess(inputArray))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_MORE_RESULTS_SUCCESS,
+    payload: inputArray
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an error message to state', () => {
@@ -175,7 +210,11 @@ it('should set an error message to state', () => {
     error: error,
     searchResults: []
   }
-  expect(tweetsReducer(initialState, fetchMoreResultsFailure(error))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_MORE_RESULTS_FAILURE,
+    payload: error
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 //Single tweet data
@@ -187,7 +226,11 @@ it('should request a single tweet\'s data', () => {
     error: null,
     singleTweetId: tweetId
   }
-  expect(tweetsReducer(initialState, fetchSingleTweetBegin(tweetId))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_SINGLETWEET_BEGIN,
+    payload: tweetId
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an object with a tweet\'s data to state', () => {
@@ -197,7 +240,11 @@ it('should set an object with a tweet\'s data to state', () => {
     error: null,
     singleTweet: inputObject
   }
-  expect(tweetsReducer(initialState, fetchSingleTweetSuccess(inputObject))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_SINGLETWEET_SUCCESS,
+    payload: inputObject
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
 
 it('should set an error message to state', () => {
@@ -208,5 +255,9 @@ it('should set an error message to state', () => {
     singleTweet: {},
     singleTweetId: null
   }
-  expect(tweetsReducer(initialState, fetchSingleTweetError(error))).toEqual(expectedOutput)
+  const action = {
+    type: FETCH_SINGLETWEET_FAILURE,
+    payload: error
+  }
+  expect(tweetsReducer(initialState, action)).toEqual(expectedOutput)
 });
