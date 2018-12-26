@@ -6,7 +6,7 @@ export function* trendsSaga() {
   yield takeLatest(FETCH_TRENDS_BEGIN, fetchTrends)  
 }
 
-function* fetchTrends() {
+export function* fetchTrends() {
   try {
     const response = yield call(fetch, GET_ARGTRENDS_URL())
     const data = yield call([response, "json"]);

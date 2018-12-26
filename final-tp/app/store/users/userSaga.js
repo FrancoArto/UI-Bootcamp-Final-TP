@@ -3,7 +3,7 @@ import { FETCH_TimelineForUser_BEGIN, fetchTimelineForUserSuccess, fetchTimeline
 import { GET_USERTIMELINE_URL, GET_USERDATA_URL } from '../../api/apiUrls';
 import { getUser } from './userSelector';
 
-function* fetchUserData() {
+export function* fetchUserData() {
   try {
     const userId = yield select(getUser)
     const response = yield call(fetch, GET_USERDATA_URL(userId))

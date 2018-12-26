@@ -27,7 +27,7 @@ import { getUser } from '../users/userSelector';
 const count = 50
 
 
-function* fetchSearchResults() {  
+export function* fetchSearchResults() {  
   try {
     const searchText = yield select(getSearchText)
     const response = yield call(fetch, GET_SEARCHTWEETS_URL(searchText))
@@ -43,7 +43,7 @@ function* searchTweets() {
 }
 
 
-function* fetchResultsToAppend() {
+export function* fetchResultsToAppend() {
   try {
     const searchText = yield select(getSearchText)
     const maxId = yield select(getMaxId)
@@ -64,7 +64,7 @@ function* appendResults() {
 
 
 
-function* fetchTimeline() {
+export function* fetchTimeline() {
   try {
     const response = yield call(fetch, GET_TIMELINE_URL(count))
     const data = yield call([response, "json"]);
@@ -80,10 +80,10 @@ function* loadTimeline() {
 
 
 
-function* fetchTweetsToAppend() {
+export function* fetchTweetsToAppend() {
   try {
     const maxId = yield select(getMaxId)
-    const response = yield call(fetch, GET_APPENDTWEETS_URL(twitTimelineCount, maxId))
+    const response = yield call(fetch, GET_APPENDTWEETS_URL(count, maxId))
     const array = yield call([response, "json"]);
     const data = array.slice(1)
     yield put(fetchMoreTweetsSuccess(data))
@@ -96,11 +96,10 @@ function* appendTweets() {
   yield takeLatest(FETCH_MORE_TWEETS_REQUEST, fetchTweetsToAppend)   
 }
 
-function* fetchUserTimeline() {
-  const twitTimelineCount = 50;
+export function* fetchUserTimeline() {
   try {
     const user = yield select(getUser)
-    const response = yield call(fetch, GET_USERTIMELINE_URL(user, twitTimelineCount))
+    const response = yield call(fetch, GET_USERTIMELINE_URL(user, count))
     const data = yield call([response, "json"]);
     yield put(fetchUserTimelineSuccess(data))
   } catch (er) {
@@ -121,7 +120,7 @@ function* userTimeline() {
   yield takeLatest(FETCH_USERTIMELINE_BEGIN, fetchUserTimeline)
 }
 
-function* fetchSingleTweet() {
+export function* fetchSingleTweet() {
   try {
     const tweetId = yield select(getSingleTweetId)
     const response = yield call(fetch, GET_SINGLETWEET_URL(tweetId))
