@@ -1,7 +1,7 @@
 import {call, put, select} from 'redux-saga/effects'
-import { fetchUserData } from "../../../app/store/users/userSaga";
-import { GET_USERDATA_URL } from "../../../app/api/apiUrls";
-import { getUser } from '../../../app/store/users/userSelector';
+import { fetchUserData } from "./userSaga";
+import { GET_USERDATA_URL } from "../../api/apiUrls";
+import { getUser } from './userSelector';
 
 describe('user saga', () => {
   it('should fetch user data', () => {

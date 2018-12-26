@@ -3,7 +3,7 @@ import { FETCH_TRENDS_BEGIN,
   FETCH_TRENDS_SUCCESS, 
   fetchTrendsSuccess, 
   fetchTrendsError, 
-  FETCH_TRENDS_FAILURE } from "../../../app/store/trends/trendsActions";
+  FETCH_TRENDS_FAILURE } from "./trendsActions";
 import { trendsArray } from "./trendsMock";
 
 

@@ -140,10 +140,11 @@ function mapStateToProps(state, props) {
 //Connect everything
 export default connect(mapStateToProps)(SearchScreen);
 
-
+/*
 SearchScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
+*/
 
 SearchScreen.navigationOptions = {
   title: 'Search',

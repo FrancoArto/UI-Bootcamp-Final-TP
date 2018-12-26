@@ -79,10 +79,11 @@ function mapDispatchToProps(dispatch) {
 
 //Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen);
-
+/*
 SettingsScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
+*/
 
 SettingsScreen.navigationOptions = {
   title: 'Settings',

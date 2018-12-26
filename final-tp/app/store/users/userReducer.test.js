@@ -1,6 +1,6 @@
-import { fetchUserDataRequest, fetchUserDataSuccess, fetchUserDataFailure } from "../../../app/store/users/userActions";
+import { fetchUserDataRequest, fetchUserDataSuccess, fetchUserDataFailure } from "./userActions";
 import { userData } from "./userMock";
-import userReducer from "../../../app/store/users/userReducer";
+import userReducer from "./userReducer";
 
 const userId = '8105922'
 

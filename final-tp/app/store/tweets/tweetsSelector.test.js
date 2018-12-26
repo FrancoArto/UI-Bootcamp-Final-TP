@@ -1,5 +1,5 @@
 import { tweetsArray, singleTweetData } from "./tweetsMock";
-import { getSearchText, getMaxId, getSingleTweetId, getFilteredTweets } from "../../../app/store/tweets/tweetsSelector";
+import { getSearchText, getMaxId, getSingleTweetId, getFilteredTweets } from "./tweetsSelector";
 
 const state = {
   tweetsReducer: {

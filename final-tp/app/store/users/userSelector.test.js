@@ -1,4 +1,4 @@
-import { getUser } from "../../../app/store/users/userSelector";
+import { getUser } from "./userSelector";
 
 const state = {
   userReducer: {

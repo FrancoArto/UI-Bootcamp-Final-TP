@@ -34,7 +34,7 @@ import { fetchTweetsTimeline,
   FETCH_SEARCH_BEGIN,
   fetchSingleTweetBegin,
   fetchSingleTweetSuccess,
-  fetchSingleTweetError} from "../../../app/store/tweets/tweetsActions";
+  fetchSingleTweetError} from "./tweetsActions";
 
 const inputObject = singleTweetData
 const inputArray = tweetsArray

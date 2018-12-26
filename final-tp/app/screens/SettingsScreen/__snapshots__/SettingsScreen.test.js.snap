@@ -1,0 +1,647 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    automaticallyAdjustContentInsets={false}
+    contentContainerStyle={
+      Array [
+        Object {
+          "padding": undefined,
+        },
+        undefined,
+      ]
+    }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardShouldPersistTaps="handled"
+    keyboardSpace={0}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    resetScrollToCoords={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
+    showsVerticalScrollIndicator={true}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      }
+    }
+    viewIsInsideTabBar={false}
+    virtual={undefined}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#ccc",
+            "borderLeftWidth": 0.5,
+            "borderRadius": 2,
+            "borderRightWidth": 0.5,
+            "borderTopWidth": 0.5,
+            "elevation": 3,
+            "flexWrap": "nowrap",
+            "marginBottom": 5,
+            "marginLeft": 2,
+            "marginRight": 2,
+            "marginTop": 5,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.1,
+            "shadowRadius": 1.5,
+          }
+        }
+        virtual={undefined}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fff",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "paddingBottom": 10,
+                "paddingLeft": 15,
+                "paddingRight": 15,
+                "paddingTop": 10,
+              },
+              Object {
+                "backgroundColor": "#79a6d2",
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "flex-start",
+                "alignSelf": "stretch",
+                "flex": 1,
+              }
+            }
+            virtual={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFFFFF",
+                  "fontWeight": "800",
+                }
+              }
+            >
+              Silence notifications from...
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": 0.5,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "marginLeft": 16,
+              "paddingBottom": 13,
+              "paddingRight": 16,
+              "paddingTop": 13,
+            }
+          }
+          virtual={undefined}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": null,
+                "alignSelf": null,
+                "flex": 1,
+              }
+            }
+            virtual={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+              People who have not verified the account
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomWidth": 1,
+                "borderColor": "#039BE5",
+                "borderLeftWidth": 1,
+                "borderRadius": 13,
+                "borderRightWidth": 1,
+                "borderTopWidth": 1,
+                "height": 20,
+                "left": 10,
+                "marginLeft": -10,
+                "marginRight": 10,
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingBottom": 0,
+                "paddingLeft": 3,
+                "width": 20,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": 0.5,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "marginLeft": 16,
+              "paddingBottom": 13,
+              "paddingRight": 16,
+              "paddingTop": 13,
+            }
+          }
+          virtual={undefined}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": null,
+                "alignSelf": null,
+                "flex": 1,
+              }
+            }
+            virtual={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+              People who do not follow
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomWidth": 1,
+                "borderColor": "#039BE5",
+                "borderLeftWidth": 1,
+                "borderRadius": 13,
+                "borderRightWidth": 1,
+                "borderTopWidth": 1,
+                "height": 20,
+                "left": 10,
+                "marginLeft": -10,
+                "marginRight": 10,
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingBottom": 0,
+                "paddingLeft": 3,
+                "width": 20,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": 0.5,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "marginLeft": 16,
+              "paddingBottom": 13,
+              "paddingRight": 16,
+              "paddingTop": 13,
+            }
+          }
+          virtual={undefined}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": null,
+                "alignSelf": null,
+                "flex": 1,
+              }
+            }
+            virtual={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+              People who have default profile information
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomWidth": 1,
+                "borderColor": "#039BE5",
+                "borderLeftWidth": 1,
+                "borderRadius": 13,
+                "borderRightWidth": 1,
+                "borderTopWidth": 1,
+                "height": 20,
+                "left": 10,
+                "marginLeft": -10,
+                "marginRight": 10,
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingBottom": 0,
+                "paddingLeft": 3,
+                "width": 20,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": 0.5,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "marginLeft": 16,
+              "paddingBottom": 13,
+              "paddingRight": 16,
+              "paddingTop": 13,
+            }
+          }
+          virtual={undefined}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": null,
+                "alignSelf": null,
+                "flex": 1,
+              }
+            }
+            virtual={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+              Tweets that contains a link
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomWidth": 1,
+                "borderColor": "#039BE5",
+                "borderLeftWidth": 1,
+                "borderRadius": 13,
+                "borderRightWidth": 1,
+                "borderTopWidth": 1,
+                "height": 20,
+                "left": 10,
+                "marginLeft": -10,
+                "marginRight": 10,
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingBottom": 0,
+                "paddingLeft": 3,
+                "width": 20,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "borderBottomWidth": 0.5,
+              "borderColor": "#c9c9c9",
+              "flexDirection": "row",
+              "marginLeft": 16,
+              "paddingBottom": 13,
+              "paddingRight": 16,
+              "paddingTop": 13,
+            }
+          }
+          virtual={undefined}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": null,
+                "alignSelf": null,
+                "flex": 1,
+              }
+            }
+            virtual={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+              Tweets that has text truncated
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomWidth": 1,
+                "borderColor": "#039BE5",
+                "borderLeftWidth": 1,
+                "borderRadius": 13,
+                "borderRightWidth": 1,
+                "borderTopWidth": 1,
+                "height": 20,
+                "left": 10,
+                "marginLeft": -10,
+                "marginRight": 10,
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingBottom": 0,
+                "paddingLeft": 3,
+                "width": 20,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

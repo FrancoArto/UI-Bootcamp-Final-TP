@@ -1,8 +1,8 @@
 import {call, put, select} from 'redux-saga/effects'
-import { fetchTimeline, fetchTweetsToAppend, fetchSearchResults, fetchResultsToAppend, fetchUserTimeline, fetchSingleTweet } from "../../../app/store/tweets/tweetsSaga";
-import { GET_TIMELINE_URL, GET_APPENDRESULTS_URL, GET_APPENDTWEETS_URL, GET_SEARCHTWEETS_URL, GET_USERTIMELINE_URL, GET_SINGLETWEET_URL } from "../../../app/api/apiUrls";
-import { getMaxId, getSearchText, getSingleTweetId } from '../../../app/store/tweets/tweetsSelector';
-import { getUser } from '../../../app/store/users/userSelector';
+import { fetchTimeline, fetchTweetsToAppend, fetchSearchResults, fetchResultsToAppend, fetchUserTimeline, fetchSingleTweet } from "./tweetsSaga";
+import { GET_TIMELINE_URL, GET_APPENDRESULTS_URL, GET_APPENDTWEETS_URL, GET_SEARCHTWEETS_URL, GET_USERTIMELINE_URL, GET_SINGLETWEET_URL } from "../../api/apiUrls";
+import { getMaxId, getSearchText, getSingleTweetId } from './tweetsSelector';
+import { getUser } from '../users/userSelector';
 
 describe('tweets saga', () => {
   it('should fetch timeline', () => {

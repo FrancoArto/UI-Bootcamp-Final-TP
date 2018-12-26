@@ -1,4 +1,4 @@
-import { settingsChanged, SETTINGS_CHANGED } from "../../../app/store/settings/settingsActions";
+import { settingsChanged, SETTINGS_CHANGED } from "./settingsActions";
 
 let inputSettings = {
   verified: false,

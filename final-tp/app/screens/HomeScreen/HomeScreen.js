@@ -145,10 +145,11 @@ function mapStateToProps(state, props) {
 export default connect(mapStateToProps)(HomeScreen);
 
 
-
+/*
 HomeScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
+*/
 
 HomeScreen.navigationOptions = {
   title: 'Home',

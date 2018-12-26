@@ -1,6 +1,6 @@
-import { fetchTrends } from "../../../app/store/trends/trendsSaga";
+import { fetchTrends } from "./trendsSaga";
 import {call, put} from 'redux-saga/effects'
-import { GET_ARGTRENDS_URL } from "../../../app/api/apiUrls";
+import { GET_ARGTRENDS_URL } from "../../api/apiUrls";
 
 describe('trends saga', () => {
   it('should fetch trends', () => {

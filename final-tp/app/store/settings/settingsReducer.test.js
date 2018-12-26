@@ -1,5 +1,5 @@
-import settingsReducer from "../../../app/store/settings/settingsReducer";
-import { settingsChanged } from "../../../app/store/settings/settingsActions";
+import settingsReducer from "./settingsReducer";
+import { settingsChanged } from "./settingsActions";
 
 const inputSettings = {
   verified: false,

@@ -3,7 +3,7 @@ import { FETCH_USERDATA_REQUEST,
   FETCH_USERDATA_FAILURE, 
   fetchUserDataFailure, 
   fetchUserDataRequest, 
-  fetchUserDataSuccess } from "../../../app/store/users/userActions";
+  fetchUserDataSuccess } from "./userActions";
 import { userData } from "./userMock";
 
 

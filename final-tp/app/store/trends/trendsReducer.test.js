@@ -1,5 +1,5 @@
-import trendsReducer from "../../../app/store/trends/trendsReducer";
-import { fetchTrendsBegin, fetchTrendsSuccess, fetchTrendsError } from "../../../app/store/trends/trendsActions";
+import trendsReducer from "./trendsReducer";
+import { fetchTrendsBegin, fetchTrendsSuccess, fetchTrendsError } from "./trendsActions";
 import { trendsArray } from "./trendsMock";
 
 
