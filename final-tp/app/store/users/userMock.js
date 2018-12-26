@@ -1,4 +1,4 @@
-export const userData = {
+export default {
   "id": 8105922,
   "id_str": "8105922",
   "name": "Clarín",

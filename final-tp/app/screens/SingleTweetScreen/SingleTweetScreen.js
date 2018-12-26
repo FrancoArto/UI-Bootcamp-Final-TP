@@ -11,7 +11,7 @@ import { fetchUserDataRequest } from '../../store/users/userActions';
 import Hyperlink from 'react-native-hyperlink'
 
 
-class SingleTweetScreen extends Component {
+export class SingleTweetScreen extends Component {
 
     constructor(props) {
         super(props);

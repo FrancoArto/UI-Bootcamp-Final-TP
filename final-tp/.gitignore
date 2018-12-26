@@ -19,5 +19,4 @@ yarn-error.log*
 #coverage
 /coverage
 
-#snapshots
-/tests/__snapshots__
+

@@ -14,24 +14,20 @@ import PropTypes from 'prop-types';
 import {fetchSingleTweetBegin} from '../../store/tweets/tweetsActions'
 
 
-class UserProfileScreen extends Component {
+export class UserProfileScreen extends Component {
   constructor(props) {
     super(props);
 
     this.renderItem = this.renderItem.bind(this);
-    this.handleOnTweetWithImgPress = this.handleOnTweetWithImgPress.bind(this)
-    this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
+    this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
   }
 
-  handleOnTweetWithImgPress(event) {
+  handleOnTweetPress(event) {
     this.props.dispatch(fetchSingleTweetBegin(event))
     this.props.navigation.navigate('SingleTweet')
   }
 
-  handleOnTweetWithoutImgPress(event) {
-    this.props.dispatch(fetchSingleTweetBegin(event))
-    this.props.navigation.navigate('SingleTweet')
-  }
+  
 
   render() {
     if ((this.props.loadingInfo) || (this.props.loadingTimeline)) {
@@ -76,8 +72,7 @@ class UserProfileScreen extends Component {
         navigationProp={this.props.navigation}
         media={item.entities.media}
         goToUserProfile={() => { }}
-        onTweetWithImgPress={this.handleOnTweetWithImgPress}
-        onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress}
+        onTweetPress={this.handleOnTweetPress}
       />
 
     )
@@ -95,10 +90,10 @@ function mapStateToProps(state, props) {
 }
 
 
-
+/*
 UserProfileScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
-};
+};*/
 
 
 //Connect everything

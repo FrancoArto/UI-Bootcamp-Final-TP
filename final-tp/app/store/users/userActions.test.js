@@ -4,10 +4,10 @@ import { FETCH_USERDATA_REQUEST,
   fetchUserDataFailure, 
   fetchUserDataRequest, 
   fetchUserDataSuccess } from "./userActions";
-import { userData } from "./userMock";
+import  userMock  from "./userMock";
 
 
-const inputObject = userData
+const inputObject =  userMock
 const error = 'Something happened'
 const userId = '8105922'
 
@@ -22,9 +22,9 @@ it('action should request user data', () => {
 it('action should return an object with user data', () => {
   const actionOutput = {
     type: FETCH_USERDATA_SUCCESS,
-    payload: userData
+    payload: inputObject
   }
-  expect(fetchUserDataSuccess(userData)).toEqual(actionOutput)
+  expect(fetchUserDataSuccess(inputObject)).toEqual(actionOutput)
 });
 
 it('action should return an object with an error payload', () => {

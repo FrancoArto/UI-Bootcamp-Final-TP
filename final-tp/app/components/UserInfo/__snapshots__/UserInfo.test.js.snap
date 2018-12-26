@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderBottomColor": "#AAA",
+      "borderBottomWidth": 0.5,
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 22,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://pbs.twimg.com/profile_banners/8105922/1544741225",
+        }
+      }
+      style={
+        Object {
+          "height": 296.44444444444446,
+          "width": 750,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 20,
+        "flexDirection": "row",
+        "marginLeft": 11.538461538461538,
+      }
+    }
+  >
+    <View>
+      <Image
+        large={true}
+        source={
+          Object {
+            "uri": "http://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 80,
+              "width": 80,
+            },
+            Object {
+              "borderColor": "white",
+              "borderWidth": 3,
+            },
+          ]
+        }
+        virtual={undefined}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginLeft": 34.09090909090909,
+          "marginTop": 75,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 41.666666666666664,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Clarín
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#9c9c9c",
+          }
+        }
+      >
+        @todonoticias
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 35,
+        "marginLeft": 25,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginTop": 13.636363636363637,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#5D5D5D",
+            "fontSize": 28.846153846153847,
+            "fontWeight": "400",
+          }
+        }
+      >
+        Noticias de Argentina y el mundo las 24 horas. Información de último momento, opinión, análisis e informes especiales.
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "marginTop": 5,
+        }
+      }
+    >
+      <View />
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "blue",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+           
+          http://t.co/1RuczZo0FK
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "marginTop": 5,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#989898",
+            "fontSize": 26.785714285714285,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        />
+        Se unio el: 
+        10 Aug 2007
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "marginTop": 5,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#989898",
+            "fontSize": 26.785714285714285,
+          }
+        }
+      >
+         
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+            
+          265
+            
+        </Text>
+        Siguiendo 
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#989898",
+            "fontSize": 26.785714285714285,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+            
+          2810171
+            
+        </Text>
+        Seguidores
+      </Text>
+    </View>
+  </View>
+</View>
+`;

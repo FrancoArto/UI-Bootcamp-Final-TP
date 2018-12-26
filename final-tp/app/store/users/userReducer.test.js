@@ -1,5 +1,5 @@
 import { fetchUserDataRequest, fetchUserDataSuccess, fetchUserDataFailure } from "./userActions";
-import { userData } from "./userMock";
+import  userMock  from "./userMock";
 import userReducer from "./userReducer";
 
 const userId = '8105922'
@@ -13,7 +13,7 @@ it('should request user data', () => {
   expect(userReducer(null, fetchUserDataRequest(userId))).toEqual(expectedOutput)
 });
 
-const reducerInput = userData
+const reducerInput = userMock
 it('should save user data to state', () => {
   const expectedOutput = {
     loading: false,

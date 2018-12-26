@@ -1,0 +1,664 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      Object {
+        "flex": 0.85,
+        "paddingLeft": 10,
+      },
+    ]
+  }
+  virtual={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#000",
+        "fontFamily": "System",
+        "fontSize": 16,
+      }
+    }
+    uppercase={false}
+    virtual={undefined}
+  >
+    Trends for you
+  </Text>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "name": "Sofía Herrera",
+          "promoted_content": null,
+          "query": "%22Sof%C3%ADa+Herrera%22",
+          "tweet_volume": null,
+          "url": "http://twitter.com/search?q=%22Sof%C3%ADa+Herrera%22",
+        },
+        Object {
+          "name": "#BuenJueves",
+          "promoted_content": null,
+          "query": "%23BuenJueves",
+          "tweet_volume": 10263,
+          "url": "http://twitter.com/search?q=%23BuenJueves",
+        },
+        Object {
+          "name": "La Cámara Federal",
+          "promoted_content": null,
+          "query": "%22La+C%C3%A1mara+Federal%22",
+          "tweet_volume": null,
+          "url": "http://twitter.com/search?q=%22La+C%C3%A1mara+Federal%22",
+        },
+        Object {
+          "name": "#Getting_Closer",
+          "promoted_content": null,
+          "query": "%23Getting_Closer",
+          "tweet_volume": 111867,
+          "url": "http://twitter.com/search?q=%23Getting_Closer",
+        },
+        Object {
+          "name": "#20deDiciembre",
+          "promoted_content": null,
+          "query": "%2320deDiciembre",
+          "tweet_volume": null,
+          "url": "http://twitter.com/search?q=%2320deDiciembre",
+        },
+        Object {
+          "name": "#OTDirecto20DIC",
+          "promoted_content": null,
+          "query": "%23OTDirecto20DIC",
+          "tweet_volume": 51417,
+          "url": "http://twitter.com/search?q=%23OTDirecto20DIC",
+        },
+        Object {
+          "name": "Aguad",
+          "promoted_content": null,
+          "query": "Aguad",
+          "tweet_volume": null,
+          "url": "http://twitter.com/search?q=Aguad",
+        },
+        Object {
+          "name": "Soledad Acuña",
+          "promoted_content": null,
+          "query": "%22Soledad+Acu%C3%B1a%22",
+          "tweet_volume": null,
+          "url": "http://twitter.com/search?q=%22Soledad+Acu%C3%B1a%22",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    invertStickyHeaders={undefined}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {},
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "padding": 10,
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              1
+              . 
+              Sofía Herrera
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={undefined}
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {},
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "padding": 10,
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              2
+              . 
+              #BuenJueves
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={undefined}
+            >
+              10263 tweets
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {},
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "padding": 10,
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              3
+              . 
+              La Cámara Federal
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={undefined}
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {},
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "padding": 10,
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              4
+              . 
+              #Getting_Closer
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={undefined}
+            >
+              111867 tweets
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {},
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "padding": 10,
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              5
+              . 
+              #20deDiciembre
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={undefined}
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {},
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "padding": 10,
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              6
+              . 
+              #OTDirecto20DIC
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={undefined}
+            >
+              51417 tweets
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {},
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "padding": 10,
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              7
+              . 
+              Aguad
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={undefined}
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {},
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "padding": 10,
+              },
+            ]
+          }
+          virtual={undefined}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              8
+              . 
+              Soledad Acuña
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={undefined}
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

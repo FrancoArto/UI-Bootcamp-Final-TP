@@ -24,16 +24,10 @@ class HomeScreen extends Component {
     this.renderItem = this.renderItem.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
     this.goToUserProfile = this.goToUserProfile.bind(this)
-    this.handleOnTweetWithImgPress = this.handleOnTweetWithImgPress.bind(this)
-    this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
+    this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
   }
 
-  handleOnTweetWithImgPress(event) {
-    this.props.dispatch(fetchSingleTweetBegin(event))
-    this.props.navigation.navigate('SingleTweet')
-  }
-
-  handleOnTweetWithoutImgPress(event) {
+  handleOnTweetPress(event) {
     this.props.dispatch(fetchSingleTweetBegin(event))
     this.props.navigation.navigate('SingleTweet')
   }
@@ -90,7 +84,7 @@ class HomeScreen extends Component {
         <View style={{ flex: 1 }}>
           <View style={{ flex: 10 }}>
             <ErrorInApp
-              errorMesagge={this.props.error}
+              errorMessage={this.props.error}
             />
           </View>
           <View style={{ flex: 90 }}>
@@ -120,8 +114,7 @@ class HomeScreen extends Component {
         navigationProp={this.props.navigation}
         media={item.entities.media}
         goToUserProfile={this.goToUserProfile}
-        onTweetWithImgPress={this.handleOnTweetWithImgPress}
-        onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress}
+        onTweetPress={this.handleOnTweetPress}
       />
     )
   }

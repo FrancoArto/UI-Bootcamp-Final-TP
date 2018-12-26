@@ -31,23 +31,19 @@ class SearchScreen extends Component {
     this.handleOnTrendPress = this.handleOnTrendPress.bind(this);
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
     this.goToUserProfile = this.goToUserProfile.bind(this)
-    this.handleOnTweetWithImgPress = this.handleOnTweetWithImgPress.bind(this)
-    this.handleOnTweetWithoutImgPress = this.handleOnTweetWithoutImgPress.bind(this)
+    this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
     this.handleClearPress = this.handleClearPress.bind(this);
     this.handleOnChangeText = this.handleOnChangeText.bind(this)
     this.handleFading = this.handleFading.bind(this)
   }
 
 
-  handleOnTweetWithImgPress(event) {
+  handleOnTweetPress(event) {
     this.props.dispatch(fetchSingleTweetBegin(event))
     this.props.navigation.navigate('SingleTweet')
   }
 
-  handleOnTweetWithoutImgPress(event) {
-    this.props.dispatch(fetchSingleTweetBegin(event))
-    this.props.navigation.navigate('SingleTweet')
-  }
+  
 
   handleOnEndReached() {
     this.props.dispatch(fetchMoreResults());
@@ -113,8 +109,8 @@ class SearchScreen extends Component {
                 searchText={this.state.searchText}
                 loading={this.props.tweets.loading}
                 data={this.props.tweets.searchResults}
-                onTweetWithImgPress={this.handleOnTweetWithImgPress}
-                onTweetWithoutImgPress={this.handleOnTweetWithoutImgPress} />
+                onTweetPress={this.handleOnTweetPress}
+                />
             </Fade>
           }
           {!this.state.searching &&
