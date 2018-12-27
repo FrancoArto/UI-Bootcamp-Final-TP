@@ -599,3 +599,373 @@ export const tweetsArray = [
     "lang": "es"
   }
 ]
+
+export const searchResultsMock = {
+"statuses": [
+  {
+    "created_at": "Thu Dec 27 19:03:11 +0000 2018",
+    "id": 1078365695518363600,
+    "id_str": "1078365695518363648",
+    "text": "RT @Vanessa34822400: Hola queridos tuiteros , dios los bendiga , gracias  por el apoyo , y solidaridad , que han tenido por la búsqueda de…",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "Vanessa34822400",
+          "name": "Vanessa furtado",
+          "id": 1072278728783380500,
+          "id_str": "1072278728783380480",
+          "indices": [
+            3,
+            19
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "metadata": {
+      "iso_language_code": "es",
+      "result_type": "recent"
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 844946890940710900,
+      "id_str": "844946890940710912",
+      "name": "Telo Undo 🐽",
+      "screen_name": "DolorTedoy",
+      "location": "San Pedro ",
+      "description": "** Yo guardo pan, pa cuando haya leche ** Táchira - San Cristóbal ☆☆☆☆☆☆☆",
+      "url": null,
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 226,
+      "friends_count": 213,
+      "listed_count": 0,
+      "created_at": "Thu Mar 23 16:20:11 +0000 2017",
+      "favourites_count": 2166,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 9128,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "F5F8FA",
+      "profile_background_image_url": null,
+      "profile_background_image_url_https": null,
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/871535695726333953/_ohZ11I1_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/871535695726333953/_ohZ11I1_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/844946890940710912/1535896029",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": false,
+      "default_profile": true,
+      "default_profile_image": false,
+      "following": false,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Wed Dec 26 11:35:54 +0000 2018",
+      "id": 1077890745816756200,
+      "id_str": "1077890745816756224",
+      "text": "Hola queridos tuiteros , dios los bendiga , gracias  por el apoyo , y solidaridad , que han tenido por la búsqueda… https://t.co/sKEFVb35zr",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/sKEFVb35zr",
+            "expanded_url": "https://twitter.com/i/web/status/1077890745816756224",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              116,
+              139
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "iso_language_code": "es",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 1072278728783380500,
+        "id_str": "1072278728783380480",
+        "name": "Vanessa furtado",
+        "screen_name": "Vanessa34822400",
+        "location": "Miranda, Venezuela",
+        "description": "",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 18,
+        "friends_count": 316,
+        "listed_count": 0,
+        "created_at": "Mon Dec 10 23:55:45 +0000 2018",
+        "favourites_count": 133,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 193,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "F5F8FA",
+        "profile_background_image_url": null,
+        "profile_background_image_url_https": null,
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1072279363993903104/zbPYEvtv_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1072279363993903104/zbPYEvtv_normal.jpg",
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 162,
+      "favorite_count": 49,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 162,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Thu Dec 27 19:03:10 +0000 2018",
+    "id": 1078365690065760300,
+    "id_str": "1078365690065760257",
+    "text": "Hola @salvameoficial, ¿cuánto os ha pagado el friki este para estar todos los días haciendo el ridi? 🤣🤣🤣",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "salvameoficial",
+          "name": "Sálvame Oficial",
+          "id": 252607825,
+          "id_str": "252607825",
+          "indices": [
+            5,
+            20
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "metadata": {
+      "iso_language_code": "es",
+      "result_type": "recent"
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 3129017391,
+      "id_str": "3129017391",
+      "name": "MissSunshine",
+      "screen_name": "MissSunshineTV",
+      "location": "Madrid",
+      "description": "Viendo la TV desde 1990. Mi cuenta es una tómbola de follows y unfollows.",
+      "url": null,
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 293,
+      "friends_count": 218,
+      "listed_count": 0,
+      "created_at": "Mon Mar 30 13:53:34 +0000 2015",
+      "favourites_count": 1170,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 1957,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "000000",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1057443345063182336/EWqNVvCz_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1057443345063182336/EWqNVvCz_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/3129017391/1539177387",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "000000",
+      "profile_text_color": "000000",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": false,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Thu Dec 27 19:03:09 +0000 2018",
+    "id": 1078365687708598300,
+    "id_str": "1078365687708598272",
+    "text": "@JanhsMiranda hola, me gustaría saber si se puede ir en bicicleta, para dejarla estacionada ahi. gracias",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "JanhsMiranda",
+          "name": "La Moustache Élégante",
+          "id": 786019940822200300,
+          "id_str": "786019940822200320",
+          "indices": [
+            0,
+            13
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "metadata": {
+      "iso_language_code": "es",
+      "result_type": "recent"
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": 786019940822200300,
+    "in_reply_to_user_id_str": "786019940822200320",
+    "in_reply_to_screen_name": "JanhsMiranda",
+    "user": {
+      "id": 19548549,
+      "id_str": "19548549",
+      "name": "mesa del pellejo",
+      "screen_name": "mesadelpellejo",
+      "location": "santiago de Chile",
+      "description": "Serenense, bibliotecario, beatlemaniaco. Aficionado al cine sin pop corn, rock, el dr.mortis y los gatos.",
+      "url": null,
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 61,
+      "friends_count": 43,
+      "listed_count": 1,
+      "created_at": "Mon Jan 26 18:28:39 +0000 2009",
+      "favourites_count": 290,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 1048,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "ACDED6",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme18/bg.gif",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme18/bg.gif",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/836547755015356416/aN64akj-_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/836547755015356416/aN64akj-_normal.jpg",
+      "profile_link_color": "038543",
+      "profile_sidebar_border_color": "EEEEEE",
+      "profile_sidebar_fill_color": "F6F6F6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": false,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  }
+]}

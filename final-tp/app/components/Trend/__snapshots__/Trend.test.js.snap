@@ -39,7 +39,7 @@ exports[`renders without crashing 1`] = `
   >
     NaN
     . 
-    Sofía Herrera
+    Nahir Galarza
   </Text>
   <Text
     accessible={true}

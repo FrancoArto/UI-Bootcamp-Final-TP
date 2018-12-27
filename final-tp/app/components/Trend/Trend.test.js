@@ -6,7 +6,7 @@ import Trend from './Trend';
 
 
 it('renders without crashing', () => {
-  const trend = trendsArray[0]
+  const trend = trendsArray[0].trends[0]
   const rendered = renderer.create(<Trend item={trend}/>).toJSON();
   expect(rendered).toMatchSnapshot();
 });

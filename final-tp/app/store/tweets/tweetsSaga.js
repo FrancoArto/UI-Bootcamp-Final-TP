@@ -49,9 +49,7 @@ export function* fetchResultsToAppend() {
     const maxId = yield select(getMaxId)
     const response = yield call(fetch, GET_APPENDRESULTS_URL(searchText, count, maxId))
     const results = yield call([response, "json"]);
-    const resultArray = results.statuses
-    const data = resultArray.slice(1)
-    yield put(fetchMoreResultsSuccess(data))
+    yield put(fetchMoreResultsSuccess(results.statuses.slice(1)))
   } catch (er) {
     yield put(fetchMoreResultsFailure(er))
   }
@@ -85,8 +83,7 @@ export function* fetchTweetsToAppend() {
     const maxId = yield select(getMaxId)
     const response = yield call(fetch, GET_APPENDTWEETS_URL(count, maxId))
     const array = yield call([response, "json"]);
-    const data = array.slice(1)
-    yield put(fetchMoreTweetsSuccess(data))
+    yield put(fetchMoreTweetsSuccess(array.slice(1)))
   } catch (er) {
     yield put(fetchMoreTweetsFailure(er))
   }

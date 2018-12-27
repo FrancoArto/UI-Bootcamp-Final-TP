@@ -10,3 +10,6 @@ NativeModules.BlobModule = {
 global.WebSocket = WebSocket
 
 
+class XMLHttpRequest {} global.XMLHttpRequest = XMLHttpRequest;
+
+jest.useFakeTimers()

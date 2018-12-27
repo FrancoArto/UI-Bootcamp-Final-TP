@@ -50,6 +50,7 @@ class Tweet extends PureComponent {
             this.setState({ loading: false });
         }
     }
+    
     componentDidMount() {
         this._isMounted = true;
     }

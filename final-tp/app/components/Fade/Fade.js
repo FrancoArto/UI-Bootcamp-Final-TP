@@ -13,7 +13,7 @@ export default class Fade extends Component {
       Animated.timing(this.visibility, {
         toValue: this.props.visible ? 1 : 0,
         duration: 1000,
-        useNativeDriver: true
+        useNativeDriver: false
       }).start()
     }
   }
@@ -23,7 +23,7 @@ export default class Fade extends Component {
       Animated.timing(this.visibility, {
         toValue: this.props.visible ? 1 : 0,
         duration: 1000,
-        useNativeDriver: true
+        useNativeDriver: false
       }).start(() => { this.props.visible ? null : this.props.fading() })
     }
   }

@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import {
   View,
   ActivityIndicator,
-  Easing,
-  Animated,
 } from 'react-native';
 import { connect } from 'react-redux';
 import Search from '../../components/Search/Search';
@@ -16,7 +14,7 @@ import styles from './searchScreen.style';
 import Fade from '../../components/Fade/Fade';
 
 
-class SearchScreen extends Component {
+export class SearchScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -55,7 +53,7 @@ class SearchScreen extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchTrendsBegin());
+    this.props.fetchTrendsBegin();
   }
 
   goToUserProfile(event) {
@@ -133,8 +131,11 @@ function mapStateToProps(state, props) {
     tweets: state.tweetsReducer
   }
 }
+const mapDispatchToProps = {
+  fetchTrendsBegin: () => fetchTrendsBegin(),
+ }
 //Connect everything
-export default connect(mapStateToProps)(SearchScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);
 
 /*
 SearchScreen.propTypes = {

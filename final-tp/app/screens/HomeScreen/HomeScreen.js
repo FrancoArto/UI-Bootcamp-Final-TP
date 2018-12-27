@@ -13,7 +13,7 @@ import styles from './homeScreen.styles';
 import { getFilteredTweets } from '../../store/tweets/tweetsSelector';
 import { fetchUserDataRequest } from '../../store/users/userActions';
 
-class HomeScreen extends Component {
+export class HomeScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -33,7 +33,7 @@ class HomeScreen extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchTweetsTimeline()); //call our action
+    this.props.fetchTweetsTimeline(); //call our action
   }
 
   handleOnEndReached() {
@@ -134,8 +134,12 @@ function mapStateToProps(state, props) {
   }
 }
 
+const mapDispatchToProps = {
+  fetchTweetsTimeline: () => fetchTweetsTimeline(),
+ }
+
 //Connect everything
-export default connect(mapStateToProps)(HomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
 
 
 /*
