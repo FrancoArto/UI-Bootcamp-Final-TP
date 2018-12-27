@@ -1,12 +1,13 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import store from '../../store/store';
 import SettingsScreen from './SettingsScreen';
 
 
 
 it('renders without crashing', () => {
-  const rendered = renderer.create(<SettingsScreen store={store} />).toJSON();
+  const rendered = new ShallowRenderer()
+  rendered.render(<SettingsScreen store={store} />)
   expect(rendered).toMatchSnapshot();
 });

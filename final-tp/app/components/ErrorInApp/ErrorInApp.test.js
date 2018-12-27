@@ -1,11 +1,13 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
+
 import ErrorInApp from './ErrorInApp';
 
 
 const error = 'ERROR MESSAGE'
 it('renders without crashing', () => {
-  const rendered = renderer.create(<ErrorInApp errorMessage={error} />).toJSON();
+  const rendered = new ShallowRenderer()
+  rendered.render(<ErrorInApp errorMessage={error} />)
   expect(rendered).toMatchSnapshot();
 });

@@ -1,13 +1,14 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { singleTweetData } from '../../store/tweets/tweetsMock';
 import Tweet from './Tweet';
 
 
 it('renders without crashing', () => {
   const item = singleTweetData
-  const rendered = renderer.create(
+  const rendered = new ShallowRenderer()
+  rendered.render(
   <Tweet
     id_str={item.id_str}
     user={item.user}
@@ -18,6 +19,6 @@ it('renders without crashing', () => {
     media={item.entities.media}
     created_at={item.created_at}
     media={item.entities.media}
-    />).toJSON();
+    />)
   expect(rendered).toMatchSnapshot();
 });

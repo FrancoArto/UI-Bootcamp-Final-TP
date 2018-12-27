@@ -1,34 +1,37 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import {HomeScreen} from './HomeScreen';
 import { tweetsArray } from '../../store/tweets/tweetsMock';
 
 
 
 it('loads without crashing', () => {
-  const rendered = renderer.create(<HomeScreen
+  const rendered = new ShallowRenderer()
+  rendered.render(<HomeScreen
     data={[]}
     loading={true}
     error={null}
-    fetchTweetsTimeline={() => {}}  />).toJSON();
+    fetchTweetsTimeline={() => {}}  />)
   expect(rendered).toMatchSnapshot();
 });
 
 it('renders timeline without crashing', () => {
-  const rendered = renderer.create(<HomeScreen
+  const rendered = new ShallowRenderer()
+  rendered.render(<HomeScreen
     data={tweetsArray}
     loading={false}
     error={null}
-    fetchTweetsTimeline={() => {}}  />).toJSON();
+    fetchTweetsTimeline={() => {}}  />)
   expect(rendered).toMatchSnapshot();
 });
 
 it('renders an error message without crashing', () => {
-  const rendered = renderer.create(<HomeScreen
+  const rendered = new ShallowRenderer()
+  rendered.render(<HomeScreen
     data={[]}
     loading={false}
     error={'ERROR'}
-    fetchTweetsTimeline={() => {}}  />).toJSON();
+    fetchTweetsTimeline={() => {}}  />)
   expect(rendered).toMatchSnapshot();
 });

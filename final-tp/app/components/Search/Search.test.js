@@ -1,10 +1,11 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import Search from './Search';
 
 
 it('renders without crashing', () => {
-  const rendered = renderer.create(<Search />).toJSON();
+  const rendered = new ShallowRenderer()
+  rendered.render(<Search />)
   expect(rendered).toMatchSnapshot();
 });

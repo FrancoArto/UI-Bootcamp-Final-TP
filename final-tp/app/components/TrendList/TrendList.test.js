@@ -1,12 +1,13 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { trendsArray } from '../../store/trends/trendsMock';
 import TrendList from './TrendList';
 
 
 it('renders without crashing', () => {
   const trends = trendsArray
-  const rendered = renderer.create(<TrendList data={trends[0].trends}/>).toJSON();
+  const rendered = new ShallowRenderer()
+  rendered.render(<TrendList data={trends[0].trends}/>)
   expect(rendered).toMatchSnapshot();
 });

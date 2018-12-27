@@ -1,3 +1,246 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `<ExponentAppLoading />`;
+exports[`renders without crashing 1`] = `
+ReactShallowRenderer {
+  "_context": Object {},
+  "_element": <Tweet
+    created_at="Wed Dec 05 15:00:08 +0000 2018"
+    favorite_count={26}
+    id_str="1070331995492880385"
+    mainContent="Detuvieron a un cura en San Pedro: lo acusan de abusar de nenes de un jardín de infantes https://t.co/Cqm0vehy5P https://t.co/OLSi1XswSf"
+    media={
+      Array [
+        Object {
+          "display_url": "pic.twitter.com/OLSi1XswSf",
+          "expanded_url": "https://twitter.com/clarincom/status/1070331995492880385/photo/1",
+          "id": 1070331991478992900,
+          "id_str": "1070331991478992896",
+          "indices": Array [
+            113,
+            136,
+          ],
+          "media_url": "http://pbs.twimg.com/media/DtqVRn_XgAAVAHD.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DtqVRn_XgAAVAHD.jpg",
+          "sizes": Object {
+            "large": Object {
+              "h": 630,
+              "resize": "fit",
+              "w": 1200,
+            },
+            "medium": Object {
+              "h": 630,
+              "resize": "fit",
+              "w": 1200,
+            },
+            "small": Object {
+              "h": 357,
+              "resize": "fit",
+              "w": 680,
+            },
+            "thumb": Object {
+              "h": 150,
+              "resize": "crop",
+              "w": 150,
+            },
+          },
+          "type": "photo",
+          "url": "https://t.co/OLSi1XswSf",
+        },
+      ]
+    }
+    retweet_count={14}
+    uri="https://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg"
+    user={
+      Object {
+        "contributors_enabled": false,
+        "created_at": "Fri Aug 10 15:14:11 +0000 2007",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Noticias de Argentina y el mundo las 24 horas. Información de último momento, opinión, análisis e informes especiales.",
+        "entities": Object {
+          "description": Object {
+            "urls": Array [],
+          },
+          "url": Object {
+            "urls": Array [
+              Object {
+                "display_url": "clarin.com",
+                "expanded_url": "http://www.clarin.com",
+                "indices": Array [
+                  0,
+                  22,
+                ],
+                "url": "http://t.co/1RuczZo0FK",
+              },
+            ],
+          },
+        },
+        "favourites_count": 391,
+        "follow_request_sent": false,
+        "followers_count": 2810163,
+        "following": true,
+        "friends_count": 265,
+        "geo_enabled": true,
+        "has_extended_profile": false,
+        "id": 8105922,
+        "id_str": "8105922",
+        "is_translation_enabled": true,
+        "is_translator": false,
+        "lang": "es",
+        "listed_count": 10833,
+        "location": "Buenos Aires, Argentina",
+        "name": "Clarín",
+        "notifications": false,
+        "profile_background_color": "131516",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+        "profile_background_tile": true,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/8105922/1544741225",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+        "profile_link_color": "FF0324",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "EFEFEF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "clarincom",
+        "statuses_count": 301742,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "http://t.co/1RuczZo0FK",
+        "utc_offset": null,
+        "verified": true,
+      }
+    }
+  />,
+  "_forcedUpdate": false,
+  "_instance": Tweet {
+    "context": Object {},
+    "goToUserProfile": [Function],
+    "handleOnPress": [Function],
+    "props": Object {
+      "created_at": "Wed Dec 05 15:00:08 +0000 2018",
+      "favorite_count": 26,
+      "id_str": "1070331995492880385",
+      "mainContent": "Detuvieron a un cura en San Pedro: lo acusan de abusar de nenes de un jardín de infantes https://t.co/Cqm0vehy5P https://t.co/OLSi1XswSf",
+      "media": Array [
+        Object {
+          "display_url": "pic.twitter.com/OLSi1XswSf",
+          "expanded_url": "https://twitter.com/clarincom/status/1070331995492880385/photo/1",
+          "id": 1070331991478992900,
+          "id_str": "1070331991478992896",
+          "indices": Array [
+            113,
+            136,
+          ],
+          "media_url": "http://pbs.twimg.com/media/DtqVRn_XgAAVAHD.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DtqVRn_XgAAVAHD.jpg",
+          "sizes": Object {
+            "large": Object {
+              "h": 630,
+              "resize": "fit",
+              "w": 1200,
+            },
+            "medium": Object {
+              "h": 630,
+              "resize": "fit",
+              "w": 1200,
+            },
+            "small": Object {
+              "h": 357,
+              "resize": "fit",
+              "w": 680,
+            },
+            "thumb": Object {
+              "h": 150,
+              "resize": "crop",
+              "w": 150,
+            },
+          },
+          "type": "photo",
+          "url": "https://t.co/OLSi1XswSf",
+        },
+      ],
+      "retweet_count": 14,
+      "uri": "https://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+      "user": Object {
+        "contributors_enabled": false,
+        "created_at": "Fri Aug 10 15:14:11 +0000 2007",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Noticias de Argentina y el mundo las 24 horas. Información de último momento, opinión, análisis e informes especiales.",
+        "entities": Object {
+          "description": Object {
+            "urls": Array [],
+          },
+          "url": Object {
+            "urls": Array [
+              Object {
+                "display_url": "clarin.com",
+                "expanded_url": "http://www.clarin.com",
+                "indices": Array [
+                  0,
+                  22,
+                ],
+                "url": "http://t.co/1RuczZo0FK",
+              },
+            ],
+          },
+        },
+        "favourites_count": 391,
+        "follow_request_sent": false,
+        "followers_count": 2810163,
+        "following": true,
+        "friends_count": 265,
+        "geo_enabled": true,
+        "has_extended_profile": false,
+        "id": 8105922,
+        "id_str": "8105922",
+        "is_translation_enabled": true,
+        "is_translator": false,
+        "lang": "es",
+        "listed_count": 10833,
+        "location": "Buenos Aires, Argentina",
+        "name": "Clarín",
+        "notifications": false,
+        "profile_background_color": "131516",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+        "profile_background_tile": true,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/8105922/1544741225",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+        "profile_link_color": "FF0324",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "EFEFEF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "clarincom",
+        "statuses_count": 301742,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "http://t.co/1RuczZo0FK",
+        "utc_offset": null,
+        "verified": true,
+      },
+    },
+    "refs": Object {},
+    "state": Object {
+      "loading": true,
+    },
+    "updater": Updater {
+      "_callbacks": Array [],
+      "_renderer": [Circular],
+    },
+  },
+  "_newState": null,
+  "_rendered": <AppLoading />,
+  "_rendering": false,
+  "_updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": [Circular],
+  },
+}
+`;

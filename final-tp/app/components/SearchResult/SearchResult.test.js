@@ -1,12 +1,14 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
+
 import SearchResult from './SearchResult';
 import { tweetsArray } from '../../store/tweets/tweetsMock';
 
 
 it('renders without crashing', () => {
   const searchText = 'Hola'
-  const rendered = renderer.create(<SearchResult data={tweetsArray} searchText={searchText} />).toJSON();
+  const rendered = new ShallowRenderer()
+  rendered.render(<SearchResult data={tweetsArray} searchText={searchText} />)
   expect(rendered).toMatchSnapshot();
 });

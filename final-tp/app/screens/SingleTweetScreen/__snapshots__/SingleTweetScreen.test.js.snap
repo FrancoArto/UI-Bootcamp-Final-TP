@@ -1,3 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `<ExponentAppLoading />`;
+exports[`renders without crashing 1`] = `
+ReactShallowRenderer {
+  "_context": Object {},
+  "_element": <SingleTweetScreen
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />,
+  "_forcedUpdate": false,
+  "_instance": SingleTweetScreen {
+    "context": Object {},
+    "goToUserProfile": [Function],
+    "props": Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+    },
+    "refs": Object {},
+    "state": Object {
+      "loading": true,
+    },
+    "updater": Updater {
+      "_callbacks": Array [],
+      "_renderer": [Circular],
+    },
+  },
+  "_newState": null,
+  "_rendered": <AppLoading />,
+  "_rendering": false,
+  "_updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": [Circular],
+  },
+}
+`;

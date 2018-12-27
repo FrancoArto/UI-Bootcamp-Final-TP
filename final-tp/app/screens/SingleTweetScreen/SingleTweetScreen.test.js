@@ -1,12 +1,13 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import store from '../../store/store';
 import {SingleTweetScreen} from './SingleTweetScreen';
 
 
 
 it('renders without crashing', () => {
-  const rendered = renderer.create(<SingleTweetScreen store={store} />).toJSON();
+  const rendered = new ShallowRenderer()
+  rendered.render(<SingleTweetScreen store={store} />)
   expect(rendered).toMatchSnapshot();
 });

@@ -1,53 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
-  accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "opacity": 1,
-    }
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
->
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
+ReactShallowRenderer {
+  "_context": Object {},
+  "_element": <Trend
+    item={
       Object {
-        "fontSize": 15,
-        "fontWeight": "600",
+        "name": "Nahir Galarza",
+        "promoted_content": null,
+        "query": "%22Nahir+Galarza%22",
+        "tweet_volume": null,
+        "url": "http://twitter.com/search?q=%22Nahir+Galarza%22",
       }
     }
+  />,
+  "_forcedUpdate": false,
+  "_instance": Trend {
+    "context": Object {},
+    "handleOnPress": [Function],
+    "props": Object {
+      "item": Object {
+        "name": "Nahir Galarza",
+        "promoted_content": null,
+        "query": "%22Nahir+Galarza%22",
+        "tweet_volume": null,
+        "url": "http://twitter.com/search?q=%22Nahir+Galarza%22",
+      },
+    },
+    "refs": Object {},
+    "state": null,
+    "updater": Updater {
+      "_callbacks": Array [],
+      "_renderer": [Circular],
+    },
+  },
+  "_newState": null,
+  "_rendered": <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
   >
-    NaN
-    . 
-    Nahir Galarza
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={undefined}
-  >
-    
-  </Text>
-</View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 15,
+          "fontWeight": "600",
+        }
+      }
+    >
+      NaN
+      . 
+      Nahir Galarza
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={undefined}
+    >
+      
+    </Text>
+  </TouchableOpacity>,
+  "_rendering": false,
+  "_updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": [Circular],
+  },
+}
 `;

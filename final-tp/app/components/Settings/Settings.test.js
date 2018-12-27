@@ -1,6 +1,6 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import Settings from './Settings';
 
 
@@ -12,6 +12,7 @@ it('renders without crashing', () => {
     withLink: true,
     withTruncatedText: false
   }
-  const rendered = renderer.create(<Settings settings={inputSettings}/>).toJSON();
+  const rendered = new ShallowRenderer()
+  rendered.render(<Settings settings={inputSettings}/>)
   expect(rendered).toMatchSnapshot();
 });
