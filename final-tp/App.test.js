@@ -5,7 +5,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 
 it('renders without crashing', () => {
   const rendered = new ShallowRenderer()
-  rendered.mount(<App />);
+  rendered.render(<App />);
   expect(rendered).toMatchSnapshot();
 });
 

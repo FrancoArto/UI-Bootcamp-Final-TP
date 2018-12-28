@@ -22,7 +22,8 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node_modules/.bin/jest"
+    "test": "node_modules/.bin/jest",
+    "debug": "node --debug-brk --inspect ./node_modules/.bin/jest -i"
   },
   "jest": {
     "preset": "jest-expo",

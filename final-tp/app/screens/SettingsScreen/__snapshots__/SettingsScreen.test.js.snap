@@ -9,11 +9,11 @@ ReactShallowRenderer {
   "_element": <Connect(SettingsScreen)
     store={
       Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       }
     }
   />,
@@ -26,11 +26,11 @@ ReactShallowRenderer {
     "notifyNestedSubs": [Function],
     "props": Object {
       "store": Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       },
     },
     "propsMode": true,
@@ -48,11 +48,11 @@ ReactShallowRenderer {
           "withTruncatedText": false,
         },
         "store": Object {
+          "@@observable": [Function],
           "dispatch": [Function],
           "getState": [Function],
           "replaceReducer": [Function],
           "subscribe": [Function],
-          Symbol(observable): [Function],
         },
       },
       "run": [Function],
@@ -61,11 +61,11 @@ ReactShallowRenderer {
     "setWrappedInstance": [Function],
     "state": Object {},
     "store": Object {
+      "@@observable": [Function],
       "dispatch": [Function],
       "getState": [Function],
       "replaceReducer": [Function],
       "subscribe": [Function],
-      Symbol(observable): [Function],
     },
     "subscription": Subscription {
       "listeners": Object {
@@ -74,11 +74,11 @@ ReactShallowRenderer {
       "onStateChange": [Function],
       "parentSub": undefined,
       "store": Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       },
       "unsubscribe": null,
     },
@@ -102,11 +102,11 @@ ReactShallowRenderer {
     }
     store={
       Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       }
     }
     storeSubscription={
@@ -117,11 +117,11 @@ ReactShallowRenderer {
         "onStateChange": [Function],
         "parentSub": undefined,
         "store": Object {
+          "@@observable": [Function],
           "dispatch": [Function],
           "getState": [Function],
           "replaceReducer": [Function],
           "subscribe": [Function],
-          Symbol(observable): [Function],
         },
         "unsubscribe": null,
       }

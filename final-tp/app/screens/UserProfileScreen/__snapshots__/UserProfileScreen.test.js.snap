@@ -6,11 +6,11 @@ ReactShallowRenderer {
   "_element": <UserProfileScreen
     store={
       Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       }
     }
     userData={
@@ -202,11 +202,11 @@ ReactShallowRenderer {
     "handleOnTweetPress": [Function],
     "props": Object {
       "store": Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       },
       "userData": Object {
         "contributors_enabled": false,

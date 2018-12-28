@@ -6,11 +6,11 @@ ReactShallowRenderer {
   "_element": <SingleTweetScreen
     store={
       Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       }
     }
   />,
@@ -20,11 +20,11 @@ ReactShallowRenderer {
     "goToUserProfile": [Function],
     "props": Object {
       "store": Object {
+        "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(observable): [Function],
       },
     },
     "refs": Object {},
