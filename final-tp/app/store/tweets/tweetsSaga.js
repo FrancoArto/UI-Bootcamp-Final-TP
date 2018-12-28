@@ -108,7 +108,7 @@ function* userDataSucceeded() {
   yield takeLatest(FETCH_USERDATA_SUCCESS, requestUserTimelineFetch)
 }
 
-function* requestUserTimelineFetch() {
+export function* requestUserTimelineFetch() {
   yield put(fetchUserTimelineBegin())
 }
 

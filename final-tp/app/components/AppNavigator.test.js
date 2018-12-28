@@ -1,11 +1,11 @@
 import React from 'react';
-import App from './App';
+
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { AppNavigator } from './AppNavigator';
 
 
 it('renders without crashing', () => {
   const rendered = new ShallowRenderer()
-  rendered.mount(<App />);
+  rendered.render(<AppNavigator />)
   expect(rendered).toMatchSnapshot();
 });
-
