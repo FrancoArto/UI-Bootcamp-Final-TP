@@ -74,4 +74,11 @@ app.get('/statuses/user_time', function (req, res) {
   })
 });
 
+//http://localhost:8080/user?id=123456
+app.get('/user', function (req, res) {
+  T.get('users/show',req.query, function(err, data, response) {
+    return res.json(data);
+  })
+});
+
 app.listen(8080);

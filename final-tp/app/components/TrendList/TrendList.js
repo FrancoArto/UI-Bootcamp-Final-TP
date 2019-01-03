@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'native-base';
 import styles from './trendList.style';
-import { FlatList } from 'react-native';
+import { FlatList, ActivityIndicator } from 'react-native';
 import Trend from '../Trend/Trend';
 
 export default class TrendList extends Component {

@@ -8,3 +8,4 @@ export const GET_SEARCHTWEETS_URL = (searchWord) => SERVER_URL+'/search?q=' + se
 export const GET_APPENDRESULTS_URL = (searchWord, count, maxId) => SERVER_URL+'/search?q=' + searchWord + '&count=' + count + '&max_id=' + maxId;  
 export const GET_SINGLETWEET_URL = (twitID) => SERVER_URL + '/show?id=' + twitID;
 export const GET_USERTIMELINE_URL = (userID, count) => SERVER_URL + '/statuses/user_time?id=' + userID + '&' + 'count=' + count;
+export const GET_USERDATA_URL = (userId) => SERVER_URL + '/user?id=' + userId;

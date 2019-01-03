@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "jest-expo": "~27.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-polyfill": "^6.26.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "jest-enzyme": "^7.0.1",
+    "jest-expo": "^27.0.1",
+    "react-dom": "^16.7.0",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1",
     "reactotron-react-native": "^2.1.0",
@@ -16,24 +22,39 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "node_modules/.bin/jest",
+    "debug": "node --debug-brk --inspect ./node_modules/.bin/jest -i"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupTestFrameworkScriptFile": "./jest.setup.js",
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!react-native|native-base|native-base-shoutem-theme|@shoutem/animation|@shoutem/ui|tcomb-form-native|react-native-vector-icons|react-navigation|react-native/Libraries/Interaction|expo|@expo/vector-icons|glyphmaps|Ionicons)"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/coverage/**"
+    ]
   },
   "dependencies": {
     "expo": "^27.0.1",
     "javascript-time-ago": "^1.0.32",
+    "mock-socket": "^8.0.5",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
     "native-base": "^2.8.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-hyperlink": "0.0.14",
     "react-navigation": "^2.3.1",
     "react-navigation-redux-helpers": "^2.0.2",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sinon": "^7.2.2"
   }
 }
