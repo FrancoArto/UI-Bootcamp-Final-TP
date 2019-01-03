@@ -1,182 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-ReactShallowRenderer {
-  "_context": Object {},
-  "_element": <Settings
-    settings={
-      Object {
-        "defaultInfo": false,
-        "following": true,
-        "verified": false,
-        "withLink": true,
-        "withTruncatedText": false,
-      }
-    }
-  />,
-  "_forcedUpdate": false,
-  "_instance": Settings {
-    "context": Object {},
-    "onDefaultInfoChange": [Function],
-    "onFollowingChange": [Function],
-    "onVerifiedChange": [Function],
-    "onWithLinkChange": [Function],
-    "onWithTruncatedTextChange": [Function],
-    "props": Object {
-      "settings": Object {
-        "defaultInfo": false,
-        "following": true,
-        "verified": false,
-        "withLink": true,
-        "withTruncatedText": false,
-      },
-    },
-    "refs": Object {},
-    "state": null,
-    "updater": Updater {
-      "_callbacks": Array [],
-      "_renderer": [Circular],
-    },
-  },
-  "_newState": null,
-  "_rendered": <Styled(Content)
-    virtual={undefined}
-  >
-    <Styled(Card)
-      virtual={undefined}
-    >
-      <Styled(CardItem)
-        style={
-          Object {
-            "backgroundColor": "#79a6d2",
-          }
+<Styled(Content)>
+  <Styled(Card)>
+    <Styled(CardItem)
+      style={
+        Object {
+          "backgroundColor": "#79a6d2",
         }
-        virtual={undefined}
-      >
-        <Styled(Body)
-          virtual={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#FFFFFF",
-                "fontWeight": "800",
-              }
+      }
+    >
+      <Styled(Body)>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontWeight": "800",
             }
-          >
-            Silence notifications from...
-          </Text>
-        </Styled(Body)>
-      </Styled(CardItem)>
-    </Styled(Card)>
-    <Styled(ListItem)
-      virtual={undefined}
-    >
-      <Styled(Body)
-        virtual={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+          }
         >
-          People who have not verified the account
+          Silence notifications from...
         </Text>
       </Styled(Body)>
-      <Styled(CheckBox)
-        checked={false}
-        onPress={[Function]}
-        virtual={undefined}
-      />
-    </Styled(ListItem)>
-    <Styled(ListItem)
-      virtual={undefined}
-    >
-      <Styled(Body)
-        virtual={undefined}
+    </Styled(CardItem)>
+  </Styled(Card)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          People who do not follow
-        </Text>
-      </Styled(Body)>
-      <Styled(CheckBox)
-        checked={true}
-        onPress={[Function]}
-        virtual={undefined}
-      />
-    </Styled(ListItem)>
-    <Styled(ListItem)
-      virtual={undefined}
-    >
-      <Styled(Body)
-        virtual={undefined}
+        People who have not verified the account
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={false}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          People who have default profile information
-        </Text>
-      </Styled(Body)>
-      <Styled(CheckBox)
-        checked={false}
-        onPress={[Function]}
-        virtual={undefined}
-      />
-    </Styled(ListItem)>
-    <Styled(ListItem)
-      virtual={undefined}
-    >
-      <Styled(Body)
-        virtual={undefined}
+        People who do not follow
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={true}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Tweets that contains a link
-        </Text>
-      </Styled(Body)>
-      <Styled(CheckBox)
-        checked={true}
-        onPress={[Function]}
-        virtual={undefined}
-      />
-    </Styled(ListItem)>
-    <Styled(ListItem)
-      virtual={undefined}
-    >
-      <Styled(Body)
-        virtual={undefined}
+        People who have default profile information
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={false}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Tweets that has text truncated
-        </Text>
-      </Styled(Body)>
-      <Styled(CheckBox)
-        checked={false}
-        onPress={[Function]}
-        virtual={undefined}
-      />
-    </Styled(ListItem)>
-  </Styled(Content)>,
-  "_rendering": false,
-  "_updater": Updater {
-    "_callbacks": Array [],
-    "_renderer": [Circular],
-  },
-}
+        Tweets that contains a link
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={true}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Tweets that has text truncated
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={false}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+</Styled(Content)>
 `;

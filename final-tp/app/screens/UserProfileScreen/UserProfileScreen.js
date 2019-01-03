@@ -23,7 +23,7 @@ export class UserProfileScreen extends Component {
   }
 
   handleOnTweetPress(event) {
-    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.fetchSingleTweetBegin(event)
     this.props.navigation.navigate('SingleTweet')
   }
 
@@ -89,6 +89,12 @@ function mapStateToProps(state, props) {
   }
 }
 
+function mapDispatchToProps() {
+  return {
+    fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event)
+  }
+}
+
 
 /*
 UserProfileScreen.propTypes = {
@@ -97,7 +103,7 @@ UserProfileScreen.propTypes = {
 
 
 //Connect everything
-export default connect(mapStateToProps)(UserProfileScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfileScreen);
 
 
 

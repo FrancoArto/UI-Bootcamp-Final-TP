@@ -1,132 +1,98 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-ReactShallowRenderer {
-  "_context": Object {},
-  "_element": <Search />,
-  "_forcedUpdate": false,
-  "_instance": Search {
-    "context": Object {},
-    "handleClearPress": [Function],
-    "handleOnPress": [Function],
-    "onChangeText": [Function],
-    "props": Object {},
-    "refs": Object {},
-    "state": null,
-    "updater": Updater {
-      "_callbacks": Array [],
-      "_renderer": [Circular],
-    },
-  },
-  "_newState": null,
-  "_rendered": <Component
-    style={
-      Object {
-        "flex": 0.15,
-        "flexDirection": "row",
-      }
+<Component
+  style={
+    Object {
+      "flex": 0.15,
+      "flexDirection": "row",
     }
-  >
-    <Styled(Content)
-      virtual={undefined}
+  }
+>
+  <Styled(Content)>
+    <Styled(Item)
+      style={
+        Object {
+          "borderBottomWidth": 0,
+        }
+      }
     >
       <Styled(Item)
         style={
           Object {
-            "borderBottomWidth": 0,
+            "borderBottomWidth": 0.5,
+            "borderColor": "black",
+            "borderLeftWidth": 0.5,
+            "borderRightWidth": 0.5,
+            "borderTopWidth": 0.5,
+            "height": "80%",
+            "marginLeft": 10,
+            "marginTop": 5,
+            "paddingLeft": 5,
+            "width": "70%",
           }
         }
-        virtual={undefined}
       >
-        <Styled(Item)
+        <Styled(Icon)
+          active={true}
+          name="search"
           style={
             Object {
-              "borderBottomWidth": 0.5,
-              "borderColor": "black",
-              "borderLeftWidth": 0.5,
-              "borderRightWidth": 0.5,
-              "borderTopWidth": 0.5,
-              "height": "80%",
-              "marginLeft": 10,
-              "marginTop": 5,
-              "paddingLeft": 5,
-              "width": "70%",
+              "color": "lightskyblue",
             }
           }
-          virtual={undefined}
-        >
-          <Styled(Icon)
-            active={true}
-            name="search"
-            style={
-              Object {
-                "color": "lightskyblue",
-              }
-            }
-            virtual={undefined}
-          />
-          <Styled(Input)
-            onChangeText={[Function]}
-            value={undefined}
-            virtual={undefined}
-          />
-          <Styled(Icon)
-            active={true}
-            name="close"
-            onPress={[Function]}
-            style={
-              Object {
-                "color": "black",
-              }
-            }
-            virtual={undefined}
-          />
-        </Styled(Item)>
-        <Styled(Item)
+        />
+        <Styled(Input)
+          onChangeText={[Function]}
+        />
+        <Styled(Icon)
+          active={true}
+          name="close"
+          onPress={[Function]}
           style={
-            Array [
-              Object {
-                "height": "80%",
-                "justifyContent": "center",
-                "marginTop": 5,
-                "paddingRight": 10,
-                "width": "30%",
-              },
-              Object {
-                "borderBottomWidth": 0,
-              },
-            ]
+            Object {
+              "color": "black",
+            }
           }
-          virtual={undefined}
-        >
-          <Styled(Button)
-            info={true}
-            onPress={[Function]}
-            virtual={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "white",
-                  "marginHorizontal": 20,
-                  "textAlign": "center",
-                }
-              }
-            >
-              Search
-            </Text>
-          </Styled(Button)>
-        </Styled(Item)>
+        />
       </Styled(Item)>
-    </Styled(Content)>
-  </Component>,
-  "_rendering": false,
-  "_updater": Updater {
-    "_callbacks": Array [],
-    "_renderer": [Circular],
-  },
-}
+      <Styled(Item)
+        style={
+          Array [
+            Object {
+              "height": "80%",
+              "justifyContent": "center",
+              "marginTop": 5,
+              "paddingRight": 10,
+              "width": "30%",
+            },
+            Object {
+              "borderBottomWidth": 0,
+            },
+          ]
+        }
+      >
+        <Styled(Button)
+          info={true}
+          onPress={[Function]}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "white",
+                "marginHorizontal": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            Search
+          </Text>
+        </Styled(Button)>
+      </Styled(Item)>
+    </Styled(Item)>
+  </Styled(Content)>
+</Component>
 `;

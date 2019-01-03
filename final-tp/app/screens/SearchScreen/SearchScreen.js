@@ -37,14 +37,14 @@ export class SearchScreen extends Component {
 
 
   handleOnTweetPress(event) {
-    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.fetchSingleTweetBegin(event)
     this.props.navigation.navigate('SingleTweet')
   }
 
   
 
   handleOnEndReached() {
-    this.props.dispatch(fetchMoreResults());
+    this.props.fetchMoreResults();
   }
 
   handleOnTrendPress(event) {
@@ -57,12 +57,12 @@ export class SearchScreen extends Component {
   }
 
   goToUserProfile(event) {
-    this.props.dispatch(fetchUserDataRequest(event))
+    this.props.fetchUserDataRequest(event)
     this.props.navigation.navigate('UserProfile')
   }
 
   onSearch(searchText) {
-    this.props.dispatch(fetchSearchBegin(searchText));
+    this.props.fetchSearchBegin(searchText)
     this.searchDispatched = true
   }
 
@@ -133,6 +133,10 @@ function mapStateToProps(state, props) {
 }
 const mapDispatchToProps = {
   fetchTrendsBegin: () => fetchTrendsBegin(),
+  fetchSearchBegin: (searchText) => fetchSearchBegin(searchText),
+  fetchUserDataRequest: (event) => fetchUserDataRequest(event),
+  fetchMoreResults: () => fetchMoreResults(),
+  fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event)
  }
 //Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);

@@ -28,7 +28,7 @@ export class HomeScreen extends Component {
   }
 
   handleOnTweetPress(event) {
-    this.props.dispatch(fetchSingleTweetBegin(event))
+    this.props.fetchSingleTweetBegin(event)
     this.props.navigation.navigate('SingleTweet')
   }
 
@@ -37,12 +37,12 @@ export class HomeScreen extends Component {
   }
 
   handleOnEndReached() {
-    this.props.dispatch(fetchMoreTweets());
+    this.props.fetchMoreTweets();
   }
 
   loadMore = () => {
     this.setState({ refreshing: true }, () => {
-      this.props.dispatch(fetchTweetsTimeline());
+      this.props.fetchTweetsTimeline();
       if (!this.props.loading) {
         this.loadFinish()
       }
@@ -53,7 +53,7 @@ export class HomeScreen extends Component {
   loadFinish = () => this.setState({ refreshing: false });
 
   goToUserProfile(event) {
-    this.props.dispatch(fetchUserDataRequest(event))
+    this.props.fetchUserDataRequest(event)
     this.props.navigation.navigate('UserProfile')
   }
 
@@ -75,7 +75,7 @@ export class HomeScreen extends Component {
             refreshing={this.state.refreshing}
             onRefresh={this.loadMore}
             onEndReachedThreshold={5}
-            onEndReached={() => { this.handleOnEndReached }}
+            onEndReached={this.handleOnEndReached}
           />
         </View>
       );
@@ -136,6 +136,10 @@ function mapStateToProps(state, props) {
 
 const mapDispatchToProps = {
   fetchTweetsTimeline: () => fetchTweetsTimeline(),
+  fetchMoreTweets: () => fetchMoreTweets(),
+  fetchUserDataRequest: (event) => fetchUserDataRequest(event),
+  fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event)
+
  }
 
 //Connect everything

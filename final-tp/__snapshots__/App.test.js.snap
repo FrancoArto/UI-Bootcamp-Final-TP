@@ -1,38 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-ReactShallowRenderer {
-  "_context": Object {},
-  "_element": <App />,
-  "_forcedUpdate": false,
-  "_instance": App {
-    "context": Object {},
-    "props": Object {},
-    "refs": Object {},
-    "state": null,
-    "updater": Updater {
-      "_callbacks": Array [],
-      "_renderer": [Circular],
-    },
-  },
-  "_newState": null,
-  "_rendered": <Provider
-    store={
-      Object {
-        "@@observable": [Function],
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
     }
-  >
-    <AppNavigator />
-  </Provider>,
-  "_rendering": false,
-  "_updater": Updater {
-    "_callbacks": Array [],
-    "_renderer": [Circular],
-  },
-}
+  }
+>
+  <AppNavigator />
+</Provider>
 `;

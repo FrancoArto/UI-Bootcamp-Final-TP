@@ -9,7 +9,7 @@ import { settingsChanged } from '../../store/settings/settingsActions';
 import PropTypes from 'prop-types'
 import styles from './settingsScreen.style';
 
-class SettingsScreen extends Component {
+export class SettingsScreen extends Component {
   constructor(props) {
     super(props);
 

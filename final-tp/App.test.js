@@ -1,11 +1,9 @@
 import React from 'react';
 import App from './App';
-import ShallowRenderer from 'react-test-renderer/shallow';
-
+import {shallow} from 'enzyme'
 
 it('renders without crashing', () => {
-  const rendered = new ShallowRenderer()
-  rendered.render(<App />);
+  const rendered = shallow(<App />);
   expect(rendered).toMatchSnapshot();
 });
 

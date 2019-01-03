@@ -1,13 +1,10 @@
 import React from 'react';
-import {mount} from 'enzyme'
-
-import ShallowRenderer from 'react-test-renderer/shallow';
+import {mount, shallow} from 'enzyme'
 import Search from './Search';
 
 
 it('renders without crashing', () => {
-  const rendered = new ShallowRenderer()
-  rendered.render(<Search />)
+  const rendered = shallow(<Search />)
   expect(rendered).toMatchSnapshot();
 })
 
@@ -51,13 +48,13 @@ it('clears search text', () => {
 
 it('dispatch search', () => {
   let searchText = 'Hola'
-  var flag = false
+  const onSearch = jest.fn()
   
   const wrapper = mount(<Search 
     searchText={searchText}
-    onSearch={() => {flag = true}}/>)
+    onSearch={onSearch}/>)
  
   const searchButton = wrapper.find('Button').first();
   searchButton.props().onPress()
-  expect(flag).toBeTruthy()
+  expect(onSearch).toHaveBeenCalled()
 });

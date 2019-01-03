@@ -1,75 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `
-ReactShallowRenderer {
-  "_context": Object {
-    "store": undefined,
-    "storeSubscription": undefined,
-  },
-  "_element": <Connect(SettingsScreen)
-    store={
-      Object {
-        "@@observable": [Function],
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
+exports[`renders connected to store 1`] = `
+<SettingsScreen
+  SettingsChanged={[Function]}
+  settings={
+    Object {
+      "defaultInfo": false,
+      "following": false,
+      "verified": false,
+      "withLink": false,
+      "withTruncatedText": false,
     }
-  />,
-  "_forcedUpdate": false,
-  "_instance": Connect {
-    "context": Object {
-      "store": undefined,
-      "storeSubscription": undefined,
-    },
-    "notifyNestedSubs": [Function],
-    "props": Object {
-      "store": Object {
-        "@@observable": [Function],
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-    },
-    "propsMode": true,
-    "refs": Object {},
-    "renderCount": 0,
-    "selector": Object {
-      "error": null,
-      "props": Object {
-        "SettingsChanged": [Function],
-        "settings": Object {
-          "defaultInfo": false,
-          "following": false,
-          "verified": false,
-          "withLink": false,
-          "withTruncatedText": false,
-        },
-        "store": Object {
-          "@@observable": [Function],
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-      },
-      "run": [Function],
-      "shouldComponentUpdate": false,
-    },
-    "setWrappedInstance": [Function],
-    "state": Object {},
-    "store": Object {
+  }
+  store={
+    Object {
       "@@observable": [Function],
       "dispatch": [Function],
       "getState": [Function],
       "replaceReducer": [Function],
       "subscribe": [Function],
-    },
-    "subscription": Subscription {
+    }
+  }
+  storeSubscription={
+    Subscription {
       "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
         "notify": [Function],
+        "subscribe": [Function],
       },
       "onStateChange": [Function],
       "parentSub": undefined,
@@ -80,57 +38,27 @@ ReactShallowRenderer {
         "replaceReducer": [Function],
         "subscribe": [Function],
       },
-      "unsubscribe": null,
-    },
-    "updater": Updater {
-      "_callbacks": Array [],
-      "_renderer": [Circular],
-    },
-    "version": 0,
-  },
-  "_newState": null,
-  "_rendered": <SettingsScreen
-    SettingsChanged={[Function]}
-    settings={
-      Object {
-        "defaultInfo": false,
-        "following": false,
-        "verified": false,
-        "withLink": false,
-        "withTruncatedText": false,
-      }
+      "unsubscribe": [Function],
     }
-    store={
-      Object {
-        "@@observable": [Function],
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
+  }
+/>
+`;
+
+exports[`renders without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "flex": 1,
     }
-    storeSubscription={
-      Subscription {
-        "listeners": Object {
-          "notify": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "@@observable": [Function],
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "unsubscribe": null,
-      }
-    }
-  />,
-  "_rendering": false,
-  "_updater": Updater {
-    "_callbacks": Array [],
-    "_renderer": [Circular],
-  },
-}
+  }
+>
+  <Settings
+    onDefaultInfoChange={[Function]}
+    onFollowingChange={[Function]}
+    onVerifiedChange={[Function]}
+    onWithLinkChange={[Function]}
+    onWithTruncatedTextChange={[Function]}
+  />
+</Component>
 `;
